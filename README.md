@@ -54,7 +54,7 @@ Ambiente profissional de segurança cibernética, usado em computadores conectad
 
 ---
 
-##    Entrega 2 – Análise de Concorrência  (28-08-2025) [Concluído]
+## Entrega 2 – Análise de Concorrência  (28-08-2025) [Concluído]
 
 ### Versão – Autor: Kaique Fernandes  
 
@@ -62,27 +62,26 @@ Ambiente profissional de segurança cibernética, usado em computadores conectad
 Pentesters independentes, analistas de segurança de pequenas/médias empresas, consultorias que buscam automatização.  
 
 #### Concorrentes analisados  
-- **Shodan** – motor de busca para dispositivos conectados.  
-- **HaveIBeenPwned (HIBP)** – consulta de credenciais vazadas.  
-- **Maltego CE** – ferramenta gráfica de análise OSINT.  
+- **TheHarvester** – coleta de e-mails e domínios a partir de motores de busca.  
+- **Holehe** – checagem de e-mails em serviços populares.  
 
 #### Características e funcionalidades  
-- **Shodan:** varredura, banners de serviços, estatísticas.  
-- **HIBP:** busca rápida por email/usuário em vazamentos.  
-- **Maltego:** visualização de grafos, integração com DBs.  
+- **TheHarvester:** busca de e-mails, subdomínios, hosts.  
+<img width="1848" height="844" alt="image" src="https://github.com/user-attachments/assets/6f3839b5-bb21-40c0-9e2c-c2781b384a40" />
+
+- **Holehe:** verifica presença de e-mails em serviços (Netflix, Twitter, GitHub, etc.).  
+<img width="855" height="313" alt="image" src="https://github.com/user-attachments/assets/d35ac0b8-fba6-4a68-a285-c8c2b431a6e5" />
 
 #### Experiência do usuário (UX)  
-- Shodan → poderoso, mas complexo.  
-- HIBP → simples e intuitivo.  
-- Maltego → atrativo visualmente, mas exige curva de aprendizado.  
+- TheHarvester → simples, mas restrito a linha de comando.  
+- Holehe → rápido, mas com saída técnica.  
 
 #### Preços e modelos de negócio  
-- Shodan: plano free + premium.  
-- HIBP: gratuito (consultas básicas).  
-- Maltego: CE grátis + Pro paga.  
+- TheHarvester: open source e gratuito.  
+- Holehe: open source e gratuito.  
 
 #### Padrões e tendências  
-- Dashboards visuais.  
+- Automação de consultas.  
 - Exportação de relatórios automáticos.  
 - Integração com APIs OSINT.  
 
@@ -94,28 +93,28 @@ Pentesters independentes, analistas de segurança de pequenas/médias empresas, 
 Empresas maiores, times internos de segurança e auditores que buscam otimizar auditorias.  
 
 #### Concorrentes analisados  
-- **Recon-ng** – framework modular de OSINT.  
-- **SpiderFoot** – automação OSINT completa.  
-- **Censys** – motor de busca de infraestrutura online.  
+- **PhoneInfoga** – coleta de informações sobre números de telefone. 
+<img width="764" height="346" alt="image" src="https://github.com/user-attachments/assets/219ac06d-cbed-4f10-a702-0b712220b9d2" />
+ 
+- **Maigret** – busca de perfis de usuários em centenas de sites.  
+<img width="863" height="524" alt="image" src="https://github.com/user-attachments/assets/4f905727-e622-4c71-8e6e-46655e85395b" />
+
 
 #### Características e funcionalidades  
-- **Recon-ng:** modular, scriptável, mas linha de comando.  
-- **SpiderFoot:** coleta OSINT em larga escala, interface web.  
-- **Censys:** varredura em massa de certificados, IPs e serviços.  
+- **PhoneInfoga:** metadados de números (país, operadora, possíveis registros).  
+- **Maigret:** varredura massiva de nomes de usuário em redes sociais.  
 
 #### Experiência do usuário (UX)  
-- Recon-ng → poderoso mas pouco amigável.  
-- SpiderFoot → interface simples, automação robusta.  
-- Censys → intuitivo, voltado para pesquisas rápidas.  
+- PhoneInfoga → simples, mas técnico.  
+- Maigret → prático, mas saída longa e técnica.  
 
 #### Preços e modelos de negócio  
-- Recon-ng: gratuito (open source).  
-- SpiderFoot: versão community grátis + pro paga.  
-- Censys: consultas limitadas grátis + planos pagos.  
+- PhoneInfoga: open source e gratuito.  
+- Maigret: open source e gratuito.  
 
 #### Padrões e tendências  
 - Integração com pipelines de segurança (CI/CD).  
-- Uso de ML para detectar padrões em vazamentos.  
+- Uso de OSINT em larga escala para investigação de perfis digitais.  
 - Democratização de ferramentas OSINT.  
 
 ---
