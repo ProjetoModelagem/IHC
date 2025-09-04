@@ -120,7 +120,7 @@ Empresas maiores, times internos de segurança e auditores que buscam otimizar a
 
 ---
 
-##    Entrega 3 – Personas, Mapa de Empatia, Contexto e Jornada   (28-08-2025) [Concluído]
+## Entrega 3 – Personas, Mapa de Empatia, Contexto e Jornada (28-08-2025) [Concluído]
 
 ### Persona – Autor: Kaique Fernandes  
 **Nome:** Lucas Andrade  
@@ -143,12 +143,12 @@ Empresas maiores, times internos de segurança e auditores que buscam otimizar a
 ---
 
 ### Mapa de Empatia (Equipe)  
-- **O que pensa/sente:** preocupação com qualidade e prazos de auditoria.  
-- **O que vê:** múltiplas ferramentas fragmentadas.  
-- **O que ouve:** gestores pedindo clareza e rapidez.  
-- **O que fala/faz:** usa scripts, consulta várias fontes.  
-- **Dores:** retrabalho, risco de erro humano.  
-- **Ganhos:** economia de tempo, padronização, segurança da informação.  
+- **Quem pensa/sente isso? (Marina)** → preocupação com qualidade e prazos de auditoria.  
+- **Quem vê isso? (Lucas)** → múltiplas ferramentas fragmentadas.  
+- **Quem ouve isso? (Marina)** → gestores pedindo clareza e rapidez.  
+- **Quem fala/faz isso? (Lucas)** → usa scripts, consulta várias fontes.  
+- **Quem sofre essas dores? (Equipe toda)** → retrabalho, risco de erro humano.  
+- **Quem ganha com isso? (Equipe e gestores)** → economia de tempo, padronização, segurança da informação.  
 
 ---
 
@@ -156,19 +156,39 @@ Empresas maiores, times internos de segurança e auditores que buscam otimizar a
 - **Local:** escritórios de segurança, consultorias, home office.  
 - **Dispositivo:** computadores/notebooks.  
 - **Ambiente:** multitarefa, conectado, de alta criticidade (impacta conformidade legal).  
+- **Características sociais:**  
+  - Trabalho colaborativo em equipe multidisciplinar.  
+  - Relacionamento direto com gestores e clientes.  
+  - Necessidade de comunicação clara e objetiva.  
+  - Forte cobrança por produtividade e confiabilidade.  
 
 ---
 
-### Jornada do Usuário (Equipe)  
-1. Inicia projeto de pentest.  
-2. Acessa aplicação → insere alvo.  
-3. Sistema realiza buscas em APIs OSINT.  
-4. Usuário acompanha progresso.  
-5. Resultados organizados em dashboard.  
-6. Geração de relatório em PDF.  
-7. Cliente recebe relatório consolidado.  
+### Jornada do Usuário  
+
+#### Antes da ferramenta  
+1. Usuário inicia projeto de pentest manualmente.  
+2. Pesquisa dados em múltiplas fontes e scripts isolados.  
+3. Gasta muito tempo consolidando informações.  
+4. Sente frustração e pressão por prazos curtos.  
+5. Relatórios finais ficam inconsistentes ou pouco visuais.  
+
+**Sentimento antes:** sobrecarga, insegurança, falta de confiança no resultado.  
 
 ---
+
+#### Depois da ferramenta  
+1. Usuário inicia projeto e insere o alvo na aplicação.  
+2. Sistema realiza buscas automáticas em APIs OSINT.  
+3. Resultados organizados em dashboard centralizado.  
+4. Geração de relatório padronizado em PDF.  
+5. Cliente recebe documento final claro e objetivo.  
+
+**Sentimento depois:** alívio, confiança na qualidade, satisfação por entregar dentro do prazo.  
+**Resultado:** objetivos alcançados → relatórios rápidos, confiáveis e com linguagem adaptada ao público-alvo.  
+
+---
+
 
 ## Entrega 4 - 08/09/2025 [Em andamento]
 
