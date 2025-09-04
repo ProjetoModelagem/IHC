@@ -129,6 +129,9 @@ Empresas maiores, times internos de segurança e auditores que buscam otimizar a
 **Dores:** falta de padronização, retrabalho, pressão de prazos.  
 **Expectativas:** interface simples, exportação rápida, relatórios profissionais.  
 
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/7012ec32-692b-4b5e-9142-4fc67e3988f9" />
+
+
 ---
 
 ### Persona – Autor: Guilherme de Abreu  
@@ -138,6 +141,9 @@ Empresas maiores, times internos de segurança e auditores que buscam otimizar a
 **Objetivos:** ter relatórios claros para apresentar.  
 **Dores:** perda de tempo procurando dados manuais, dificuldade em consolidar informações.  
 **Expectativas:** ferramenta confiável, relatórios com linguagem executiva, métricas visuais.  
+
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/75428df1-a853-483c-9700-f919bbb93828" />
+
 
 ---
 
