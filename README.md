@@ -137,7 +137,7 @@ Empresas maiores, times internos de segurança e auditores que buscam otimizar a
 **Idade:** 32 anos  
 **Profissão:** Gerente de Segurança da Informação  
 **Objetivos:** ter relatórios claros para apresentar.  
-**Dores:** perda de tempo validando dados manuais, dificuldade em consolidar informações.  
+**Dores:** perda de tempo procurando dados manuais, dificuldade em consolidar informações.  
 **Expectativas:** ferramenta confiável, relatórios com linguagem executiva, métricas visuais.  
 
 ---
