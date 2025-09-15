@@ -195,18 +195,64 @@ Empresas maiores, times internos de segurança e auditores que buscam otimizar a
 ---
 
 
-## Entrega 4 - 08/09/2025 [Em andamento]
-
-### 1) Cenário de Análise/Problema
-(Descrever situação real que gera dificuldade para o usuário. É uma "história triste", não contém solução, apenas o problema.)
-
-### 2) Questões de Refinamento
-(Questões que ajudam a detalhar melhor o problema descrito.)
-
-### 3) Refinamento do Cenário Análise/Problema
-(Texto revisado e mais claro do cenário de problema, considerando as questões de refinamento.)
+## Entrega 4 – Cenário de Análise/Problema (08/09/2025) [Concluído]
 
 ---
+
+### Cenário 1 – Autor: Kaique Fernandes
+
+#### 1) Cenário de Análise/Problema  
+Lucas, analista de pentest, está conduzindo um projeto para um cliente do setor financeiro.  
+Ele precisa coletar dados de diversas fontes abertas para identificar possíveis vazamentos.  
+O processo é todo manual: cada busca exige tempo, atenção e retrabalho, pois os dados chegam em formatos diferentes.  
+O prazo do cliente é curto, e Lucas sente frustração porque, mesmo dedicando horas ao processo, o relatório final fica inconsistente e sujeito a erros.  
+
+É uma rotina cansativa e repetitiva, que compromete a produtividade e aumenta a pressão sobre o analista.  
+
+---
+
+#### 2) Questões de Refinamento  
+- Quais fontes de dados o analista costuma utilizar no processo manual?  
+- Quanto tempo médio é gasto em cada projeto antes da entrega?  
+- Que tipo de inconsistências mais aparecem nos relatórios finais?  
+- De que forma a pressão do prazo impacta a qualidade do resultado?  
+- Qual o sentimento principal do analista durante esse processo?  
+
+---
+
+#### 3) Refinamento do Cenário  
+Lucas, como analista de pentest, precisa lidar diariamente com prazos curtos e uma grande quantidade de dados provenientes de diferentes fontes OSINT.  
+Sem padronização, ele passa horas copiando, ajustando e organizando informações que chegam em formatos distintos.  
+Esse esforço manual aumenta as chances de erro, gera retrabalho e resulta em relatórios pouco consistentes, o que o deixa constantemente estressado e inseguro sobre a qualidade do trabalho entregue.  
+
+---
+
+### Cenário 2 – Autor: Guilherme de Abreu
+
+#### 1) Cenário de Análise/Problema  
+Marina, gerente de segurança da informação, recebe relatórios de auditorias internas e externas de sua equipe.  
+O problema é que cada documento chega em um formato diferente, com linguagem técnica e pouco acessível para os executivos.  
+Ela precisa revisar, interpretar e consolidar manualmente as informações para criar uma versão clara que será apresentada em reuniões estratégicas.  
+Esse processo consome muito tempo e gera insegurança sobre se a mensagem transmitida reflete de fato os riscos reais da organização.  
+
+---
+
+#### 2) Questões de Refinamento  
+- Quais tipos de relatórios Marina costuma receber da equipe?  
+- Quanto tempo ela gasta para consolidar as informações em uma versão executiva?  
+- Quais as maiores dificuldades na comunicação entre parte técnica e executiva?  
+- O que acontece quando a mensagem não é transmitida de forma clara para a diretoria?  
+- Qual é o impacto emocional em Marina ao lidar com esse processo repetitivo?  
+
+---
+
+#### 3) Refinamento do Cenário  
+Marina, gerente de segurança da informação, enfrenta constantemente a dificuldade de transformar relatórios técnicos em documentos estratégicos claros para a diretoria.  
+O esforço de interpretar termos técnicos, reorganizar dados e montar métricas visuais demanda muito tempo e gera desgaste, especialmente quando há pressão de reuniões próximas.  
+Ela sente insegurança ao consolidar os relatórios, pois teme que informações críticas sejam mal comunicadas ou que o nível executivo não compreenda o real impacto dos riscos apresentados.  
+
+---
+
 
 ## Entrega 5 - 15/09/2025 [Em andamento]
 
