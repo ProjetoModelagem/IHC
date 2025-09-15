@@ -254,20 +254,223 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 ---
 
 
-## Entrega 5 - 15/09/2025 [Em andamento]
-
-### Análise de Tarefas
-
-#### 1) HTA (Hierarchical Task Analysis)
-(Colocar o diagrama + explicação da funcionalidade.)
-
-#### 2) GOMS
-(Colocar o diagrama + explicação da funcionalidade.)
-
-#### 3) CTT (ConcurTaskTrees)
-(Colocar o diagrama + explicação da funcionalidade.)
+# Entrega 6 – Análise de Tarefas (15/09/2025) [Concluída]
 
 ---
+
+## Persona 1 – Lucas Andrade (Analista de Pentest)
+
+### 1) HTA – Hierarchical Task Analysis
+
+**Funcionalidade analisada:** executar investigação OSINT de um alvo técnico e gerar relatório detalhado.  
+Objetivo: reduzir esforço manual e consolidar resultados de múltiplas fontes.
+
+#### Diagrama HTA
+```
+flowchart TD
+    A0["0. Conduzir investigação OSINT"]:::root
+    A1["1. Preparar alvo"]:::n
+    A2["2. Configurar coletas automáticas"]:::n
+    A3["3. Monitorar execução"]:::n
+    A4["4. Validar achados"]:::n
+    A5["5. Classificar riscos"]:::n
+    A6["6. Montar relatório técnico"]:::n
+    A7["7. Revisar e exportar"]:::n
+
+    A0-->A1-->A1a["1.1 Definir escopo"]
+    A1-->A1b["1.2 Selecionar fontes"]
+
+    A0-->A2-->A2a["2.1 Inserir chaves/API"]
+    A2-->A2b["2.2 Disparar varredura"]
+
+    A0-->A3-->A3a["3.1 Acompanhar progresso"]
+    A3-->A3b["3.2 Reexecutar falhas"]
+
+    A0-->A4-->A4a["4.1 Deduplicar"]
+    A4-->A4b["4.2 Correlacionar dados"]
+
+    A0-->A5-->A5a["5.1 Matriz impacto/prob."]
+
+    A0-->A6-->A6a["6.1 Preencher template técnico"]
+    A6-->A6b["6.2 Inserir evidências"]
+
+    A0-->A7-->A7a["7.1 Revisão de pares"]
+    A7-->A7b["7.2 Exportar PDF"]
+
+    classDef root fill:#111,stroke:#555,color:#fff;
+    classDef n fill:#222,stroke:#555,color:#fff;
+```
+**Funcionalidade analisada:** executar buscas em diferentes APIs OSINT, validar resultados, remover falsos positivos e gerar um relatório técnico padronizado para o cliente.  
+O HTA mostra que o processo segue uma sequência linear (preparar → coletar → validar → reportar), com possíveis iterações em casos de falha de coleta ou inconsistências.
+
+# 2) GOMS – Relatório OSINT Técnico
+
+## Goal (G0)
+**Produzir relatório OSINT técnico confiável.**
+
+---
+
+## Sub-goals
+- **G1**: Preparar alvo e fontes  
+- **G2**: Coletar dados  
+- **G3**: Validar resultados  
+- **G4**: Classificar riscos  
+- **G5**: Montar relatório técnico  
+- **G6**: Revisar e exportar  
+
+---
+
+## Operators (KLM)
+- **K**: Keystroke (digitação)  
+- **P**: Point (apontar/clicar)  
+- **M**: Mental (decisão, reflexão, análise)  
+- **Rᴿ**: Resposta do sistema  
+
+---
+
+## Método Exemplo – G2 (Coleta)
+1. **Abrir módulo de coletas** (P)  
+2. **Selecionar APIs** (P M)  
+3. **Inserir alvo** (K M)  
+4. **Iniciar varredura** (P)  
+5. **Monitorar progresso** (Rᴿ M)  
+
+---
+
+## Selection Rules
+- **Se prazo é curto** → priorizar fontes rápidas.  
+- **Se coleta falha** → reexecutar fonte alternativa.  
+
+---
+
+## Explicação da Funcionalidade
+O modelo **GOMS** detalha cada ação de Lucas, desde cliques até análises mentais.  
+Ele evidencia:  
+- Onde o tempo é gasto no processo.  
+- Como decisões (selection rules) influenciam a fluidez da execução.  
+- A relação entre interação humana e resposta do sistema para garantir eficiência.  
+
+
+#CTT - ConcurTaskTrees
+
+Realizar_OSINT =
+  Preparar_Alvo >> 
+  (Configurar_Fontes ||| Disparar_Coleta) >> 
+  Monitorar_Execucao >> 
+  Validar_Achados >> 
+  Classificar_Risco >> 
+  Montar_Relatorio_Tecnico >> 
+  Revisar_Exportar
+
+Validar_Achados = Deduplicar >> Correlacionar >> Evidenciar
+Montar_Relatorio_Tecnico = Template_Tecnico >> Inserir_Evidencias
+
+**Explicação da funcionalidade: O CTT mostra a possibilidade de tarefas em paralelo (ex.: configurar fontes enquanto coleta roda). Esse modelo ajuda a otimizar multitarefa e prever gargalos no fluxo de Lucas.
+
+
+## Persona 2 – Marina Souza (Gerente de Segurança)
+
+### 1) HTA – Hierarchical Task Analysis
+
+**Funcionalidade analisada:** consolidar relatórios técnicos em versão executiva clara.  
+**Objetivo:** traduzir achados técnicos em insights estratégicos.
+
+#### Diagrama HTA
+```mermaid
+flowchart TD
+    B0["0. Consolidar relatório executivo"]:::root
+    B1["1. Importar achados técnicos"]:::n
+    B2["2. Selecionar métricas relevantes"]:::n
+    B3["3. Redigir sumário executivo"]:::n
+    B4["4. Revisar linguagem"]:::n
+    B5["5. Preparar material de apresentação"]:::n
+    B6["6. Apresentar à diretoria"]:::n
+
+    B0-->B1
+    B0-->B2-->B2a["2.1 KPIs de risco"]
+    B2-->B2b["2.2 Impacto no negócio"]
+
+    B0-->B3-->B3a["3.1 Estruturar tópicos"]
+    B3-->B3b["3.2 Adaptar vocabulário"]
+
+    B0-->B4-->B4a["4.1 Eliminar jargão técnico"]
+    B4-->B4b["4.2 Validar clareza"]
+
+    B0-->B5-->B5a["5.1 Criar slides"]
+    B5-->B5b["5.2 Inserir gráficos"]
+
+    B0-->B6-->B6a["6.1 Apresentar"]
+    B6-->B6b["6.2 Coletar feedback"]
+
+    classDef root fill:#111,stroke:#555,color:#fff;
+    classDef n fill:#222,stroke:#555,color:#fff;
+```
+
+### 2) GOMS – Relatório Executivo
+
+#### Goal (G0)
+**Produzir resumo executivo claro e convincente.**
+
+---
+
+#### Sub-goals
+- **G1**: Importar achados  
+- **G2**: Selecionar KPIs estratégicos  
+- **G3**: Redigir sumário executivo  
+- **G4**: Revisar linguagem  
+- **G5**: Preparar material de apoio  
+- **G6**: Apresentar à diretoria  
+
+---
+
+#### Operators (KLM)
+- **K**: Keystroke (digitação)  
+- **P**: Point (apontar/clicar)  
+- **M**: Mental (decisão, reflexão, análise)  
+- **S**: Preparar slides  
+
+---
+
+#### Método Exemplo – G3 (Redação)
+1. **Listar tópicos de maior impacto** (M K)  
+2. **Reescrever em linguagem executiva** (K M)  
+3. **Inserir exemplos visuais** (P K)  
+
+---
+
+#### Selection Rules
+- **Se audiência é executiva** → reduzir detalhes técnicos.  
+- **Se reunião é estratégica** → destacar impacto financeiro.  
+
+---
+
+#### Explicação da funcionalidade
+O modelo **GOMS** de Marina mostra a cadeia de ações **mentais e motoras** necessárias para transformar achados técnicos em **insights de negócio**.  
+Ele destaca a importância das **decisões de comunicação**, que influenciam diretamente a clareza e a efetividade da mensagem ao público executivo.
+
+### 3) CTT – ConcurTaskTrees
+
+```ctt
+Sintetizar_Relatorio_Executivo =
+  Importar_Achados >> 
+  Selecionar_KPIs >> 
+  Redigir_Sumario_Exec >> 
+  Revisar_Linguagem >> 
+  Preparar_Apresentacao >> 
+  Apresentar_Diretoria
+
+Selecionar_KPIs = (Risco_Severidade ||| Nº_Incidentes ||| Tempo_Resposta)
+Preparar_Apresentacao = Criar_Slides >> Inserir_Graficos
+```
+
+### Explicação da funcionalidade 
+O CTT mostra que Marina pode selecionar múltiplas métricas em paralelo antes de compor o sumário executivo.
+Ele também evidencia a importância da revisão da linguagem, garantindo que a diretoria compreenda os riscos e indicadores sem jargão técnico, transformando relatórios técnicos em insights estratégicos.
+
+
+
+_________________
+
 
 ## Entrega 6 - 22/09/2025 [Em andamento]
 
