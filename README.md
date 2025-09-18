@@ -254,7 +254,7 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 ---
 
 
-# Entrega 6 – Análise de Tarefas (15/09/2025) [Concluída]
+# Entrega 5 – Análise de Tarefas (15/09/2025) [Concluída]
 
 ---
 
