@@ -266,7 +266,7 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 Objetivo: reduzir esforço manual e consolidar resultados de múltiplas fontes.
 
 #### Diagrama HTA
-```
+```mermaid
 flowchart TD
     A0["0. Conduzir investigação OSINT"]:::root
     A1["1. Preparar alvo"]:::n
@@ -352,7 +352,7 @@ Ele evidencia:
 
 
 #CTT - ConcurTaskTrees
-
+```ctt
 Realizar_OSINT =
   Preparar_Alvo >> 
   (Configurar_Fontes ||| Disparar_Coleta) >> 
@@ -364,13 +364,14 @@ Realizar_OSINT =
 
 Validar_Achados = Deduplicar >> Correlacionar >> Evidenciar
 Montar_Relatorio_Tecnico = Template_Tecnico >> Inserir_Evidencias
+```
 
 **Explicação da funcionalidade: O CTT mostra a possibilidade de tarefas em paralelo (ex.: configurar fontes enquanto coleta roda). Esse modelo ajuda a otimizar multitarefa e prever gargalos no fluxo de Lucas.
 
 
 ## Persona 2 – Marina Souza (Gerente de Segurança)
 
-### 1) HTA – Hierarchical Task Analysis
+#### 1) HTA – Hierarchical Task Analysis
 
 **Funcionalidade analisada:** consolidar relatórios técnicos em versão executiva clara.  
 **Objetivo:** traduzir achados técnicos em insights estratégicos.
@@ -406,7 +407,7 @@ flowchart TD
     classDef n fill:#222,stroke:#555,color:#fff;
 ```
 
-### 2) GOMS – Relatório Executivo
+#### 2) GOMS – Relatório Executivo
 
 #### Goal (G0)
 **Produzir resumo executivo claro e convincente.**
@@ -463,11 +464,9 @@ Selecionar_KPIs = (Risco_Severidade ||| Nº_Incidentes ||| Tempo_Resposta)
 Preparar_Apresentacao = Criar_Slides >> Inserir_Graficos
 ```
 
-### Explicação da funcionalidade 
+#### Explicação da funcionalidade 
 O CTT mostra que Marina pode selecionar múltiplas métricas em paralelo antes de compor o sumário executivo.
 Ele também evidencia a importância da revisão da linguagem, garantindo que a diretoria compreenda os riscos e indicadores sem jargão técnico, transformando relatórios técnicos em insights estratégicos.
-
-
 
 _________________
 
