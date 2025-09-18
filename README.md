@@ -303,7 +303,7 @@ flowchart TD
 **Funcionalidade analisada:** executar buscas em diferentes APIs OSINT, validar resultados, remover falsos positivos e gerar um relatório técnico padronizado para o cliente.  
 O HTA mostra que o processo segue uma sequência linear (preparar → coletar → validar → reportar), com possíveis iterações em casos de falha de coleta ou inconsistências.
 
-# 2) GOMS – Relatório OSINT Técnico
+#### 2) GOMS – Relatório OSINT Técnico
 
 ## Goal (G0)
 **Produzir relatório OSINT técnico confiável.**
