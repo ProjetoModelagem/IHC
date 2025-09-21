@@ -351,70 +351,150 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 
 
 
-#### 2) GOMS – Relatório OSINT Técnico
+# GOMS-KLM — Lucas (Analista de Pentest)
 
-## Goal (G0)
-**Produzir relatório OSINT técnico confiável.**
-
----
-
-## Sub-goals
-- **G1**: Preparar alvo e fontes  
-- **G2**: Coletar dados  
-- **G3**: Validar resultados  
-- **G4**: Classificar riscos  
-- **G5**: Montar relatório técnico  
-- **G6**: Revisar e exportar  
+**Goal 0:** Produzir relatório OSINT técnico confiável
 
 ---
 
-## Operators (KLM)
-- **K**: Keystroke (digitação)  
-- **P**: Point (apontar/clicar)  
-- **M**: Mental (decisão, reflexão, análise)  
-- **Rᴿ**: Resposta do sistema  
+## Goal 1: Preparar alvo e fontes
+### Method 1.A: Definir escopo e restrições
+- OP 1.A.1: [K] Digitar identificação do cliente no campo do sistema  
+- OP 1.A.2: [K] Digitar o domínio alvo (ex.: empresa.com)  
+- OP 1.A.3: [P] Mover cursor até checkbox "Limites legais"  
+- OP 1.A.4: [B] Clicar em confirmar escopo  
+- OP 1.A.5: [R] Esperar feedback do sistema sobre validação do escopo  
+- **Selection Rule:** Se o escopo não for validado → voltar para OP 1.A.2
+
+### Method 1.B: Selecionar fontes OSINT
+- OP 1.B.1: [P] Mover cursor até lista de fontes  
+- OP 1.B.2: [B] Marcar checkbox de “HaveIBeenPwned”  
+- OP 1.B.3: [B] Marcar checkbox de “Shodan”  
+- OP 1.B.4: [B] Marcar checkbox de “Pastebin”  
+- OP 1.B.5: [M] Pensar e revisar se todas as fontes são adequadas  
+- **Selection Rule:** Se prazo < 24h → selecionar apenas fontes de alta cobertura (pular OP 1.B.3 e OP 1.B.4)
 
 ---
 
-## Método Exemplo – G2 (Coleta)
-1. **Abrir módulo de coletas** (P)  
-2. **Selecionar APIs** (P M)  
-3. **Inserir alvo** (K M)  
-4. **Iniciar varredura** (P)  
-5. **Monitorar progresso** (Rᴿ M)  
+## Goal 2: Executar coleta
+### Method 2.A: Configurar APIs e parâmetros
+- OP 2.A.1: [K] Digitar chave da API HIBP no campo de credenciais  
+- OP 2.A.2: [B] Pressionar botão "Validar chave"  
+- OP 2.A.3: [R] Aguardar retorno do sistema  
+- OP 2.A.4: [M] Preparar query para pesquisa  
+- OP 2.A.5: [K] Digitar query (e.g. “email:alvo@dominio.com”)  
+- OP 2.A.6: [P] Mover cursor até botão "Salvar parâmetros"  
+- OP 2.A.7: [B] Clicar no botão  
+- **Selection Rule:** Se a API não validar → repetir OP 2.A.1 com nova chave
+
+### Method 2.B: Disparar varredura
+- OP 2.B.1: [P] Mover cursor até botão "Iniciar varredura"  
+- OP 2.B.2: [B] Clicar botão  
+- OP 2.B.3: [R] Aguardar barra de progresso carregar  
+- OP 2.B.4: [M] Observar status de cada fonte  
+- OP 2.B.5: [P] Mover cursor até “Reexecutar” (se falha)  
+- OP 2.B.6: [B] Clicar em reexecutar  
+- **Selection Rule:** Se coleta terminar sem falhas → prosseguir para Goal 3
 
 ---
 
-## Selection Rules
-- **Se prazo é curto** → priorizar fontes rápidas.  
-- **Se coleta falha** → reexecutar fonte alternativa.  
+## Goal 3: Validar resultados
+### Method 3.A: Deduplicar
+- OP 3.A.1: [P] Selecionar opção “Remover duplicados”  
+- OP 3.A.2: [B] Clicar em executar deduplicação  
+- OP 3.A.3: [R] Aguardar sistema processar  
+- OP 3.A.4: [M] Pensar e revisar lista final  
+
+### Method 3.B: Correlacionar achados
+- OP 3.B.1: [P] Mover cursor até “Correlacionar por e-mail”  
+- OP 3.B.2: [B] Clicar em correlacionar  
+- OP 3.B.3: [R] Esperar resposta do sistema  
+- OP 3.B.4: [M] Revisar resultados correlacionados  
+
+### Method 3.C: Evidenciar
+- OP 3.C.1: [P] Mover cursor até item do achado  
+- OP 3.C.2: [B] Clicar em “Salvar evidência”  
+- OP 3.C.3: [R] Esperar confirmação  
+- OP 3.C.4: [M] Verificar se evidência foi anexada corretamente  
 
 ---
 
-## Explicação da Funcionalidade
-O modelo **GOMS** detalha cada ação de Lucas, desde cliques até análises mentais.  
-Ele evidencia:  
-- Onde o tempo é gasto no processo.  
-- Como decisões (selection rules) influenciam a fluidez da execução.  
-- A relação entre interação humana e resposta do sistema para garantir eficiência.  
+## Goal 4: Classificar riscos
+### Method 4.A: Impacto x Probabilidade
+- OP 4.A.1: [P] Selecionar matriz de riscos  
+- OP 4.A.2: [B] Clicar em célula de classificação (Baixo, Médio, Alto)  
+- OP 4.A.3: [R] Esperar registro do risco  
+
+### Method 4.B: Mapear a normas
+- OP 4.B.1: [P] Selecionar “Mapear para LGPD”  
+- OP 4.B.2: [B] Clicar confirmar  
+- OP 4.B.3: [R] Aguardar resposta  
+
+---
+
+## Goal 5: Montar relatório técnico
+### Method 5.A: Preencher template
+- OP 5.A.1: [K] Digitar título do relatório  
+- OP 5.A.2: [K] Digitar resumo técnico  
+- OP 5.A.3: [K] Inserir achados e riscos  
+- OP 5.A.4: [P] Mover cursor até botão “Salvar”  
+- OP 5.A.5: [B] Clicar em salvar  
+
+### Method 5.B: Inserir gráficos e KPIs
+- OP 5.B.1: [P] Selecionar aba “KPIs”  
+- OP 5.B.2: [B] Clicar em “Gerar gráfico”  
+- OP 5.B.3: [R] Aguardar visualização do gráfico  
+- OP 5.B.4: [M] Validar se gráfico corresponde aos dados  
+
+### Method 5.C: Revisar e Exportar
+- OP 5.C.1: [P] Selecionar “Exportar PDF”  
+- OP 5.C.2: [B] Clicar em exportar  
+- OP 5.C.3: [R] Aguardar geração do arquivo  
+- OP 5.C.4: [M] Conferir se relatório gerado está íntegro  
+- **Selection Rule:** Se relatório não aprovado em revisão de pares → voltar a Method 5.A
+
+---
+
+## Legenda (KLM)
+- **K (Keying):** Digitar no teclado (≈0.2s por tecla)  
+- **P (Pointing):** Mover cursor até alvo na tela (≈1.1s)  
+- **B (Button press):** Clicar botão do mouse (≈0.1s)  
+- **H (Homing):** Alternar mão entre teclado e mouse (≈0.4s)  
+- **M (Mental preparation):** Pensar/preparar próxima ação (≈1.2s)  
+- **R (Response):** Tempo de resposta do sistema (variável)  
+
+---
+
+### Observação
+Esse GOMS-KLM do Lucas cobre **todo o fluxo da investigação OSINT até o relatório técnico**.  
+- Em cada Goal temos **Methods com Operators detalhados**.  
+- Incluímos **Selection Rules** para lidar com falhas e exceções.  
+- Pode ser usado tanto para análise de tarefas quanto para estimar **tempo total de execução** (somando tempos de KLM).
 
 
-#CTT - ConcurTaskTrees
-```ctt
-Realizar_OSINT =
-  Preparar_Alvo >> 
-  (Configurar_Fontes ||| Disparar_Coleta) >> 
-  Monitorar_Execucao >> 
-  Validar_Achados >> 
-  Classificar_Risco >> 
-  Montar_Relatorio_Tecnico >> 
-  Revisar_Exportar
+# ConcurTaskTree - Lucas (Executar Varredura OSINT)
 
-Validar_Achados = Deduplicar >> Correlacionar >> Evidenciar
-Montar_Relatorio_Tecnico = Template_Tecnico >> Inserir_Evidencias
-```
+T0: Executar Varredura OSINT
 
-**Explicação da funcionalidade: O CTT mostra a possibilidade de tarefas em paralelo (ex.: configurar fontes enquanto coleta roda). Esse modelo ajuda a otimizar multitarefa e prever gargalos no fluxo de Lucas.
+T0 = 
+    T1 >> T2 >> T3 ||| T4 >> T5 >> T6
+
+Onde:
+
+- T1: Preparar alvo (tarefa do usuário)  
+- T2: Configurar coleta (tarefa interativa)  
+- T3: Executar varredura (tarefa do sistema)  
+- T4: Validar achados (tarefa interativa)  
+- T5: Classificar riscos (tarefa do usuário)  
+- T6: Gerar relatório técnico (tarefa do sistema + usuário)  
+
+### Relações:
+- T1 >> T2 → só é possível configurar coleta após preparar o alvo.  
+- T2 >> T3 → execução da varredura depende da configuração.  
+- T3 ||| T4 → a validação pode ocorrer em paralelo à execução (comunicação entre sistema e usuário).  
+- T4 >> T5 → só é possível classificar após validar.  
+- T5 >> T6 → relatório é produzido somente após classificação.  
+
 
 
 ## Persona 2 – Marina Souza (Gerente de Segurança)
@@ -493,67 +573,150 @@ Montar_Relatorio_Tecnico = Template_Tecnico >> Inserir_Evidencias
 - **Planos** indicam ordem, paralelismo e seleção de métricas conforme contexto.  
 - **Tabela** mostra problemas comuns (ex.: jargão técnico, excesso de slides) e recomendações (ex.: glossário, modelo padrão).
 
+# GOMS-KLM — Marina (Gestora de Segurança)
 
-#### 2) GOMS – Relatório Executivo
-
-#### Goal (G0)
-**Produzir resumo executivo claro e convincente.**
+**Goal 0:** Consolidar relatório OSINT em versão executiva e apresentá-lo à diretoria
 
 ---
 
-#### Sub-goals
-- **G1**: Importar achados  
-- **G2**: Selecionar KPIs estratégicos  
-- **G3**: Redigir sumário executivo  
-- **G4**: Revisar linguagem  
-- **G5**: Preparar material de apoio  
-- **G6**: Apresentar à diretoria  
+## Goal 1: Importar achados técnicos
+### Method 1.A: Receber relatório técnico
+- OP 1.A.1: [P] Mover cursor até e-mail/módulo de relatórios  
+- OP 1.A.2: [B] Clicar em "Baixar relatório técnico"  
+- OP 1.A.3: [R] Aguardar download  
+- OP 1.A.4: [M] Validar que arquivo baixado está correto  
+
+### Method 1.B: Selecionar seções relevantes
+- OP 1.B.1: [K] Abrir arquivo e navegar até seções técnicas  
+- OP 1.B.2: [P] Destacar achados críticos  
+- OP 1.B.3: [B] Copiar para documento executivo  
+- OP 1.B.4: [M] Validar se a seleção é suficiente para gestores  
+- **Selection Rule:** Se relatório tiver excesso de dados → priorizar apenas severidade alta
 
 ---
 
-#### Operators (KLM)
-- **K**: Keystroke (digitação)  
-- **P**: Point (apontar/clicar)  
-- **M**: Mental (decisão, reflexão, análise)  
-- **S**: Preparar slides  
+## Goal 2: Selecionar métricas (KPIs)
+### Method 2.A: Definir indicadores de risco
+- OP 2.A.1: [P] Mover cursor até campo de indicadores  
+- OP 2.A.2: [K] Inserir número de incidentes  
+- OP 2.A.3: [K] Inserir severidade média  
+- OP 2.A.4: [M] Pensar se métricas são adequadas  
+
+### Method 2.B: Avaliar impacto no negócio
+- OP 2.B.1: [K] Escrever breve descrição do impacto financeiro  
+- OP 2.B.2: [K] Escrever impacto reputacional  
+- OP 2.B.3: [M] Pensar se impacto traduz riscos técnicos em estratégicos  
+- **Selection Rule:** Se diretoria exigir → incluir também riscos de compliance
 
 ---
 
-#### Método Exemplo – G3 (Redação)
-1. **Listar tópicos de maior impacto** (M K)  
-2. **Reescrever em linguagem executiva** (K M)  
-3. **Inserir exemplos visuais** (P K)  
+## Goal 3: Redigir sumário executivo
+### Method 3.A: Estruturar tópicos
+- OP 3.A.1: [K] Escrever tópicos principais (3–5 bullet points)  
+- OP 3.A.2: [M] Pensar sobre clareza e objetividade  
+
+### Method 3.B: Adaptar vocabulário
+- OP 3.B.1: [K] Reescrever frases técnicas em linguagem executiva  
+- OP 3.B.2: [M] Revisar se texto é compreensível para não técnicos  
+- **Selection Rule:** Se jargão ainda estiver presente → voltar a OP 3.B.1
 
 ---
 
-#### Selection Rules
-- **Se audiência é executiva** → reduzir detalhes técnicos.  
-- **Se reunião é estratégica** → destacar impacto financeiro.  
+## Goal 4: Revisar clareza
+### Method 4.A: Eliminar termos técnicos
+- OP 4.A.1: [P] Revisar texto linha por linha  
+- OP 4.A.2: [K] Substituir termos complexos por equivalentes simples  
+
+### Method 4.B: Validar com equipe
+- OP 4.B.1: [P] Enviar versão preliminar para equipe  
+- OP 4.B.2: [R] Aguardar feedback  
+- OP 4.B.3: [M] Ajustar conforme comentários  
 
 ---
 
-#### Explicação da funcionalidade
-O modelo **GOMS** de Marina mostra a cadeia de ações **mentais e motoras** necessárias para transformar achados técnicos em **insights de negócio**.  
-Ele destaca a importância das **decisões de comunicação**, que influenciam diretamente a clareza e a efetividade da mensagem ao público executivo.
+## Goal 5: Preparar material de apresentação
+### Method 5.A: Criar slides
+- OP 5.A.1: [P] Abrir software de apresentação  
+- OP 5.A.2: [K] Inserir título da apresentação  
+- OP 5.A.3: [K] Inserir tópicos do sumário executivo  
 
-### 3) CTT – ConcurTaskTrees
+### Method 5.B: Inserir gráficos e dashboards
+- OP 5.B.1: [P] Selecionar botão "Adicionar gráfico"  
+- OP 5.B.2: [K] Escolher tipo (barra, pizza, linha)  
+- OP 5.B.3: [R] Visualizar gráfico gerado  
+- OP 5.B.4: [M] Validar se gráfico comunica bem a métrica  
+- **Selection Rule:** Se gráfico confuso → trocar tipo de visualização  
 
-```ctt
-Sintetizar_Relatorio_Executivo =
-  Importar_Achados >> 
-  Selecionar_KPIs >> 
-  Redigir_Sumario_Exec >> 
-  Revisar_Linguagem >> 
-  Preparar_Apresentacao >> 
-  Apresentar_Diretoria
+---
 
-Selecionar_KPIs = (Risco_Severidade ||| Nº_Incidentes ||| Tempo_Resposta)
-Preparar_Apresentacao = Criar_Slides >> Inserir_Graficos
-```
+## Goal 6: Apresentar à diretoria
+### Method 6.A: Expor sumário
+- OP 6.A.1: [P] Abrir apresentação em tela cheia  
+- OP 6.A.2: [K] Falar tópicos principais  
+- OP 6.A.3: [M] Pausar para avaliar reação da diretoria  
 
-#### Explicação da funcionalidade 
-O CTT mostra que Marina pode selecionar múltiplas métricas em paralelo antes de compor o sumário executivo.
-Ele também evidencia a importância da revisão da linguagem, garantindo que a diretoria compreenda os riscos e indicadores sem jargão técnico, transformando relatórios técnicos em insights estratégicos.
+### Method 6.B: Responder dúvidas
+- OP 6.B.1: [M] Interpretar pergunta feita pela diretoria  
+- OP 6.B.2: [K] Responder com clareza  
+- OP 6.B.3: [R] Esperar reação/feedback  
+- **Selection Rule:** Se pergunta exigir detalhe técnico → anexar relatório de Lucas
+
+---
+
+## Goal 7: Arquivar versão final
+### Method 7.A: Salvar relatório executivo
+- OP 7.A.1: [P] Mover cursor até "Salvar como PDF"  
+- OP 7.A.2: [B] Clicar em exportar  
+- OP 7.A.3: [R] Aguardar arquivo ser gerado  
+
+### Method 7.B: Indexar em histórico corporativo
+- OP 7.B.1: [P] Acessar sistema de gestão documental  
+- OP 7.B.2: [K] Inserir título e palavras-chave  
+- OP 7.B.3: [B] Clicar em “Publicar/Arquivar”  
+- OP 7.B.4: [M] Validar se documento foi indexado corretamente  
+
+---
+
+## Legenda (KLM)
+- **K (Keying):** Digitar no teclado (≈0.2s por tecla)  
+- **P (Pointing):** Mover cursor até alvo na tela (≈1.1s)  
+- **B (Button press):** Clicar botão do mouse (≈0.1s)  
+- **H (Homing):** Alternar mão entre teclado e mouse (≈0.4s)  
+- **M (Mental preparation):** Pensar/preparar próxima ação (≈1.2s)  
+- **R (Response):** Tempo de resposta do sistema (variável)  
+
+---
+
+### Observação
+Esse GOMS-KLM da Marina cobre **todo o processo de transformar o relatório técnico em executivo**.  
+- Cada **Goal** é detalhado em **Methods e Operators KLM**.  
+- Incluímos **Selection Rules** para tratar casos práticos (prazo curto, gráficos confusos, perguntas inesperadas).  
+- Útil para demonstrar como a **gestora interage com a interface e aplica raciocínio** até a entrega final.
+
+
+
+# ConcurTaskTree - Marina (Consolidar Relatório Executivo)
+
+T0: Consolidar Relatório Executivo
+
+T0 =
+    T1 >> T2 >> (T3 || T4) >> T5 >> T6
+
+Onde:
+
+- T1: Importar achados técnicos (tarefa do sistema)  
+- T2: Selecionar métricas (tarefa do usuário)  
+- T3: Redigir sumário executivo (tarefa do usuário)  
+- T4: Revisar linguagem (tarefa interativa)  
+- T5: Preparar apresentação (tarefa do usuário + sistema)  
+- T6: Apresentar à diretoria (tarefa do usuário)  
+
+### Relações:
+- T1 >> T2 → só é possível selecionar métricas após importar os dados.  
+- T2 >> (T3 || T4) → após a seleção, pode-se redigir e revisar em paralelo.  
+- (T3 || T4) >> T5 → ambos devem estar finalizados antes da preparação da apresentação.  
+- T5 >> T6 → apresentação depende da preparação dos materiais.  
+
 
 _________________
 
