@@ -262,46 +262,94 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 
 ### 1) HTA – Hierarchical Task Analysis
 
-**Funcionalidade analisada:** executar investigação OSINT de um alvo técnico e gerar relatório detalhado.  
-Objetivo: reduzir esforço manual e consolidar resultados de múltiplas fontes.
+**Tarefa 0: Realizar investigação OSINT e entregar relatório técnico padronizado**
 
-#### Diagrama HTA
-```mermaid
-flowchart TD
-    A0["0. Conduzir investigação OSINT"]:::root
-    A1["1. Preparar alvo"]:::n
-    A2["2. Configurar coletas automáticas"]:::n
-    A3["3. Monitorar execução"]:::n
-    A4["4. Validar achados"]:::n
-    A5["5. Classificar riscos"]:::n
-    A6["6. Montar relatório técnico"]:::n
-    A7["7. Revisar e exportar"]:::n
+---
 
-    A0-->A1-->A1a["1.1 Definir escopo"]
-    A1-->A1b["1.2 Selecionar fontes"]
+## Diagrama de Análise Hierárquica de Tarefas (estrutura em árvore)
 
-    A0-->A2-->A2a["2.1 Inserir chaves/API"]
-    A2-->A2b["2.2 Disparar varredura"]
+> **Plano 0:** **1 > 2 > 3 > 4 > 5 > 6 > 7**  
+> (Sequencial: preparar → coletar → monitorar → validar → classificar → relatar → registrar/entregar)  
+> **Exceções/seleções/paralelos** detalhados nos planos locais abaixo.
 
-    A0-->A3-->A3a["3.1 Acompanhar progresso"]
-    A3-->A3b["3.2 Reexecutar falhas"]
+**0. Realizar investigação OSINT**  
+- **1. Preparar alvo e contexto**  
+  - **1.1 Verificar contrato/consentimento**  
+  - **1.2 Definir escopo e restrições** (alvo, limites legais, janela de execução)  
+  - **1.3 Selecionar fontes OSINT** (por tipo: credenciais, infra, mídia social, pastes)  
+  - **Plano 1:** **1.1 > 1.2 > 1.3** (sequencial; sem 1.1 não prossegue)  
+- **2. Configurar coletas automáticas**  
+  - **2.1 Provisionar chaves/API** (HIBP, Shodan, etc.)  
+  - **2.2 Parametrizar consultas** (queries, throttling, retries)  
+  - **2.3 Agendar/Disparar varreduras**  
+  - **Plano 2:** **2.1 > (2.2 + 2.3)** (2.2 e 2.3 em **paralelo controlado**)  
+- **3. Monitorar execução**  
+  - **3.1 Acompanhar progresso** (status por fonte)  
+  - **3.2 Tratar falhas** (timeout, quota, credencial inválida)  
+  - **3.3 Registrar logs de execução**  
+  - **Plano 3:** **(3.1 + 3.2 + 3.3)\*** (ciclo **paralelo/iterativo** até término)  
+- **4. Validar e evidenciar achados**  
+  - **4.1 Deduplicar e remover falsos positivos**  
+  - **4.2 Correlacionar dados entre fontes**  
+  - **4.3 Evidenciar** (screenshots, hashes, URLs, timestamps)  
+  - **Plano 4:** **4.1 > 4.2 > 4.3** (sequencial)  
+- **5. Classificar e priorizar riscos**  
+  - **5.1 Avaliar impacto x probabilidade** (matriz)  
+  - **5.2 Mapear a requisitos/controles** (LGPD/ISO/NIST conforme escopo)  
+  - **Plano 5:** **5.1 > 5.2** (sequencial)  
+- **6. Montar relatório técnico**  
+  - **6.1 Preencher template técnico** (achado, evidência, risco, recomendação)  
+  - **6.2 Inserir gráficos/KPIs** (por severidade, fonte, tempo)  
+  - **6.3 Revisão por pares**  
+  - **6.4 Exportar PDF**  
+  - **Plano 6:** **6.1 > 6.2 > 6.3 > 6.4** (sequencial)  
+- **7. Entregar e arquivar**  
+  - **7.1 Enviar ao cliente**  
+  - **7.2 Registrar em histórico/KB** (para reuso, métricas)  
+  - **Plano 7:** **7.1 > 7.2** (sequencial)
 
-    A0-->A4-->A4a["4.1 Deduplicar"]
-    A4-->A4b["4.2 Correlacionar dados"]
+**Regras de Seleção (globais):**  
+- Se **prazo < 24h** → priorizar fontes de **alta cobertura/baixo tempo de resposta** e suspender fontes lentas (**seleção 2/3 de fontes**).  
+- Se **falha crítica** numa fonte essencial → **3.2** aciona **retry** até N tentativas; se exceder, **seleciona alternativa** (outro provedor).  
+- Se **falsos positivos > limiar** → reforçar **4.1** (deduplicação) antes de seguir para **4.2**.
 
-    A0-->A5-->A5a["5.1 Matriz impacto/prob."]
+---
 
-    A0-->A6-->A6a["6.1 Preencher template técnico"]
-    A6-->A6b["6.2 Inserir evidências"]
+## Tabela — Objetivos/Operações × Input / Ação / Feedback / Problemas / Recomendações
 
-    A0-->A7-->A7a["7.1 Revisão de pares"]
-    A7-->A7b["7.2 Exportar PDF"]
+| **Objetivos / Operações** | **Input** | **Ação** | **Feedback** | **Problemas** | **Recomendações** |
+|---|---|---|---|---|---|
+| **0. Realizar investigação OSINT** | Solicitação + escopo | Executar Plano 0 | Status geral por etapa | Escopo incompleto | Checklist de escopo obrigatório |
+| **1. Preparar alvo e contexto** | Contrato, alvo | Confirmar base legal e limites | OK p/ prosseguir ou bloqueio | Falta de consentimento | Gate de compliance que impede 2 sem 1.1 |
+| **1.1 Verificar contrato/consentimento** | Documento/ordem serviço | Validar autorização | “Autorizado/Negado” | Documento ausente/expirado | Upload obrigatório + validade |
+| **1.2 Definir escopo e restrições** | Alvo, janelas | Registrar limites técnicos/legais | Escopo salvo | Escopo ambíguo | Campos estruturados (alvo, subdomínios, etc.) |
+| **1.3 Selecionar fontes OSINT** | Catálogo de fontes | Marcar fontes por tipo | Lista de fontes ativa | Fontes redundantes | Presets por cenário (PF/ PJ) |
+| **2.1 Provisionar chaves/API** | Credenciais | Inserir/validar | “Chave válida” | Quota/credencial inválida | Teste automático de conexão |
+| **2.2 Parametrizar consultas** | Queries, limites | Configurar filtros/throttle | Preview de consulta | Rate limit/excesso dados | Limites padrão + dicas de query |
+| **2.3 Disparar varreduras** | Fontes ativas | Start/coleta | Barra de progresso | Timeouts intermitentes | Retry exponencial + fallback |
+| **3.1 Acompanhar progresso** | Status por fonte | Monitorar | Percentual/ETA | Falta de visibilidade | Log detalhado por fonte |
+| **3.2 Tratar falhas** | Erros | Retry/alternativa | “Recuperado” | Loop infinito de falha | Circuit breaker + alerta |
+| **3.3 Registrar logs** | Eventos | Persistir logs | Log consultável | Logs incompletos | Padronizar JSON + retenção |
+| **4.1 Deduplicar/remover FP** | Achados brutos | Regras/heurística | Lista limpa | FP elevado | Regras por fonte + ML simples (fase 2) |
+| **4.2 Correlacionar dados** | Lista limpa | Correlacionar por chaves | Itens correlatos | Correlação pobre | Normalizar campos (email, domínios) |
+| **4.3 Evidenciar** | Itens finais | Coletar provas | Evidências anexas | Links quebrados | Capturas “forenses” (hash, data/hora) |
+| **5.1 Impacto × probabilidade** | Achados validados | Classificar severidade | Risco por item | Critérios subjetivos | Tabela de avaliação padronizada |
+| **5.2 Mapear a controles** | Risco por item | Relacionar a normas | Mapeamento exibido | Lacunas normativas | Taxonomia (LGPD/ISO/NIST) |
+| **6.1 Template técnico** | Itens classificados | Preencher seções | Prévia do relatório | Variabilidade de escrita | Template rígido c/ placeholders |
+| **6.2 KPIs/gráficos** | Métricas | Inserir visualizações | KPIs renderizados | Gráfico confuso | Paleta/legenda padrão |
+| **6.3 Revisão por pares** | Draft | Peer review | Comentários | Falta de revisão | Aprovação obrigatória antes de 6.4 |
+| **6.4 Exportar PDF** | Documento aprovado | Exportar | PDF gerado | Erros de formatação | Exportador testado + QA |
+| **7.1 Enviar ao cliente** | PDF final | Enviar | Confirmação envio | Caixa de e-mail/SMTP | Envio integrado + registro |
+| **7.2 Registrar em KB** | Artefatos | Arquivar/Indexar | Versão arquivada | Perda de histórico | Nomeação e versionamento padrão |
 
-    classDef root fill:#111,stroke:#555,color:#fff;
-    classDef n fill:#222,stroke:#555,color:#fff;
-```
-**Funcionalidade analisada:** executar buscas em diferentes APIs OSINT, validar resultados, remover falsos positivos e gerar um relatório técnico padronizado para o cliente.  
-O HTA mostra que o processo segue uma sequência linear (preparar → coletar → validar → reportar), com possíveis iterações em casos de falha de coleta ou inconsistências.
+---
+
+## Observações didáticas
+- **HTA ≠ fluxograma**: usamos **objetivos/subobjetivos/operações numerados** e **PLANOS** para a ordem (**1>2**), seleção (**1/2**) e paralelo (**1+2**).  
+- **Decisões** aparecem nos **planos** (ex.: priorizar fontes sob prazo curto).  
+- **Tabela** cobre **Input/Ação/Feedback** (estado final), com **Problemas/Recomendações** — como no modelo exigido pelo professor.
+
+
 
 #### 2) GOMS – Relatório OSINT Técnico
 
