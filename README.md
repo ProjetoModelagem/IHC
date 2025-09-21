@@ -421,39 +421,78 @@ Montar_Relatorio_Tecnico = Template_Tecnico >> Inserir_Evidencias
 
 #### 1) HTA – Hierarchical Task Analysis
 
-**Funcionalidade analisada:** consolidar relatórios técnicos em versão executiva clara.  
-**Objetivo:** traduzir achados técnicos em insights estratégicos.
+**Tarefa 0: Consolidar relatório OSINT em versão executiva e apresentá-lo à diretoria**
 
-#### Diagrama HTA
-```mermaid
-flowchart TD
-    B0["0. Consolidar relatório executivo"]:::root
-    B1["1. Importar achados técnicos"]:::n
-    B2["2. Selecionar métricas relevantes"]:::n
-    B3["3. Redigir sumário executivo"]:::n
-    B4["4. Revisar linguagem"]:::n
-    B5["5. Preparar material de apresentação"]:::n
-    B6["6. Apresentar à diretoria"]:::n
+---
 
-    B0-->B1
-    B0-->B2-->B2a["2.1 KPIs de risco"]
-    B2-->B2b["2.2 Impacto no negócio"]
+## Diagrama de Análise Hierárquica de Tarefas (estrutura em árvore)
 
-    B0-->B3-->B3a["3.1 Estruturar tópicos"]
-    B3-->B3b["3.2 Adaptar vocabulário"]
+> **Plano 0:** **1 > 2 > 3 > 4 > 5 > 6 > 7**  
+> (Sequencial: importar → selecionar métricas → redigir sumário → revisar → preparar apresentação → apresentar → arquivar)
 
-    B0-->B4-->B4a["4.1 Eliminar jargão técnico"]
-    B4-->B4b["4.2 Validar clareza"]
+**0. Consolidar relatório OSINT**  
+- **1. Importar achados técnicos**  
+  - **1.1 Receber relatório técnico da equipe**  
+  - **1.2 Selecionar seções relevantes para gestores**  
+  - **Plano 1:** **1.1 > 1.2** (sequencial)  
+- **2. Selecionar métricas relevantes**  
+  - **2.1 Definir KPIs de risco** (quantidade de vazamentos, severidade, tempo de resposta)  
+  - **2.2 Avaliar impacto no negócio** (financeiro, reputacional, compliance)  
+  - **Plano 2:** **2.1 + 2.2** (paralelo; métricas e impacto analisados juntos)  
+- **3. Redigir sumário executivo**  
+  - **3.1 Estruturar tópicos principais**  
+  - **3.2 Adaptar vocabulário para linguagem não técnica**  
+  - **Plano 3:** **3.1 > 3.2** (sequencial)  
+- **4. Revisar linguagem e clareza**  
+  - **4.1 Eliminar jargão técnico**  
+  - **4.2 Validar clareza com equipe**  
+  - **Plano 4:** **4.1 > 4.2** (sequencial)  
+- **5. Preparar material de apresentação**  
+  - **5.1 Criar slides** (visuais, objetivos)  
+  - **5.2 Inserir gráficos e dashboards**  
+  - **Plano 5:** **5.1 + 5.2** (paralelo)  
+- **6. Apresentar à diretoria**  
+  - **6.1 Expor sumário executivo**  
+  - **6.2 Responder dúvidas e coletar feedback**  
+  - **Plano 6:** **6.1 > 6.2** (sequencial)  
+- **7. Arquivar e registrar**  
+  - **7.1 Salvar versão final aprovada**  
+  - **7.2 Indexar em histórico/KB corporativo**  
+  - **Plano 7:** **7.1 > 7.2** (sequencial)
 
-    B0-->B5-->B5a["5.1 Criar slides"]
-    B5-->B5b["5.2 Inserir gráficos"]
+**Regras de Seleção (globais):**  
+- Se **tempo de reunião < 15min** → priorizar **2/3 métricas mais críticas** (seleção).  
+- Se **diretoria exige detalhe técnico** → anexar apêndice técnico do Lucas.  
+- Se **audiência não técnica** → ocultar termos complexos e manter foco em impacto de negócio.
 
-    B0-->B6-->B6a["6.1 Apresentar"]
-    B6-->B6b["6.2 Coletar feedback"]
+---
 
-    classDef root fill:#111,stroke:#555,color:#fff;
-    classDef n fill:#222,stroke:#555,color:#fff;
-```
+## Tabela — Objetivos/Operações × Input / Ação / Feedback / Problemas / Recomendações
+
+| **Objetivos / Operações** | **Input** | **Ação** | **Feedback** | **Problemas** | **Recomendações** |
+|---|---|---|---|---|---|
+| **0. Consolidar relatório OSINT** | Relatório técnico | Executar Plano 0 | Relatório executivo gerado | Foco técnico demais | Estrutura executiva obrigatória |
+| **1. Importar achados técnicos** | Relatório técnico | Selecionar partes úteis | Dados filtrados | Excesso de detalhes técnicos | Criar checklist de seções mínimas |
+| **2.1 Definir KPIs de risco** | Achados validados | Escolher métricas principais | Lista de KPIs | KPI irrelevante | Lista pré-aprovada de indicadores |
+| **2.2 Avaliar impacto no negócio** | Riscos técnicos | Traduzir p/ impacto financeiro/reputacional | Impacto documentado | Falta de contexto de negócio | Consultar área de compliance |
+| **3.1 Estruturar tópicos** | KPIs + achados | Criar sumário | Estrutura pronta | Texto longo | Usar bullet points |
+| **3.2 Adaptar vocabulário** | Sumário técnico | Reescrever linguagem | Texto claro | Jargão técnico | Treinamento em linguagem executiva |
+| **4.1 Eliminar jargão** | Sumário | Revisar termos | Texto simplificado | Termos não compreensíveis | Glossário comum |
+| **4.2 Validar clareza** | Versão preliminar | Revisão equipe | Feedback recebido | Falta de alinhamento | Revisão obrigatória c/ dupla função |
+| **5.1 Criar slides** | Sumário | Gerar apresentação | Slides prontos | Slides poluídos | Modelo padrão corporativo |
+| **5.2 Inserir gráficos** | KPIs/impactos | Criar gráficos | Gráficos prontos | Gráficos confusos | Paleta oficial + dashboard |
+| **6.1 Expor sumário executivo** | Relatório executivo | Apresentar | Feedback da diretoria | Tempo curto | Treinamento em pitch executivo |
+| **6.2 Responder dúvidas** | Perguntas da diretoria | Esclarecer | Feedback anotado | Falta de preparo | Sessão Q&A preparada |
+| **7.1 Salvar versão final** | Relatório executivo | Salvar | Arquivo gerado | Perda de versão | Versionamento obrigatório |
+| **7.2 Indexar histórico** | Documento | Registrar em KB | Documento indexado | Dificuldade em buscar | Indexação padronizada |
+
+---
+
+## Observações didáticas
+- Estrutura **idêntica ao HTA do Lucas**, mas o **foco em 6.x é executivo**, não técnico.  
+- **Planos** indicam ordem, paralelismo e seleção de métricas conforme contexto.  
+- **Tabela** mostra problemas comuns (ex.: jargão técnico, excesso de slides) e recomendações (ex.: glossário, modelo padrão).
+
 
 #### 2) GOMS – Relatório Executivo
 
