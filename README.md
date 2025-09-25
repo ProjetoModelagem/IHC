@@ -728,19 +728,64 @@ _________________
 
 ---
 
-## Entrega 7 - 29/09/2025 [Em andamento]
+## Entrega 7 - Identificação de Necessidades, Ética e Ferramentas de Coleta - 25/09/2025 [Concluído]
 
-### 1) Identificação de Necessidades dos Usuários e Requisitos de IHC
-- *Que dados coletar?*
-- *De quem coletar?*
+## 1) Necessidades dos Usuários e Requisitos de IHC
 
-### 2) Aspectos Éticos
-(Justificar com conceitos da disciplina — ex.: LGPD, privacidade, consentimento informado, etc.)
+### Que dados coletar
+- **Perfil:** cargo, tempo de experiência, onde trabalha (empresa, home office), nível de conhecimento em segurança.
+- **Uso de tecnologia:** quais ferramentas de coleta de informações já utiliza, quais tem mais dificuldade, como é o ambiente de trabalho (tamanho de tela, internet).
+- **Tarefas:** como faz a coleta de dados hoje, etapas mais demoradas, pontos onde costuma ter erro ou retrabalho.
+- **Informações desejadas:** tipos de gráficos e indicadores mais importantes no relatório final.
+- **Motivações e dificuldades:** pressão de prazo, necessidade de relatórios prontos e padronizados.
 
-### 3) Ferramentas de Coleta de Dados  
-#### 3.1) Nome do instrumento e objetivo  
-#### 3.2) Como aplicar  
-#### 3.3) Instrumento (link do formulário, roteiro de entrevista, etc.)
+### De quem coletar
+- **Usuários principais:** analistas de segurança (como Lucas) e gestores de segurança (como Marina).
+- **Outros envolvidos:** pessoas de compliance/privacidade e gestores de TI que vão receber os relatórios.
+
+---
+
+## 2) Aspectos Éticos
+
+- **Consentimento:** antes de entrevistas ou questionários, explicar o objetivo, tempo de participação, e garantir que a pessoa pode desistir quando quiser.
+- **Privacidade e LGPD:** só pedir dados realmente necessários; não guardar informações sensíveis ou credenciais reais; anonimizar as respostas para que não seja possível identificar quem respondeu.
+- **Princípios importantes:**
+  - **Evitar dano:** cuidar para que nenhuma informação seja usada de forma indevida.
+  - **Benefício:** os dados coletados devem trazer melhorias para o sistema.
+  - **Autonomia:** cada participante decide se quer ou não participar.
+  - **Justiça:** tratar todos de forma igual, sem sobrecarregar ninguém.
+- **No contexto OSINT:** sempre usar dados de teste ou ambientes autorizados, com escopo de coleta bem definido.
+
+---
+
+## 3) Ferramentas de Coleta de Dados
+
+### 3.1 Entrevista
+- **Objetivo:** entender de forma detalhada as tarefas, dificuldades e o que os usuários esperam da ferramenta.
+- **Como aplicar:** conversa de 30 a 45 minutos, presencial ou online, com gravação de áudio se a pessoa autorizar.
+- **Roteiro:** perguntas sobre rotina de trabalho, etapas mais demoradas, pontos de erro, informações que gostaria de ver no relatório final.
+
+### 3.2 Questionário
+- **Objetivo:** confirmar em mais pessoas quais são as maiores necessidades e problemas.
+- **Como aplicar:** formulário on-line (por exemplo Google Forms) com perguntas simples de múltipla escolha e algumas abertas; tempo de resposta de 5 a 8 minutos.
+- **Exemplo de perguntas:** cargo e tempo de experiência, ferramentas que usa, grau de dificuldade em cada etapa (escala de 1 a 5), quais indicadores são mais importantes no relatório.
+
+### 3.3 Grupo de discussão
+- **Objetivo:** reunir analistas e gestores para debater e decidir o que é mais importante no sistema.
+- **Como aplicar:** encontro de 1 hora com 6 a 8 participantes, mediado por um facilitador; anotar ou gravar com autorização.
+- **Roteiro:** conversar sobre as tarefas mais comuns, maiores dificuldades e quais recursos consideram indispensáveis.
+
+### 3.4 Observação do trabalho
+- **Objetivo:** ver como o analista realmente trabalha no dia a dia para descobrir detalhes que não aparecem em entrevistas.
+- **Como aplicar:** acompanhar a pessoa durante cerca de 1 hora enquanto ela faz uma investigação de teste; anotar etapas, erros e tempo gasto, pedindo sempre consentimento.
+
+---
+
+### Checklist de cuidado ético
+- Apresentar termo de consentimento com objetivo, tempo e contato.
+- Garantir que os dados serão guardados em local seguro e apagados no prazo combinado.
+- Não coletar senhas ou dados reais de clientes.
+- Deixar claro que a pessoa pode sair da pesquisa a qualquer momento.
 
 ---
 
