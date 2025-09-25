@@ -789,21 +789,60 @@ _________________
 
 ---
 
-## Entrega 8 - 06/10/2025 [Em andamento]
+# Entrega 8 – Características, Princípios e Metas
 
-### 1) Características da Plataforma
-- *Descrição do Software:*  
-- *Descrição do Hardware:*  
-- *Lista de Capacidades da Plataforma (com explicação):*  
-- *Lista de Restrições da Plataforma (com explicação):*
+## 1) Características da Plataforma
 
-### 2) Princípios Gerais do Projeto
-(Tabela com princípios + links + justificativa — ex.: LGPD, Acessibilidade, ISO 9241.)
+- **Descrição do Software:**  
+  Aplicação web chamada *Was I Hacked?*, desenvolvida em arquitetura cliente-servidor.  
+  O sistema coleta dados de fontes OSINT, organiza os achados em dashboards  
+  e gera relatórios técnicos e executivos em PDF/PPT.  
 
-### 3) Metas de Usabilidade
-- *Qualitativas:*  
-- *Quantitativas:*  
-(Definir metas com justificativa e porcentagem.)
+- **Descrição do Hardware:**  
+  Requisitos mínimos:  
+  - Cliente: notebook/PC com navegador atualizado, tela mínima de 14’’, 4GB RAM.  
+  - Servidor: máquina virtual com 4 vCPUs, 8GB RAM, 100GB de armazenamento, conexão estável à internet.  
+
+- **Lista de Capacidades da Plataforma (com explicação):**  
+  - **Coleta automatizada em APIs OSINT:** reduz o tempo manual do analista.  
+  - **Validação e deduplicação de achados:** garante consistência dos dados.  
+  - **Classificação de riscos:** prioriza informações para tomada de decisão.  
+  - **Geração de relatórios técnicos:** detalhamento com evidências.  
+  - **Geração de relatórios executivos:** resumo com KPIs e gráficos para gestores.  
+  - **Exportação em PDF/PPT:** facilita a apresentação e compartilhamento.  
+
+- **Lista de Restrições da Plataforma (com explicação):**  
+  - **Dependência de fontes externas (APIs OSINT):** se a API estiver fora do ar, a coleta falha.  
+  - **Conexão com internet obrigatória:** não há uso offline.  
+  - **Limite de performance em consultas massivas:** coletas muito extensas podem ser lentas.  
+  - **Uso apenas com dados autorizados:** não pode ser aplicado em alvos reais sem permissão (ética e legalidade).  
+
+---
+
+## 2) Princípios Gerais do Projeto
+
+| Princípio | Justificativa |
+|-----------|---------------|
+| **LGPD e Privacidade** | O sistema não armazena dados pessoais sem consentimento e usa apenas informações autorizadas para testes. |
+| **Acessibilidade (WCAG)** | Interfaces simples, contraste adequado e elementos claros para usuários com diferentes níveis de experiência. |
+| **Usabilidade (ISO 9241)** | Garantir que usuários (analistas e gestores) completem tarefas com eficácia e sem retrabalho. |
+| **Segurança da Informação** | Dados coletados ficam restritos, sem exposição pública, respeitando confidencialidade. |
+
+---
+
+## 3) Metas de Usabilidade
+
+- **Qualitativas:**  
+  - Usuários devem considerar o sistema fácil de aprender em menos de 30 minutos de uso.  
+  - O relatório executivo deve ser compreendido por gestores sem conhecimento técnico.  
+  - A interface deve reduzir a necessidade de retrabalho e duplicação de dados.  
+
+- **Quantitativas:**  
+  - **Redução de 40%** no tempo de coleta manual (comparado ao processo atual).  
+  - **Taxa de sucesso ≥ 90%** na execução de varreduras sem falhas.  
+  - **Tempo médio para gerar relatório ≤ 5 minutos** após término da coleta.  
+  - **Satisfação ≥ 80%** em questionários de usabilidade (SUS ou escala 1–5).  
+
 
 ---
 
