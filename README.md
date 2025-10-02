@@ -725,6 +725,7 @@ _________________
 
 ### Protótipo em Papel
 ![Untitled](https://github.com/user-attachments/assets/9f73aff4-fa1a-40ab-985a-1e2d0d4736e1)
+![Untitled-1](https://github.com/user-attachments/assets/858d02ad-ec0d-41ce-b54c-329ce7fd9cc7)
 
 ---
 
