@@ -721,7 +721,7 @@ Onde:
 _________________
 
 
-## Entrega 6 - 22/09/2025 [Em andamento]
+## Entrega 6 - 22/09/2025 [Concluído]
 
 ### Protótipo em Papel
 ![Untitled](https://github.com/user-attachments/assets/9f73aff4-fa1a-40ab-985a-1e2d0d4736e1)
