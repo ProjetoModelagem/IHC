@@ -724,7 +724,10 @@ _________________
 ## Entrega 6 - 22/09/2025 [Em andamento]
 
 ### Protótipo em Papel
-(Inserir imagens/fotos dos protótipos desenhados à mão.)
+<img width="720" height="1280" alt="image" src="https://github.com/user-attachments/assets/7b04dc60-fcaf-434d-a583-de597e0bcab8" />
+<img width="720" height="1280" alt="image" src="https://github.com/user-attachments/assets/90cd437c-3e04-4fdc-b5e4-42e6d9065174" />
+![Untitled](https://github.com/user-attachments/assets/274b89dd-0b6d-4b0e-9b2f-4bf541681388)
+
 
 ---
 
