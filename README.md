@@ -275,32 +275,39 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 
 ---
 
-## Tabela — Objetivos/Operações × Input / Ação / Feedback / Problemas / Recomendações
+## Tabela — Objetivos/Operações × Problemas e Recomendações
 
-| **Objetivos / Operações** | **Input** | **Ação** | **Feedback** | **Problemas** | **Recomendações** |
-|---|---|---|---|---|---|
-| **0. Realizar investigação OSINT** | Solicitação + escopo | Executar Plano 0 | Status geral por etapa | Escopo incompleto | Checklist de escopo obrigatório |
-| **1. Preparar alvo e contexto** | Contrato, alvo | Confirmar base legal e limites | OK p/ prosseguir ou bloqueio | Falta de consentimento | Gate de compliance que impede 2 sem 1.1 |
-| **1.1 Verificar contrato/consentimento** | Documento/ordem serviço | Validar autorização | “Autorizado/Negado” | Documento ausente/expirado | Upload obrigatório + validade |
-| **1.2 Definir escopo e restrições** | Alvo, janelas | Registrar limites técnicos/legais | Escopo salvo | Escopo ambíguo | Campos estruturados (alvo, subdomínios, etc.) |
-| **1.3 Selecionar fontes OSINT** | Catálogo de fontes | Marcar fontes por tipo | Lista de fontes ativa | Fontes redundantes | Presets por cenário (PF/ PJ) |
-| **2.1 Provisionar chaves/API** | Credenciais | Inserir/validar | “Chave válida” | Quota/credencial inválida | Teste automático de conexão |
-| **2.2 Parametrizar consultas** | Queries, limites | Configurar filtros/throttle | Preview de consulta | Rate limit/excesso dados | Limites padrão + dicas de query |
-| **2.3 Disparar varreduras** | Fontes ativas | Start/coleta | Barra de progresso | Timeouts intermitentes | Retry exponencial + fallback |
-| **3.1 Acompanhar progresso** | Status por fonte | Monitorar | Percentual/ETA | Falta de visibilidade | Log detalhado por fonte |
-| **3.2 Tratar falhas** | Erros | Retry/alternativa | “Recuperado” | Loop infinito de falha | Circuit breaker + alerta |
-| **3.3 Registrar logs** | Eventos | Persistir logs | Log consultável | Logs incompletos | Padronizar JSON + retenção |
-| **4.1 Deduplicar/remover FP** | Achados brutos | Regras/heurística | Lista limpa | FP elevado | Regras por fonte + ML simples (fase 2) |
-| **4.2 Correlacionar dados** | Lista limpa | Correlacionar por chaves | Itens correlatos | Correlação pobre | Normalizar campos (email, domínios) |
-| **4.3 Evidenciar** | Itens finais | Coletar provas | Evidências anexas | Links quebrados | Capturas “forenses” (hash, data/hora) |
-| **5.1 Impacto × probabilidade** | Achados validados | Classificar severidade | Risco por item | Critérios subjetivos | Tabela de avaliação padronizada |
-| **5.2 Mapear a controles** | Risco por item | Relacionar a normas | Mapeamento exibido | Lacunas normativas | Taxonomia (LGPD/ISO/NIST) |
-| **6.1 Template técnico** | Itens classificados | Preencher seções | Prévia do relatório | Variabilidade de escrita | Template rígido c/ placeholders |
-| **6.2 KPIs/gráficos** | Métricas | Inserir visualizações | KPIs renderizados | Gráfico confuso | Paleta/legenda padrão |
-| **6.3 Revisão por pares** | Draft | Peer review | Comentários | Falta de revisão | Aprovação obrigatória antes de 6.4 |
-| **6.4 Exportar PDF** | Documento aprovado | Exportar | PDF gerado | Erros de formatação | Exportador testado + QA |
-| **7.1 Enviar ao cliente** | PDF final | Enviar | Confirmação envio | Caixa de e-mail/SMTP | Envio integrado + registro |
-| **7.2 Registrar em KB** | Artefatos | Arquivar/Indexar | Versão arquivada | Perda de histórico | Nomeação e versionamento padrão |
+| **Objetivos / Operações**                | **Problemas e Recomendações**                                                                                                                                                                                                       |
+| ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **0. Realizar investigação OSINT 1>2**   | **Input:** solicitação e escopo.<br>**Plano:** executar **1** e **depois 2**; demais etapas seguem fluxo 3→4→5→6→7.<br>**Feedback:** status geral por etapa.<br>**Recomendação:** checklist de escopo obrigatório antes de iniciar. |
+| **1. Preparar alvo e contexto 1+2**      | **Plano:** **1.1 → 1.2 → 1.3** (sequencial; sem 1.1 não prossegue).                                                                                                                                                                 |
+| **1.1 Verificar contrato/consentimento** | **Feedback:** “Autorizado/Negado”.<br>**Problema:** documento ausente/expirado.<br>**Recomendação:** upload obrigatório e checagem de validade.                                                                                     |
+| **1.2 Definir escopo e restrições 1/2**  | **Problema:** escopo ambíguo.<br>**Recomendação:** campos estruturados (alvo, subdomínios, janelas, limites legais).                                                                                                                |
+| **1.3 Selecionar fontes OSINT**          | **Problema:** fontes redundantes.<br>**Recomendação:** presets por cenário (PF/PJ) e por tipo (credenciais/infra/social/pastes).                                                                                                    |
+| **2. Configurar coletas automáticas**    | **Plano:** **2.1 → (2.2 + 2.3)** em paralelo controlado.                                                                                                                                                                            |
+| **2.1 Provisionar chaves/API**           | **Feedback:** “Chave válida”.<br>**Problema:** quota/credencial inválida.<br>**Recomendação:** teste automático de conexão e alerta de quota.                                                                                       |
+| **2.2 Parametrizar consultas**           | **Problema:** rate limit/excesso de dados.<br>**Recomendação:** limites padrão, dicas de query e throttling/retries.                                                                                                                |
+| **2.3 Disparar varreduras**              | **Feedback:** barra de progresso/ETA.<br>**Problema:** timeouts intermitentes.<br>**Recomendação:** retry exponencial e fallback de fonte.                                                                                          |
+| **3. Monitorar execução**                | **Plano:** **(3.1 + 3.2 + 3.3)*** — ciclo iterativo até término.                                                                                                                                                                    |
+| **3.1 Acompanhar progresso**             | **Feedback:** progresso consolidado por fonte.<br>**Problema:** falta de visibilidade por fonte.<br>**Recomendação:** log detalhado com filtros.                                                                                    |
+| **3.2 Tratar falhas**                    | **Problema:** loops de falha.<br>**Recomendação:** circuit breaker + alerta; em quota/credencial, devolver para **2.1/2.2** (reconfigurar).                                                                                         |
+| **3.3 Registrar logs**                   | **Problema:** logs incompletos.<br>**Recomendação:** padronizar JSON e política de retenção.                                                                                                                                        |
+| **4. Validar e evidenciar achados**      | **Plano:** **4.1 → 4.2 → 4.3** (sequencial).                                                                                                                                                                                        |
+| **4.1 Deduplicar/remover FP**            | **Problema:** FP elevado.<br>**Recomendação:** regras por fonte; ML simples (fase 2).                                                                                                                                               |
+| **4.2 Correlacionar dados**              | **Problema:** correlação fraca.<br>**Recomendação:** normalizar chaves (e-mail, domínio, IP, TLD).                                                                                                                                  |
+| **4.3 Evidenciar**                       | **Problema:** links quebrados.<br>**Recomendação:** captura “forense” (screenshot + hash + data/hora).                                                                                                                              |
+| **5. Classificar e priorizar riscos**    | **Plano:** **5.1 → 5.2** (sequencial).                                                                                                                                                                                              |
+| **5.1 Impacto × probabilidade**          | **Problema:** critérios subjetivos.<br>**Recomendação:** tabela de avaliação padronizada.                                                                                                                                           |
+| **5.2 Mapear a controles**               | **Problema:** lacunas normativas.<br>**Recomendação:** taxonomia LGPD/ISO/NIST e registro de gaps.                                                                                                                                  |
+| **6. Montar relatório técnico**          | **Plano:** **6.1 → 6.2 → 6.3 → 6.4** (sequencial).                                                                                                                                                                                  |
+| **6.1 Template técnico**                 | **Problema:** variabilidade de escrita.<br>**Recomendação:** template rígido com placeholders.                                                                                                                                      |
+| **6.2 KPIs/gráficos**                    | **Problema:** gráficos confusos.<br>**Recomendação:** paleta e legenda padrão.                                                                                                                                                      |
+| **6.3 Revisão por pares**                | **Recomendação:** aprovação obrigatória antes de **6.4**.                                                                                                                                                                           |
+| **6.4 Exportar PDF**                     | **Problema:** formatação quebrada.<br>**Recomendação:** exportador testado + QA.                                                                                                                                                    |
+| **7. Entregar e arquivar**               | **Plano:** **7.1 → 7.2** (sequencial).                                                                                                                                                                                              |
+| **7.1 Enviar ao cliente**                | **Problema:** SMTP/caixa postal.<br>**Recomendação:** envio integrado e registro.                                                                                                                                                   |
+| **7.2 Registrar em histórico/KB**        | **Problema:** perda de aprendizado.<br>**Recomendação:** KB versionada + tags por alvo/fonte/severidade.                                                                                                                            |
+
 
 ---
 
@@ -476,22 +483,28 @@ Onde:
 
 ## Tabela — Objetivos/Operações × Input / Ação / Feedback / Problemas / Recomendações
 
-| **Objetivos / Operações** | **Input** | **Ação** | **Feedback** | **Problemas** | **Recomendações** |
-|---|---|---|---|---|---|
-| **0. Consolidar relatório OSINT** | Relatório técnico | Executar Plano 0 | Relatório executivo gerado | Foco técnico demais | Estrutura executiva obrigatória |
-| **1. Importar achados técnicos** | Relatório técnico | Selecionar partes úteis | Dados filtrados | Excesso de detalhes técnicos | Criar checklist de seções mínimas |
-| **2.1 Definir KPIs de risco** | Achados validados | Escolher métricas principais | Lista de KPIs | KPI irrelevante | Lista pré-aprovada de indicadores |
-| **2.2 Avaliar impacto no negócio** | Riscos técnicos | Traduzir p/ impacto financeiro/reputacional | Impacto documentado | Falta de contexto de negócio | Consultar área de compliance |
-| **3.1 Estruturar tópicos** | KPIs + achados | Criar sumário | Estrutura pronta | Texto longo | Usar bullet points |
-| **3.2 Adaptar vocabulário** | Sumário técnico | Reescrever linguagem | Texto claro | Jargão técnico | Treinamento em linguagem executiva |
-| **4.1 Eliminar jargão** | Sumário | Revisar termos | Texto simplificado | Termos não compreensíveis | Glossário comum |
-| **4.2 Validar clareza** | Versão preliminar | Revisão equipe | Feedback recebido | Falta de alinhamento | Revisão obrigatória c/ dupla função |
-| **5.1 Criar slides** | Sumário | Gerar apresentação | Slides prontos | Slides poluídos | Modelo padrão corporativo |
-| **5.2 Inserir gráficos** | KPIs/impactos | Criar gráficos | Gráficos prontos | Gráficos confusos | Paleta oficial + dashboard |
-| **6.1 Expor sumário executivo** | Relatório executivo | Apresentar | Feedback da diretoria | Tempo curto | Treinamento em pitch executivo |
-| **6.2 Responder dúvidas** | Perguntas da diretoria | Esclarecer | Feedback anotado | Falta de preparo | Sessão Q&A preparada |
-| **7.1 Salvar versão final** | Relatório executivo | Salvar | Arquivo gerado | Perda de versão | Versionamento obrigatório |
-| **7.2 Indexar histórico** | Documento | Registrar em KB | Documento indexado | Dificuldade em buscar | Indexação padronizada |
+| **Objetivos / Operações**             | **Problemas e Recomendações**                                                                                                                                                                                                    |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **0. Consolidar relatório OSINT 1>2** | **Input:** relatório técnico (base).<br>**Plano:** executar **1** e **depois 2**; em seguida 3→4→5→6→7.<br>**Feedback:** relatório executivo gerado.<br>**Recomendação:** estrutura executiva obrigatória antes da apresentação. |
+| **1. Importar achados técnicos**      | **Problema:** foco técnico excessivo.<br>**Recomendação:** selecionar apenas evidências e conclusões úteis ao negócio (checklist mínimo).                                                                                        |
+| **2. Sintetizar risco para negócio**  | **Plano:** **2.1 Definir KPIs → 2.2 Avaliar impacto** (sequencial).                                                                                                                                                              |
+| **2.1 Definir KPIs de risco**         | **Problema:** indicadores irrelevantes.<br>**Recomendação:** usar lista pré-aprovada de KPIs (frequência, severidade, exposição).                                                                                                |
+| **2.2 Avaliar impacto no negócio**    | **Problema:** falta de contexto (financeiro/reputacional/regulatório).<br>**Recomendação:** validar com compliance/owner do processo antes de fechar o impacto.                                                                  |
+| **3. Preparar narrativa**             | **Plano:** **3.1 Estruturar tópicos → 3.2 Adaptar vocabulário**.                                                                                                                                                                 |
+| **3.1 Estruturar tópicos**            | **Feedback:** sumário pronto e objetivo.<br>**Recomendação:** usar bullets curtos e ordem do mais crítico ao menos crítico.                                                                                                      |
+| **3.2 Adaptar vocabulário**           | **Problema:** jargão técnico.<br>**Recomendação:** linguagem executiva; evitar termos internos sem explicação.                                                                                                                   |
+| **4. Revisar clareza**                | **Plano:** **4.1 Eliminar jargão → 4.2 Validar clareza**.                                                                                                                                                                        |
+| **4.1 Eliminar jargão**               | **Recomendação:** manter glossário simples quando inevitável.                                                                                                                                                                    |
+| **4.2 Validar clareza**               | **Problema:** desalinhamento de expectativa.<br>**Recomendação:** revisão cruzada por duas funções (ex.: Segurança + Produto).                                                                                                   |
+| **5. Produzir material visual**       | **Plano:** **5.1 Criar slides → 5.2 Inserir gráficos**.                                                                                                                                                                          |
+| **5.1 Criar slides**                  | **Problema:** slides poluídos.<br>**Recomendação:** modelo corporativo e regra “1 ideia por slide”.                                                                                                                              |
+| **5.2 Inserir gráficos**              | **Problema:** gráficos confusos.<br>**Recomendação:** paleta oficial e rótulos/legendas padronizados.                                                                                                                            |
+| **6. Apresentar à diretoria**         | **Plano:** **6.1 Expor sumário executivo → 6.2 Responder dúvidas**.                                                                                                                                                              |
+| **6.1 Expor sumário executivo**       | **Problema:** tempo curto.<br>**Recomendação:** pitch de 3–5 minutos + anexo técnico.                                                                                                                                            |
+| **6.2 Responder dúvidas**             | **Recomendação:** sessão de Q&A com respostas já roteirizadas; registrar perguntas para ajustes.                                                                                                                                 |
+| **7. Arquivar e disponibilizar**      | **Plano:** **7.1 Salvar versão final → 7.2 Indexar histórico**.                                                                                                                                                                  |
+| **7.1 Salvar versão final**           | **Problema:** perda de versão.<br>**Recomendação:** versionamento controlado e registro de aprovações.                                                                                                                           |
+| **7.2 Indexar histórico/KB**          | **Problema:** baixa encontrabilidade depois.<br>**Recomendação:** indexação padronizada (tags por alvo, fonte, severidade, data).                                                                                                |
 
 ---
 
