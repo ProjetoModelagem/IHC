@@ -73,8 +73,8 @@ Pentesters independentes, analistas de segurança de pequenas/médias empresas, 
 <img width="855" height="313" alt="image" src="https://github.com/user-attachments/assets/d35ac0b8-fba6-4a68-a285-c8c2b431a6e5" />
 
 #### Experiência do usuário (UX)  
-- TheHarvester → simples, mas restrito a linha de comando.  
-- Holehe → rápido, mas com saída técnica.  
+- TheHarvester > simples, mas restrito a linha de comando.  
+- Holehe > rápido, mas com saída técnica.  
 
 #### Preços e modelos de negócio  
 - TheHarvester: open source e gratuito.  
@@ -105,8 +105,8 @@ Empresas maiores, times internos de segurança e auditores que buscam otimizar a
 - **Maigret:** varredura massiva de nomes de usuário em redes sociais.  
 
 #### Experiência do usuário (UX)  
-- PhoneInfoga → simples, mas técnico.  
-- Maigret → prático, mas saída longa e técnica.  
+- PhoneInfoga > simples, mas técnico.  
+- Maigret > prático, mas saída longa e técnica.  
 
 #### Preços e modelos de negócio  
 - PhoneInfoga: open source e gratuito.  
@@ -148,12 +148,12 @@ Empresas maiores, times internos de segurança e auditores que buscam otimizar a
 ---
 
 ### Mapa de Empatia (Equipe)  
-- **Quem pensa/sente isso? (Marina)** → preocupação com qualidade e prazos de auditoria.  
-- **Quem vê isso? (Lucas)** → múltiplas ferramentas fragmentadas.  
-- **Quem ouve isso? (Marina)** → gestores pedindo clareza e rapidez.  
-- **Quem fala/faz isso? (Lucas)** → usa scripts, consulta várias fontes.  
-- **Quem sofre essas dores? (Equipe toda)** → retrabalho, risco de erro humano.  
-- **Quem ganha com isso? (Equipe e gestores)** → economia de tempo, padronização, segurança da informação.  
+- **Quem pensa/sente isso? (Marina)** > preocupação com qualidade e prazos de auditoria.  
+- **Quem vê isso? (Lucas)** > múltiplas ferramentas fragmentadas.  
+- **Quem ouve isso? (Marina)** > gestores pedindo clareza e rapidez.  
+- **Quem fala/faz isso? (Lucas)** > usa scripts, consulta várias fontes.  
+- **Quem sofre essas dores? (Equipe toda)** > retrabalho, risco de erro humano.  
+- **Quem ganha com isso? (Equipe e gestores)** > economia de tempo, padronização, segurança da informação.  
 
 ---
 
@@ -190,7 +190,7 @@ Empresas maiores, times internos de segurança e auditores que buscam otimizar a
 5. Cliente recebe documento final claro e objetivo.  
 
 **Sentimento depois:** alívio, confiança na qualidade, satisfação por entregar dentro do prazo.  
-**Resultado:** objetivos alcançados → relatórios rápidos, confiáveis e com linguagem adaptada ao público-alvo.  
+**Resultado:** objetivos alcançados > relatórios rápidos, confiáveis e com linguagem adaptada ao público-alvo.  
 
 ---
 
@@ -269,7 +269,7 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 ## Diagrama de Análise Hierárquica de Tarefas (estrutura em árvore)
 
 > **Plano 0:** **1 > 2 > 3 > 4 > 5 > 6 > 7**  
-> (Sequencial: preparar → coletar → monitorar → validar → classificar → relatar → registrar/entregar)  
+> (Sequencial: preparar > coletar > monitorar > validar > classificar > relatar > registrar/entregar)  
 
 <img width="2743" height="712" alt="Untitled Diagram" src="https://github.com/user-attachments/assets/cdc6a7b8-888c-4924-832b-03ecdca20452" />
 
@@ -279,32 +279,32 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 
 | **Objetivos / Operações**                | **Problemas e Recomendações**                                                                                                                                                                                                       |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **0. Realizar investigação OSINT 1>2**   | **Input:** solicitação e escopo.<br>**Plano:** executar **1** e **depois 2**; demais etapas seguem fluxo 3→4→5→6→7.<br>**Feedback:** status geral por etapa.<br>**Recomendação:** checklist de escopo obrigatório antes de iniciar. |
-| **1. Preparar alvo e contexto 1+2**      | **Plano:** **1.1 → 1.2 → 1.3** (sequencial; sem 1.1 não prossegue).                                                                                                                                                                 |
+| **0. Realizar investigação OSINT 1 > 2 > 3 > 4 > 5 > 6 > 7**   | **Input:** solicitação e escopo.<br>**Plano:** 1>2>3>4>5>6>7.<br>**Feedback:** status geral por etapa.<br>**Recomendação:** checklist de escopo obrigatório antes de iniciar. |
+| **1. Preparar alvo e contexto 1.1 > 1.2 > 1.3**      | **Plano:** **1.1 > 1.2 > 1.3** (sequencial; sem 1.1 não prossegue).                                                                                                                                                                 |
 | **1.1 Verificar contrato/consentimento** | **Feedback:** “Autorizado/Negado”.<br>**Problema:** documento ausente/expirado.<br>**Recomendação:** upload obrigatório e checagem de validade.                                                                                     |
-| **1.2 Definir escopo e restrições 1/2**  | **Problema:** escopo ambíguo.<br>**Recomendação:** campos estruturados (alvo, subdomínios, janelas, limites legais).                                                                                                                |
+| **1.2 Definir escopo e restrições**  | **Problema:** escopo ambíguo.<br>**Recomendação:** campos estruturados (alvo, subdomínios, janelas, limites legais).                                                                                                                |
 | **1.3 Selecionar fontes OSINT**          | **Problema:** fontes redundantes.<br>**Recomendação:** presets por cenário (PF/PJ) e por tipo (credenciais/infra/social/pastes).                                                                                                    |
-| **2. Configurar coletas automáticas**    | **Plano:** **2.1 → (2.2 + 2.3)** em paralelo controlado.                                                                                                                                                                            |
+| **2. Configurar coletas automáticas 2.1 > (2.2 + 2.3)**    | **Plano:** **2.1 > (2.2 + 2.3)** em paralelo controlado.                                                                                                                                                                            |
 | **2.1 Provisionar chaves/API**           | **Feedback:** “Chave válida”.<br>**Problema:** quota/credencial inválida.<br>**Recomendação:** teste automático de conexão e alerta de quota.                                                                                       |
 | **2.2 Parametrizar consultas**           | **Problema:** rate limit/excesso de dados.<br>**Recomendação:** limites padrão, dicas de query e throttling/retries.                                                                                                                |
-| **2.3 Disparar varreduras**              | **Feedback:** barra de progresso/ETA.<br>**Problema:** timeouts intermitentes.<br>**Recomendação:** retry exponencial e fallback de fonte.                                                                                          |
-| **3. Monitorar execução**                | **Plano:** **(3.1 + 3.2 + 3.3)*** — ciclo iterativo até término.                                                                                                                                                                    |
+| **2.3 Agendar/Disparar varreduras**              | **Feedback:** barra de progresso/ETA.<br>**Problema:** timeouts intermitentes.<br>**Recomendação:** retry exponencial e fallback de fonte.                                                                                          |
+| **3. Monitorar execução (3.1 + 3.2 + 3.3)***                | **Plano:** **(3.1 + 3.2 + 3.3)*** — ciclo iterativo até término.                                                                                                                                                                    |
 | **3.1 Acompanhar progresso**             | **Feedback:** progresso consolidado por fonte.<br>**Problema:** falta de visibilidade por fonte.<br>**Recomendação:** log detalhado com filtros.                                                                                    |
 | **3.2 Tratar falhas**                    | **Problema:** loops de falha.<br>**Recomendação:** circuit breaker + alerta; em quota/credencial, devolver para **2.1/2.2** (reconfigurar).                                                                                         |
-| **3.3 Registrar logs**                   | **Problema:** logs incompletos.<br>**Recomendação:** padronizar JSON e política de retenção.                                                                                                                                        |
-| **4. Validar e evidenciar achados**      | **Plano:** **4.1 → 4.2 → 4.3** (sequencial).                                                                                                                                                                                        |
-| **4.1 Deduplicar/remover FP**            | **Problema:** FP elevado.<br>**Recomendação:** regras por fonte; ML simples (fase 2).                                                                                                                                               |
-| **4.2 Correlacionar dados**              | **Problema:** correlação fraca.<br>**Recomendação:** normalizar chaves (e-mail, domínio, IP, TLD).                                                                                                                                  |
+| **3.3 Registrar logs de execução**                   | **Problema:** logs incompletos.<br>**Recomendação:** padronizar JSON e política de retenção.                                                                                                                                        |
+| **4. Validar e evidenciar achados 4.1 > 4.2 > 4.3**      | **Plano:** **4.1 > 4.2 > 4.3** (sequencial).                                                                                                                                                                                        |
+| **4.1 Deduplicar/remover falsos positivos**            | **Problema:** FP elevado.<br>**Recomendação:** regras por fonte; ML simples (fase 2).                                                                                                                                               |
+| **4.2 Correlacionar dados entre fontes**              | **Problema:** correlação fraca.<br>**Recomendação:** normalizar chaves (e-mail, domínio, IP, TLD).                                                                                                                                  |
 | **4.3 Evidenciar**                       | **Problema:** links quebrados.<br>**Recomendação:** captura “forense” (screenshot + hash + data/hora).                                                                                                                              |
-| **5. Classificar e priorizar riscos**    | **Plano:** **5.1 → 5.2** (sequencial).                                                                                                                                                                                              |
-| **5.1 Impacto × probabilidade**          | **Problema:** critérios subjetivos.<br>**Recomendação:** tabela de avaliação padronizada.                                                                                                                                           |
-| **5.2 Mapear a controles**               | **Problema:** lacunas normativas.<br>**Recomendação:** taxonomia LGPD/ISO/NIST e registro de gaps.                                                                                                                                  |
-| **6. Montar relatório técnico**          | **Plano:** **6.1 → 6.2 → 6.3 → 6.4** (sequencial).                                                                                                                                                                                  |
-| **6.1 Template técnico**                 | **Problema:** variabilidade de escrita.<br>**Recomendação:** template rígido com placeholders.                                                                                                                                      |
-| **6.2 KPIs/gráficos**                    | **Problema:** gráficos confusos.<br>**Recomendação:** paleta e legenda padrão.                                                                                                                                                      |
+| **5. Classificar e priorizar riscos 5.1 > 5.2**    | **Plano:** **5.1 > 5.2** (sequencial).                                                                                                                                                                                              |
+| **5.1 Avaliar impacto × probabilidade**          | **Problema:** critérios subjetivos.<br>**Recomendação:** tabela de avaliação padronizada.                                                                                                                                           |
+| **5.2 Mapear requisitos/controles**               | **Problema:** lacunas normativas.<br>**Recomendação:** taxonomia LGPD/ISO/NIST e registro de gaps.                                                                                                                                  |
+| **6. Montar relatório técnico 6.1 > 6.2 > 6.3 > 6.4**          | **Plano:** **6.1 > 6.2 > 6.3 > 6.4** (sequencial).                                                                                                                                                                                  |
+| **6.1 Preencher template técnico**                 | **Problema:** variabilidade de escrita.<br>**Recomendação:** template rígido com placeholders.                                                                                                                                      |
+| **6.2 Inserir KPIs/gráficos**                    | **Problema:** gráficos confusos.<br>**Recomendação:** paleta e legenda padrão.                                                                                                                                                      |
 | **6.3 Revisão por pares**                | **Recomendação:** aprovação obrigatória antes de **6.4**.                                                                                                                                                                           |
 | **6.4 Exportar PDF**                     | **Problema:** formatação quebrada.<br>**Recomendação:** exportador testado + QA.                                                                                                                                                    |
-| **7. Entregar e arquivar**               | **Plano:** **7.1 → 7.2** (sequencial).                                                                                                                                                                                              |
+| **7. Entregar e arquivar 7.1 > 7.2**               | **Plano:** **7.1 > 7.2** (sequencial).                                                                                                                                                                                              |
 | **7.1 Enviar ao cliente**                | **Problema:** SMTP/caixa postal.<br>**Recomendação:** envio integrado e registro.                                                                                                                                                   |
 | **7.2 Registrar em histórico/KB**        | **Problema:** perda de aprendizado.<br>**Recomendação:** KB versionada + tags por alvo/fonte/severidade.                                                                                                                            |
 
@@ -331,7 +331,7 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 - OP 1.A.3: [P] Mover cursor até checkbox "Limites legais"  
 - OP 1.A.4: [B] Clicar em confirmar escopo  
 - OP 1.A.5: [R] Esperar feedback do sistema sobre validação do escopo  
-- **Selection Rule:** Se o escopo não for validado → voltar para OP 1.A.2
+- **Selection Rule:** Se o escopo não for validado > voltar para OP 1.A.2
 
 ### Method 1.B: Selecionar fontes OSINT
 - OP 1.B.1: [P] Mover cursor até lista de fontes  
@@ -339,7 +339,7 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 - OP 1.B.3: [B] Marcar checkbox de “Shodan”  
 - OP 1.B.4: [B] Marcar checkbox de “Pastebin”  
 - OP 1.B.5: [M] Pensar e revisar se todas as fontes são adequadas  
-- **Selection Rule:** Se prazo < 24h → selecionar apenas fontes de alta cobertura (pular OP 1.B.3 e OP 1.B.4)
+- **Selection Rule:** Se prazo < 24h > selecionar apenas fontes de alta cobertura (pular OP 1.B.3 e OP 1.B.4)
 
 ---
 
@@ -352,7 +352,7 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 - OP 2.A.5: [K] Digitar query (e.g. “email:alvo@dominio.com”)  
 - OP 2.A.6: [P] Mover cursor até botão "Salvar parâmetros"  
 - OP 2.A.7: [B] Clicar no botão  
-- **Selection Rule:** Se a API não validar → repetir OP 2.A.1 com nova chave
+- **Selection Rule:** Se a API não validar > repetir OP 2.A.1 com nova chave
 
 ### Method 2.B: Disparar varredura
 - OP 2.B.1: [P] Mover cursor até botão "Iniciar varredura"  
@@ -361,7 +361,7 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 - OP 2.B.4: [M] Observar status de cada fonte  
 - OP 2.B.5: [P] Mover cursor até “Reexecutar” (se falha)  
 - OP 2.B.6: [B] Clicar em reexecutar  
-- **Selection Rule:** Se coleta terminar sem falhas → prosseguir para Goal 3
+- **Selection Rule:** Se coleta terminar sem falhas > prosseguir para Goal 3
 
 ---
 
@@ -418,7 +418,7 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 - OP 5.C.2: [B] Clicar em exportar  
 - OP 5.C.3: [R] Aguardar geração do arquivo  
 - OP 5.C.4: [M] Conferir se relatório gerado está íntegro  
-- **Selection Rule:** Se relatório não aprovado em revisão de pares → voltar a Method 5.A
+- **Selection Rule:** Se relatório não aprovado em revisão de pares > voltar a Method 5.A
 
 ---
 
@@ -456,11 +456,11 @@ Onde:
 - T6: Gerar relatório técnico (tarefa do sistema + usuário)  
 
 ### Relações:
-- T1 >> T2 → só é possível configurar coleta após preparar o alvo.  
-- T2 >> T3 → execução da varredura depende da configuração.  
-- T3 ||| T4 → a validação pode ocorrer em paralelo à execução (comunicação entre sistema e usuário).  
-- T4 >> T5 → só é possível classificar após validar.  
-- T5 >> T6 → relatório é produzido somente após classificação.  
+- T1 >> T2 > só é possível configurar coleta após preparar o alvo.  
+- T2 >> T3 > execução da varredura depende da configuração.  
+- T3 ||| T4 > a validação pode ocorrer em paralelo à execução (comunicação entre sistema e usuário).  
+- T4 >> T5 > só é possível classificar após validar.  
+- T5 >> T6 > relatório é produzido somente após classificação.  
 
 
 
@@ -475,7 +475,7 @@ Onde:
 ## Diagrama de Análise Hierárquica de Tarefas (estrutura em árvore)
 
 > **Plano 0:** **1 > 2 > 3 > 4 > 5 > 6 > 7**  
-> (Sequencial: importar → selecionar métricas → redigir sumário → revisar → preparar apresentação → apresentar → arquivar)
+> (Sequencial: importar > selecionar métricas > redigir sumário > revisar > preparar apresentação > apresentar > arquivar)
 
 <img width="2742" height="713" alt="Untitled Diagram-Page-2" src="https://github.com/user-attachments/assets/62e99d40-1ba2-42ed-b5e4-af891bdf0484" />
 
@@ -485,24 +485,26 @@ Onde:
 
 | **Objetivos / Operações**             | **Problemas e Recomendações**                                                                                                                                                                                                    |
 | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **0. Consolidar relatório OSINT 1>2** | **Input:** relatório técnico (base).<br>**Plano:** executar **1** e **depois 2**; em seguida 3→4→5→6→7.<br>**Feedback:** relatório executivo gerado.<br>**Recomendação:** estrutura executiva obrigatória antes da apresentação. |
-| **1. Importar achados técnicos**      | **Problema:** foco técnico excessivo.<br>**Recomendação:** selecionar apenas evidências e conclusões úteis ao negócio (checklist mínimo).                                                                                        |
-| **2. Sintetizar risco para negócio**  | **Plano:** **2.1 Definir KPIs → 2.2 Avaliar impacto** (sequencial).                                                                                                                                                              |
+| **0. Consolidar relatório OSINT 1>2>3>4>5>6>7** | **Input:** relatório técnico (base).<br>**Plano:** 1>2>3>4>5>6>7.<br>**Feedback:** relatório executivo gerado.<br>**Recomendação:** estrutura executiva obrigatória antes da apresentação. |
+| **1. Importar achados técnicos 1.1 > 1.2**      | **Problema:** foco técnico excessivo.<br>**Recomendação:** selecionar apenas evidências e conclusões úteis ao negócio (checklist mínimo).                                                                                        |
+| **1.1 Receber relatório técnico da equipe**        | **Recomendação:** usar template de entrada + checklist (escopo, achados, evidências, severidade) antes de prosseguir.                                                                                 |
+| **1.2 Selecionar seções relevantes para gestores** | **Problema:** foco técnico excessivo e perda de contexto de negócio.<br>**Recomendação:** manter apenas 4 blocos: riscos prioritários, impacto (financeiro/reputacional/regulatório), evidências-chave e próximos passos; detalhes técnicos ficam em anexo. |
+| **2. Sintetizar risco para negócio 2.1 + 2.2**  | **Plano:** **2.1 Definir KPIs > 2.2 Avaliar impacto** (sequencial).                                                                                                                                                              |
 | **2.1 Definir KPIs de risco**         | **Problema:** indicadores irrelevantes.<br>**Recomendação:** usar lista pré-aprovada de KPIs (frequência, severidade, exposição).                                                                                                |
 | **2.2 Avaliar impacto no negócio**    | **Problema:** falta de contexto (financeiro/reputacional/regulatório).<br>**Recomendação:** validar com compliance/owner do processo antes de fechar o impacto.                                                                  |
-| **3. Preparar narrativa**             | **Plano:** **3.1 Estruturar tópicos → 3.2 Adaptar vocabulário**.                                                                                                                                                                 |
-| **3.1 Estruturar tópicos**            | **Feedback:** sumário pronto e objetivo.<br>**Recomendação:** usar bullets curtos e ordem do mais crítico ao menos crítico.                                                                                                      |
-| **3.2 Adaptar vocabulário**           | **Problema:** jargão técnico.<br>**Recomendação:** linguagem executiva; evitar termos internos sem explicação.                                                                                                                   |
-| **4. Revisar clareza**                | **Plano:** **4.1 Eliminar jargão → 4.2 Validar clareza**.                                                                                                                                                                        |
-| **4.1 Eliminar jargão**               | **Recomendação:** manter glossário simples quando inevitável.                                                                                                                                                                    |
-| **4.2 Validar clareza**               | **Problema:** desalinhamento de expectativa.<br>**Recomendação:** revisão cruzada por duas funções (ex.: Segurança + Produto).                                                                                                   |
-| **5. Produzir material visual**       | **Plano:** **5.1 Criar slides → 5.2 Inserir gráficos**.                                                                                                                                                                          |
+| **3. Redigir sumário executivo 3.1 > 3.2**       | **Plano:** **3.1 Estruturar tópicos > 3.2 Adaptar vocabulário**.                                                                                                                                                                 |
+| **3.1 Estruturar tópicos principais**            | **Feedback:** sumário pronto e objetivo.<br>**Recomendação:** usar bullets curtos e ordem do mais crítico ao menos crítico.                                                                                                      |
+| **3.2 Adaptar vocabulário para linguagem nao técnica**           | **Problema:** jargão técnico.<br>**Recomendação:** linguagem executiva; evitar termos internos sem explicação.                                                                                                                   |
+| **4. Revisar linguagem e clareza 4.1 > 4.2**                | **Plano:** **4.1 Eliminar jargão > 4.2 Validar clareza**.                                                                                                                                                                        |
+| **4.1 Eliminar jargão técnico**               | **Recomendação:** manter glossário simples quando inevitável.                                                                                                                                                                    |
+| **4.2 Validar clareza com equipe**               | **Problema:** desalinhamento de expectativa.<br>**Recomendação:** revisão cruzada por duas funções (ex.: Segurança + Produto).                                                                                                   |
+| **5. Produzir material visual 5.1 + 5.2**       | **Plano:** **5.1 Criar slides + 5.2 Inserir gráficos**.                                                                                                                                                                          |
 | **5.1 Criar slides**                  | **Problema:** slides poluídos.<br>**Recomendação:** modelo corporativo e regra “1 ideia por slide”.                                                                                                                              |
 | **5.2 Inserir gráficos**              | **Problema:** gráficos confusos.<br>**Recomendação:** paleta oficial e rótulos/legendas padronizados.                                                                                                                            |
-| **6. Apresentar à diretoria**         | **Plano:** **6.1 Expor sumário executivo → 6.2 Responder dúvidas**.                                                                                                                                                              |
+| **6. Apresentar à diretoria 6.1 > 6.2**         | **Plano:** **6.1 Expor sumário executivo > 6.2 Responder dúvidas**.                                                                                                                                                              |
 | **6.1 Expor sumário executivo**       | **Problema:** tempo curto.<br>**Recomendação:** pitch de 3–5 minutos + anexo técnico.                                                                                                                                            |
-| **6.2 Responder dúvidas**             | **Recomendação:** sessão de Q&A com respostas já roteirizadas; registrar perguntas para ajustes.                                                                                                                                 |
-| **7. Arquivar e disponibilizar**      | **Plano:** **7.1 Salvar versão final → 7.2 Indexar histórico**.                                                                                                                                                                  |
+| **6.2 Responder dúvidas e coletar feedbacks**             | **Recomendação:** sessão de Q&A com respostas já roteirizadas; registrar perguntas para ajustes.                                                                                                                                 |
+| **7. Arquivar e registrar 7.1 > 7.2**      | **Plano:** **7.1 Salvar versão final > 7.2 Indexar histórico**.                                                                                                                                                                  |
 | **7.1 Salvar versão final**           | **Problema:** perda de versão.<br>**Recomendação:** versionamento controlado e registro de aprovações.                                                                                                                           |
 | **7.2 Indexar histórico/KB**          | **Problema:** baixa encontrabilidade depois.<br>**Recomendação:** indexação padronizada (tags por alvo, fonte, severidade, data).                                                                                                |
 
@@ -531,7 +533,7 @@ Onde:
 - OP 1.B.2: [P] Destacar achados críticos  
 - OP 1.B.3: [B] Copiar para documento executivo  
 - OP 1.B.4: [M] Validar se a seleção é suficiente para gestores  
-- **Selection Rule:** Se relatório tiver excesso de dados → priorizar apenas severidade alta
+- **Selection Rule:** Se relatório tiver excesso de dados > priorizar apenas severidade alta
 
 ---
 
@@ -546,7 +548,7 @@ Onde:
 - OP 2.B.1: [K] Escrever breve descrição do impacto financeiro  
 - OP 2.B.2: [K] Escrever impacto reputacional  
 - OP 2.B.3: [M] Pensar se impacto traduz riscos técnicos em estratégicos  
-- **Selection Rule:** Se diretoria exigir → incluir também riscos de compliance
+- **Selection Rule:** Se diretoria exigir > incluir também riscos de compliance
 
 ---
 
@@ -558,7 +560,7 @@ Onde:
 ### Method 3.B: Adaptar vocabulário
 - OP 3.B.1: [K] Reescrever frases técnicas em linguagem executiva  
 - OP 3.B.2: [M] Revisar se texto é compreensível para não técnicos  
-- **Selection Rule:** Se jargão ainda estiver presente → voltar a OP 3.B.1
+- **Selection Rule:** Se jargão ainda estiver presente > voltar a OP 3.B.1
 
 ---
 
@@ -585,7 +587,7 @@ Onde:
 - OP 5.B.2: [K] Escolher tipo (barra, pizza, linha)  
 - OP 5.B.3: [R] Visualizar gráfico gerado  
 - OP 5.B.4: [M] Validar se gráfico comunica bem a métrica  
-- **Selection Rule:** Se gráfico confuso → trocar tipo de visualização  
+- **Selection Rule:** Se gráfico confuso > trocar tipo de visualização  
 
 ---
 
@@ -599,7 +601,7 @@ Onde:
 - OP 6.B.1: [M] Interpretar pergunta feita pela diretoria  
 - OP 6.B.2: [K] Responder com clareza  
 - OP 6.B.3: [R] Esperar reação/feedback  
-- **Selection Rule:** Se pergunta exigir detalhe técnico → anexar relatório de Lucas
+- **Selection Rule:** Se pergunta exigir detalhe técnico > anexar relatório de Lucas
 
 ---
 
@@ -652,10 +654,10 @@ Onde:
 - T6: Apresentar à diretoria (tarefa do usuário)  
 
 ### Relações:
-- T1 >> T2 → só é possível selecionar métricas após importar os dados.  
-- T2 >> (T3 || T4) → após a seleção, pode-se redigir e revisar em paralelo.  
-- (T3 || T4) >> T5 → ambos devem estar finalizados antes da preparação da apresentação.  
-- T5 >> T6 → apresentação depende da preparação dos materiais.  
+- T1 >> T2 > só é possível selecionar métricas após importar os dados.  
+- T2 >> (T3 || T4) > após a seleção, pode-se redigir e revisar em paralelo.  
+- (T3 || T4) >> T5 > ambos devem estar finalizados antes da preparação da apresentação.  
+- T5 >> T6 > apresentação depende da preparação dos materiais.  
 
 
 _________________
