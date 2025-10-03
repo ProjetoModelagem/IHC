@@ -308,16 +308,7 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 | **7.1 Enviar ao cliente**                | **Problema:** SMTP/caixa postal.<br>**Recomendação:** envio integrado e registro.                                                                                                                                                   |
 | **7.2 Registrar em histórico/KB**        | **Problema:** perda de aprendizado.<br>**Recomendação:** KB versionada + tags por alvo/fonte/severidade.                                                                                                                            |
 
-
 ---
-
-## Observações didáticas
-- **HTA ≠ fluxograma**: usamos **objetivos/subobjetivos/operações numerados** e **PLANOS** para a ordem (**1>2**), seleção (**1/2**) e paralelo (**1+2**).  
-- **Decisões** aparecem nos **planos** (ex.: priorizar fontes sob prazo curto).  
-- **Tabela** cobre **Input/Ação/Feedback** (estado final), com **Problemas/Recomendações** — como no modelo exigido pelo professor.
-
-
-
 # GOMS-KLM — Lucas (Analista de Pentest)
 
 **Goal 0:** Produzir relatório OSINT técnico confiável
@@ -509,11 +500,6 @@ Onde:
 | **7.2 Indexar histórico/KB**          | **Problema:** baixa encontrabilidade depois.<br>**Recomendação:** indexação padronizada (tags por alvo, fonte, severidade, data).                                                                                                |
 
 ---
-
-## Observações didáticas
-- Estrutura **idêntica ao HTA do Lucas**, mas o **foco em 6.x é executivo**, não técnico.  
-- **Planos** indicam ordem, paralelismo e seleção de métricas conforme contexto.  
-- **Tabela** mostra problemas comuns (ex.: jargão técnico, excesso de slides) e recomendações (ex.: glossário, modelo padrão).
 
 # GOMS-KLM — Marina (Gestora de Segurança)
 
