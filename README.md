@@ -270,48 +270,8 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 
 > **Plano 0:** **1 > 2 > 3 > 4 > 5 > 6 > 7**  
 > (Sequencial: preparar → coletar → monitorar → validar → classificar → relatar → registrar/entregar)  
-> **Exceções/seleções/paralelos** detalhados nos planos locais abaixo.
 
-**0. Realizar investigação OSINT**  
-- **1. Preparar alvo e contexto**  
-  - **1.1 Verificar contrato/consentimento**  
-  - **1.2 Definir escopo e restrições** (alvo, limites legais, janela de execução)  
-  - **1.3 Selecionar fontes OSINT** (por tipo: credenciais, infra, mídia social, pastes)  
-  - **Plano 1:** **1.1 > 1.2 > 1.3** (sequencial; sem 1.1 não prossegue)  
-- **2. Configurar coletas automáticas**  
-  - **2.1 Provisionar chaves/API** (HIBP, Shodan, etc.)  
-  - **2.2 Parametrizar consultas** (queries, throttling, retries)  
-  - **2.3 Agendar/Disparar varreduras**  
-  - **Plano 2:** **2.1 > (2.2 + 2.3)** (2.2 e 2.3 em **paralelo controlado**)  
-- **3. Monitorar execução**  
-  - **3.1 Acompanhar progresso** (status por fonte)  
-  - **3.2 Tratar falhas** (timeout, quota, credencial inválida)  
-  - **3.3 Registrar logs de execução**  
-  - **Plano 3:** **(3.1 + 3.2 + 3.3)\*** (ciclo **paralelo/iterativo** até término)  
-- **4. Validar e evidenciar achados**  
-  - **4.1 Deduplicar e remover falsos positivos**  
-  - **4.2 Correlacionar dados entre fontes**  
-  - **4.3 Evidenciar** (screenshots, hashes, URLs, timestamps)  
-  - **Plano 4:** **4.1 > 4.2 > 4.3** (sequencial)  
-- **5. Classificar e priorizar riscos**  
-  - **5.1 Avaliar impacto x probabilidade** (matriz)  
-  - **5.2 Mapear a requisitos/controles** (LGPD/ISO/NIST conforme escopo)  
-  - **Plano 5:** **5.1 > 5.2** (sequencial)  
-- **6. Montar relatório técnico**  
-  - **6.1 Preencher template técnico** (achado, evidência, risco, recomendação)  
-  - **6.2 Inserir gráficos/KPIs** (por severidade, fonte, tempo)  
-  - **6.3 Revisão por pares**  
-  - **6.4 Exportar PDF**  
-  - **Plano 6:** **6.1 > 6.2 > 6.3 > 6.4** (sequencial)  
-- **7. Entregar e arquivar**  
-  - **7.1 Enviar ao cliente**  
-  - **7.2 Registrar em histórico/KB** (para reuso, métricas)  
-  - **Plano 7:** **7.1 > 7.2** (sequencial)
-
-**Regras de Seleção (globais):**  
-- Se **prazo < 24h** → priorizar fontes de **alta cobertura/baixo tempo de resposta** e suspender fontes lentas (**seleção 2/3 de fontes**).  
-- Se **falha crítica** numa fonte essencial → **3.2** aciona **retry** até N tentativas; se exceder, **seleciona alternativa** (outro provedor).  
-- Se **falsos positivos > limiar** → reforçar **4.1** (deduplicação) antes de seguir para **4.2**.
+<img width="2743" height="712" alt="Untitled Diagram" src="https://github.com/user-attachments/assets/cdc6a7b8-888c-4924-832b-03ecdca20452" />
 
 ---
 
@@ -510,40 +470,7 @@ Onde:
 > **Plano 0:** **1 > 2 > 3 > 4 > 5 > 6 > 7**  
 > (Sequencial: importar → selecionar métricas → redigir sumário → revisar → preparar apresentação → apresentar → arquivar)
 
-**0. Consolidar relatório OSINT**  
-- **1. Importar achados técnicos**  
-  - **1.1 Receber relatório técnico da equipe**  
-  - **1.2 Selecionar seções relevantes para gestores**  
-  - **Plano 1:** **1.1 > 1.2** (sequencial)  
-- **2. Selecionar métricas relevantes**  
-  - **2.1 Definir KPIs de risco** (quantidade de vazamentos, severidade, tempo de resposta)  
-  - **2.2 Avaliar impacto no negócio** (financeiro, reputacional, compliance)  
-  - **Plano 2:** **2.1 + 2.2** (paralelo; métricas e impacto analisados juntos)  
-- **3. Redigir sumário executivo**  
-  - **3.1 Estruturar tópicos principais**  
-  - **3.2 Adaptar vocabulário para linguagem não técnica**  
-  - **Plano 3:** **3.1 > 3.2** (sequencial)  
-- **4. Revisar linguagem e clareza**  
-  - **4.1 Eliminar jargão técnico**  
-  - **4.2 Validar clareza com equipe**  
-  - **Plano 4:** **4.1 > 4.2** (sequencial)  
-- **5. Preparar material de apresentação**  
-  - **5.1 Criar slides** (visuais, objetivos)  
-  - **5.2 Inserir gráficos e dashboards**  
-  - **Plano 5:** **5.1 + 5.2** (paralelo)  
-- **6. Apresentar à diretoria**  
-  - **6.1 Expor sumário executivo**  
-  - **6.2 Responder dúvidas e coletar feedback**  
-  - **Plano 6:** **6.1 > 6.2** (sequencial)  
-- **7. Arquivar e registrar**  
-  - **7.1 Salvar versão final aprovada**  
-  - **7.2 Indexar em histórico/KB corporativo**  
-  - **Plano 7:** **7.1 > 7.2** (sequencial)
-
-**Regras de Seleção (globais):**  
-- Se **tempo de reunião < 15min** → priorizar **2/3 métricas mais críticas** (seleção).  
-- Se **diretoria exige detalhe técnico** → anexar apêndice técnico do Lucas.  
-- Se **audiência não técnica** → ocultar termos complexos e manter foco em impacto de negócio.
+<img width="2742" height="713" alt="Untitled Diagram-Page-2" src="https://github.com/user-attachments/assets/62e99d40-1ba2-42ed-b5e4-af891bdf0484" />
 
 ---
 
