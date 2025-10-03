@@ -476,26 +476,8 @@ _________________________
 
 # ConcurTaskTree - Lucas (Executar Varredura OSINT)
 
-T0: Executar Varredura OSINT
 
-T0 = 
-    T1 >> T2 >> T3 ||| T4 >> T5 >> T6
-
-Onde:
-
-- T1: Preparar alvo (tarefa do usuário)  
-- T2: Configurar coleta (tarefa interativa)  
-- T3: Executar varredura (tarefa do sistema)  
-- T4: Validar achados (tarefa interativa)  
-- T5: Classificar riscos (tarefa do usuário)  
-- T6: Gerar relatório técnico (tarefa do sistema + usuário)  
-
-### Relações:
-- T1 >> T2 > só é possível configurar coleta após preparar o alvo.  
-- T2 >> T3 > execução da varredura depende da configuração.  
-- T3 ||| T4 > a validação pode ocorrer em paralelo à execução (comunicação entre sistema e usuário).  
-- T4 >> T5 > só é possível classificar após validar.  
-- T5 >> T6 > relatório é produzido somente após classificação.  
+<img width="16384" height="2574" alt="image" src="https://github.com/user-attachments/assets/6bdc93d0-be92-45a8-a930-24e826435219" />
 
 
 
@@ -671,25 +653,7 @@ ______________
 
 # ConcurTaskTree - Marina (Consolidar Relatório Executivo)
 
-T0: Consolidar Relatório Executivo
-
-T0 =
-    T1 >> T2 >> (T3 || T4) >> T5 >> T6
-
-Onde:
-
-- T1: Importar achados técnicos (tarefa do sistema)  
-- T2: Selecionar métricas (tarefa do usuário)  
-- T3: Redigir sumário executivo (tarefa do usuário)  
-- T4: Revisar linguagem (tarefa interativa)  
-- T5: Preparar apresentação (tarefa do usuário + sistema)  
-- T6: Apresentar à diretoria (tarefa do usuário)  
-
-### Relações:
-- T1 >> T2 > só é possível selecionar métricas após importar os dados.  
-- T2 >> (T3 || T4) > após a seleção, pode-se redigir e revisar em paralelo.  
-- (T3 || T4) >> T5 > ambos devem estar finalizados antes da preparação da apresentação.  
-- T5 >> T6 > apresentação depende da preparação dos materiais.  
+<img width="16384" height="2574" alt="image" src="https://github.com/user-attachments/assets/c797180e-9e98-4085-9a1a-3108d61ac321" />
 
 
 _________________
