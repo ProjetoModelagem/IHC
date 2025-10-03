@@ -309,125 +309,169 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 | **7.2 Registrar em histórico/KB**        | **Problema:** perda de aprendizado.<br>**Recomendação:** KB versionada + tags por alvo/fonte/severidade.                                                                                                                            |
 
 ---
-# GOMS-KLM — Lucas (Analista de Pentest)
-
-**Goal 0:** Produzir relatório OSINT técnico confiável
-
----
-
-## Goal 1: Preparar alvo e fontes
-### Method 1.A: Definir escopo e restrições
-- OP 1.A.1: [K] Digitar identificação do cliente no campo do sistema  
-- OP 1.A.2: [K] Digitar o domínio alvo (ex.: empresa.com)  
-- OP 1.A.3: [P] Mover cursor até checkbox "Limites legais"  
-- OP 1.A.4: [B] Clicar em confirmar escopo  
-- OP 1.A.5: [R] Esperar feedback do sistema sobre validação do escopo  
-- **Selection Rule:** Se o escopo não for validado > voltar para OP 1.A.2
-
-### Method 1.B: Selecionar fontes OSINT
-- OP 1.B.1: [P] Mover cursor até lista de fontes  
-- OP 1.B.2: [B] Marcar checkbox de “HaveIBeenPwned”  
-- OP 1.B.3: [B] Marcar checkbox de “Shodan”  
-- OP 1.B.4: [B] Marcar checkbox de “Pastebin”  
-- OP 1.B.5: [M] Pensar e revisar se todas as fontes são adequadas  
-- **Selection Rule:** Se prazo < 24h > selecionar apenas fontes de alta cobertura (pular OP 1.B.3 e OP 1.B.4)
+# GOMS–KLM — Lucas (Analista de Pentest)
+**Goal 0:** Realizar investigação OSINT e entregar relatório técnico padronizado  
+(**Plano do HTA:** 1 > 2 > 3 > 4 > 5 > 6 > 7)
 
 ---
 
-## Goal 2: Executar coleta
-### Method 2.A: Configurar APIs e parâmetros
-- OP 2.A.1: [K] Digitar chave da API HIBP no campo de credenciais  
-- OP 2.A.2: [B] Pressionar botão "Validar chave"  
-- OP 2.A.3: [R] Aguardar retorno do sistema  
-- OP 2.A.4: [M] Preparar query para pesquisa  
-- OP 2.A.5: [K] Digitar query (e.g. “email:alvo@dominio.com”)  
-- OP 2.A.6: [P] Mover cursor até botão "Salvar parâmetros"  
-- OP 2.A.7: [B] Clicar no botão  
-- **Selection Rule:** Se a API não validar > repetir OP 2.A.1 com nova chave
+## GOAL 1: Preparar alvo e contexto  (HTA: 1.1 > 1.2 > 1.3)
 
-### Method 2.B: Disparar varredura
-- OP 2.B.1: [P] Mover cursor até botão "Iniciar varredura"  
-- OP 2.B.2: [B] Clicar botão  
-- OP 2.B.3: [R] Aguardar barra de progresso carregar  
-- OP 2.B.4: [M] Observar status de cada fonte  
-- OP 2.B.5: [P] Mover cursor até “Reexecutar” (se falha)  
-- OP 2.B.6: [B] Clicar em reexecutar  
-- **Selection Rule:** Se coleta terminar sem falhas > prosseguir para Goal 3
+### METHOD 1.A: Verificar contrato/consentimento  (HTA 1.1)
+(SEL. RULE: se documento ausente/expirado → interromper e solicitar upload/renovação)
+- **OP 1.A.1:** [P] Abrir módulo “Escopo/Compliance”
+- **OP 1.A.2:** [K] Digitar nº do contrato/OS
+- **OP 1.A.3:** [B] Clicar em **Validar**
+- **OP 1.A.4:** [R] Aguardar retorno “Autorizado/Negado”
+- **OP 1.A.5:** [M] Confirmar que a base legal está OK
 
----
+### METHOD 1.B: Definir escopo e restrições  (HTA 1.2)
+(SEL. RULE: se houver múltiplos ativos → registrar todos; se campo obrigatório vazio → bloquear avanço)
+- **OP 1.B.1:** [K] Inserir alvo (domínio/e-mail/IP)
+- **OP 1.B.2:** [K] Definir janelas/limites (horário, subdomínios, TLD)
+- **OP 1.B.3:** [B] **Salvar escopo**
+- **OP 1.B.4:** [R] Ver confirmação de escopo salvo
 
-## Goal 3: Validar resultados
-### Method 3.A: Deduplicar
-- OP 3.A.1: [P] Selecionar opção “Remover duplicados”  
-- OP 3.A.2: [B] Clicar em executar deduplicação  
-- OP 3.A.3: [R] Aguardar sistema processar  
-- OP 3.A.4: [M] Pensar e revisar lista final  
-
-### Method 3.B: Correlacionar achados
-- OP 3.B.1: [P] Mover cursor até “Correlacionar por e-mail”  
-- OP 3.B.2: [B] Clicar em correlacionar  
-- OP 3.B.3: [R] Esperar resposta do sistema  
-- OP 3.B.4: [M] Revisar resultados correlacionados  
-
-### Method 3.C: Evidenciar
-- OP 3.C.1: [P] Mover cursor até item do achado  
-- OP 3.C.2: [B] Clicar em “Salvar evidência”  
-- OP 3.C.3: [R] Esperar confirmação  
-- OP 3.C.4: [M] Verificar se evidência foi anexada corretamente  
+### METHOD 1.C: Selecionar fontes OSINT  (HTA 1.3)
+(SEL. RULE: se **prazo < 24h** → priorizar fontes de **alta cobertura**; caso contrário → conjunto completo)
+- **OP 1.C.1:** [P] Abrir lista de fontes
+- **OP 1.C.2:** [B] Marcar **HIBP**
+- **OP 1.C.3:** [B] Marcar **Shodan**
+- **OP 1.C.4:** [B] Marcar **Pastebin** (se aplicável)
+- **OP 1.C.5:** [M] Revisar redundâncias e confirmar
 
 ---
 
-## Goal 4: Classificar riscos
-### Method 4.A: Impacto x Probabilidade
-- OP 4.A.1: [P] Selecionar matriz de riscos  
-- OP 4.A.2: [B] Clicar em célula de classificação (Baixo, Médio, Alto)  
-- OP 4.A.3: [R] Esperar registro do risco  
+## GOAL 2: Configurar coletas automáticas  (HTA: 2.1 > (2.2 + 2.3))
 
-### Method 4.B: Mapear a normas
-- OP 4.B.1: [P] Selecionar “Mapear para LGPD”  
-- OP 4.B.2: [B] Clicar confirmar  
-- OP 4.B.3: [R] Aguardar resposta  
+### METHOD 2.A: Fluxo sequencial (quando UI não permite paralelismo)
+(SEL. RULE: usar quando a interface exige salvar parâmetros antes de iniciar)
+- **OP 2.A.1:** [K] Inserir chave/API da fonte (ex.: HIBP)
+- **OP 2.A.2:** [B] **Validar chave**
+- **OP 2.A.3:** [R] Ver “Chave válida”
+- **OP 2.A.4:** [K] Especificar **queries**/filtros (HTA 2.2)
+- **OP 2.A.5:** [B] **Salvar parâmetros**
+- **OP 2.A.6:** [B] **Iniciar varredura** (HTA 2.3)
+- **OP 2.A.7:** [R] Ver barra de progresso/ETA  
+(SEL. RULE: se **chave inválida** → voltar a **OP 2.A.1** com nova chave)
 
----
-
-## Goal 5: Montar relatório técnico
-### Method 5.A: Preencher template
-- OP 5.A.1: [K] Digitar título do relatório  
-- OP 5.A.2: [K] Digitar resumo técnico  
-- OP 5.A.3: [K] Inserir achados e riscos  
-- OP 5.A.4: [P] Mover cursor até botão “Salvar”  
-- OP 5.A.5: [B] Clicar em salvar  
-
-### Method 5.B: Inserir gráficos e KPIs
-- OP 5.B.1: [P] Selecionar aba “KPIs”  
-- OP 5.B.2: [B] Clicar em “Gerar gráfico”  
-- OP 5.B.3: [R] Aguardar visualização do gráfico  
-- OP 5.B.4: [M] Validar se gráfico corresponde aos dados  
-
-### Method 5.C: Revisar e Exportar
-- OP 5.C.1: [P] Selecionar “Exportar PDF”  
-- OP 5.C.2: [B] Clicar em exportar  
-- OP 5.C.3: [R] Aguardar geração do arquivo  
-- OP 5.C.4: [M] Conferir se relatório gerado está íntegro  
-- **Selection Rule:** Se relatório não aprovado em revisão de pares > voltar a Method 5.A
+### METHOD 2.B: Fluxo paralelo controlado (quando UI permite)  *(reflete o plano do HTA)*
+(SEL. RULE: usar quando é possível **parametrizar** uma fonte enquanto outra já está **coletando**)
+- **OP 2.B.1:** [K] Inserir e validar chave da **Fonte A**
+- **OP 2.B.2:** [B] **Iniciar varredura** da Fonte A
+- **OP 2.B.3:** [K] Em paralelo, parametrizar **Fonte B**
+- **OP 2.B.4:** [B] **Salvar** parâmetros da Fonte B e **Iniciar** sua varredura
+- **OP 2.B.5:** [M] Conferir que ambas executam sem conflito  
+(SEL. RULE: se ocorrer **rate limit** → ativar throttling/retries e reduzir fontes ativas)
 
 ---
 
-## Legenda (KLM)
-- **K (Keying):** Digitar no teclado (≈0.2s por tecla)  
-- **P (Pointing):** Mover cursor até alvo na tela (≈1.1s)  
-- **B (Button press):** Clicar botão do mouse (≈0.1s)  
-- **H (Homing):** Alternar mão entre teclado e mouse (≈0.4s)  
-- **M (Mental preparation):** Pensar/preparar próxima ação (≈1.2s)  
-- **R (Response):** Tempo de resposta do sistema (variável)  
+## GOAL 3: Monitorar execução  (HTA: (3.1 + 3.2 + 3.3)\*)
+*(Ciclo iterativo até término, com registro de logs)*
+
+### METHOD 3.A: Acompanhar e tratar falhas  (HTA 3.1 + 3.2)
+(SEL. RULE: se **falha crítica** em fonte essencial → reexecutar; se quota esgotada → trocar chave/adiar)
+- **OP 3.A.1:** [R] Observar status por fonte (✔ / … / ✖)
+- **OP 3.A.2:** [M] Diagnosticar causa (timeout/quota/credencial)
+- **OP 3.A.3:** [B] **Reexecutar** ou **trocar** para fonte alternativa
+- **OP 3.A.4:** [R] Ver resultado da nova tentativa
+
+### METHOD 3.B: Registrar logs de execução  (HTA 3.3)
+- **OP 3.B.1:** [B] Abrir painel de logs
+- **OP 3.B.2:** [R] Conferir eventos (start/stop/erros)
+- **OP 3.B.3:** [B] **Exportar** logs (se necessário)
 
 ---
 
-### Observação
-Esse GOMS-KLM do Lucas cobre **todo o fluxo da investigação OSINT até o relatório técnico**.  
-- Em cada Goal temos **Methods com Operators detalhados**.  
-- Incluímos **Selection Rules** para lidar com falhas e exceções.  
-- Pode ser usado tanto para análise de tarefas quanto para estimar **tempo total de execução** (somando tempos de KLM).
+## GOAL 4: Validar e evidenciar achados  (HTA: 4.1 > 4.2 > 4.3)
+
+### METHOD 4.A: Deduplicar/remover falsos positivos  (HTA 4.1)
+(SEL. RULE: se **FP acima do limiar** → reforçar regras e repetir deduplicação)
+- **OP 4.A.1:** [B] Executar “Remover duplicados”
+- **OP 4.A.2:** [R] Ver lista consolidada
+- **OP 4.A.3:** [M] Conferir amostras de FP
+
+### METHOD 4.B: Correlacionar dados entre fontes  (HTA 4.2)
+(SEL. RULE: se campos não normalizados → normalizar (e-mail, domínio, IP) antes de correlacionar)
+- **OP 4.B.1:** [B] Rodar “Correlacionar por chave”
+- **OP 4.B.2:** [R] Ver grupos correlatos
+- **OP 4.B.3:** [M] Validar coerência dos vínculos
+
+### METHOD 4.C: Evidenciar  (HTA 4.3)
+- **OP 4.C.1:** [B] Abrir item do achado
+- **OP 4.C.2:** [B] **Capturar evidência** (screenshot/URL/hash/timestamp)
+- **OP 4.C.3:** [R] Confirmar evidência anexada
+
+---
+
+## GOAL 5: Classificar e priorizar riscos  (HTA: 5.1 > 5.2)
+
+### METHOD 5.A: Avaliar impacto × probabilidade  (HTA 5.1)
+- **OP 5.A.1:** [B] Abrir **Matriz de Riscos**
+- **OP 5.A.2:** [B] Classificar item (Baixo/Médio/Alto)
+- **OP 5.A.3:** [R] Ver severidade registrada
+
+### METHOD 5.B: Mapear a requisitos/controles  (HTA 5.2)
+(SEL. RULE: se item não mapeável → registrar em “Observações”)
+- **OP 5.B.1:** [B] Selecionar norma (LGPD/ISO/NIST)
+- **OP 5.B.2:** [B] Associar controle/requisito
+- **OP 5.B.3:** [R] Ver mapeamento salvo
+
+---
+
+## GOAL 6: Montar relatório técnico  (HTA: 6.1 > 6.2 > 6.3 > 6.4)
+
+### METHOD 6.A: Preencher template técnico  (HTA 6.1)
+- **OP 6.A.1:** [K] Inserir título e contexto
+- **OP 6.A.2:** [K] Descrever achado + evidência + risco
+- **OP 6.A.3:** [B] **Salvar seção**
+
+### METHOD 6.B: Inserir KPIs/gráficos  (HTA 6.2)
+(SEL. RULE: se gráfico confuso → trocar tipo/legenda até ficar compreensível)
+- **OP 6.B.1:** [B] **Gerar** gráfico (por severidade/fonte/tempo)
+- **OP 6.B.2:** [R] Visualizar renderização
+- **OP 6.B.3:** [M] Validar leitura
+
+### METHOD 6.C: Revisão por pares  (HTA 6.3)
+(SEL. RULE: se **reprovado** → retornar ao **METHOD 6.A** para correções)
+- **OP 6.C.1:** [B] Enviar para revisão
+- **OP 6.C.2:** [R] Receber comentários
+- **OP 6.C.3:** [M] Aplicar ajustes solicitados
+
+### METHOD 6.D: Exportar PDF  (HTA 6.4)
+- **OP 6.D.1:** [B] **Exportar PDF**
+- **OP 6.D.2:** [R] Conferir arquivo gerado
+
+---
+
+## GOAL 7: Entregar e arquivar  (HTA: 7.1 > 7.2)
+
+### METHOD 7.A: Enviar ao cliente  (HTA 7.1)
+- **OP 7.A.1:** [B] Anexar PDF final
+- **OP 7.A.2:** [K] Inserir destinatários
+- **OP 7.A.3:** [B] **Enviar**
+- **OP 7.A.4:** [R] Ver confirmação de envio
+
+### METHOD 7.B: Registrar em histórico/KB  (HTA 7.2)
+- **OP 7.B.1:** [B] Publicar artefatos (PDF + logs)
+- **OP 7.B.2:** [K] Adicionar tags (alvo/fonte/severidade)
+- **OP 7.B.3:** [R] Ver versão arquivada
+
+---
+
+## Regras de Seleção (globais alinhadas ao HTA)
+- **Prazo curto (<24h):** aplicar **METHOD 1.C** com fontes de alta cobertura (priorização) e **METHOD 2.B** com throttling.  
+- **Chave/API inválida:** retornar a **METHOD 2.A** (reinserção/validação).  
+- **Falha crítica em coleta:** **METHOD 3.A** reexecuta com backoff; se persistir, troca fonte.  
+- **FP alto:** repetir **METHOD 4.A** com regras mais estritas; só então **4.B**.  
+- **Revisão reprovada:** voltar a **METHOD 6.A** e repetir 6.A → 6.B → 6.C.  
+
+---
+
+### Legenda KLM
+**K** (Keying) ≈ 0,2s • **P** (Pointing) ≈ 1,1s • **B** (Button) ≈ 0,1s • **H** (Homing) ≈ 0,4s • **M** (Mental) ≈ 1,2s • **R** (Response) = variável
+
+_________________________
 
 
 # ConcurTaskTree - Lucas (Executar Varredura OSINT)
@@ -501,127 +545,129 @@ Onde:
 
 ---
 
-# GOMS-KLM — Marina (Gestora de Segurança)
+# GOMS–KLM — Marina (Gerente de Segurança)
 
-**Goal 0:** Consolidar relatório OSINT em versão executiva e apresentá-lo à diretoria
-
----
-
-## Goal 1: Importar achados técnicos
-### Method 1.A: Receber relatório técnico
-- OP 1.A.1: [P] Mover cursor até e-mail/módulo de relatórios  
-- OP 1.A.2: [B] Clicar em "Baixar relatório técnico"  
-- OP 1.A.3: [R] Aguardar download  
-- OP 1.A.4: [M] Validar que arquivo baixado está correto  
-
-### Method 1.B: Selecionar seções relevantes
-- OP 1.B.1: [K] Abrir arquivo e navegar até seções técnicas  
-- OP 1.B.2: [P] Destacar achados críticos  
-- OP 1.B.3: [B] Copiar para documento executivo  
-- OP 1.B.4: [M] Validar se a seleção é suficiente para gestores  
-- **Selection Rule:** Se relatório tiver excesso de dados > priorizar apenas severidade alta
+**Goal 0:** Consolidar relatório OSINT em versão executiva para diretoria  
+(**Plano do HTA:** 1 > 2 > 3 > 4 > 5 > 6 > 7)
 
 ---
 
-## Goal 2: Selecionar métricas (KPIs)
-### Method 2.A: Definir indicadores de risco
-- OP 2.A.1: [P] Mover cursor até campo de indicadores  
-- OP 2.A.2: [K] Inserir número de incidentes  
-- OP 2.A.3: [K] Inserir severidade média  
-- OP 2.A.4: [M] Pensar se métricas são adequadas  
+## GOAL 1: Importar achados técnicos (HTA 1.1 > 1.2)
 
-### Method 2.B: Avaliar impacto no negócio
-- OP 2.B.1: [K] Escrever breve descrição do impacto financeiro  
-- OP 2.B.2: [K] Escrever impacto reputacional  
-- OP 2.B.3: [M] Pensar se impacto traduz riscos técnicos em estratégicos  
-- **Selection Rule:** Se diretoria exigir > incluir também riscos de compliance
+### METHOD 1.A: Receber relatório técnico da equipe (HTA 1.1)
+- **OP 1.A.1:** [P] Abrir e acessar pasta/drive da equipe  
+- **OP 1.A.2:** [B] Clicar no relatório técnico mais recente  
+- **OP 1.A.3:** [R] Aguardar carregamento do arquivo  
+- **OP 1.A.4:** [M] Verificar checklist (escopo, achados, evidências, severidade)  
 
----
-
-## Goal 3: Redigir sumário executivo
-### Method 3.A: Estruturar tópicos
-- OP 3.A.1: [K] Escrever tópicos principais (3–5 bullet points)  
-- OP 3.A.2: [M] Pensar sobre clareza e objetividade  
-
-### Method 3.B: Adaptar vocabulário
-- OP 3.B.1: [K] Reescrever frases técnicas em linguagem executiva  
-- OP 3.B.2: [M] Revisar se texto é compreensível para não técnicos  
-- **Selection Rule:** Se jargão ainda estiver presente > voltar a OP 3.B.1
+### METHOD 1.B: Selecionar seções relevantes (HTA 1.2)  
+(SEL. RULE: manter apenas riscos prioritários, impactos, evidências-chave e próximos passos)  
+- **OP 1.B.1:** [P] Navegar pelas seções do relatório  
+- **OP 1.B.2:** [B] Destacar blocos importantes (riscos, impacto, evidências)  
+- **OP 1.B.3:** [M] Validar se conteúdo é relevante para gestores  
+- **OP 1.B.4:** [R] Conferir versão reduzida com apenas seções relevantes  
 
 ---
 
-## Goal 4: Revisar clareza
-### Method 4.A: Eliminar termos técnicos
-- OP 4.A.1: [P] Revisar texto linha por linha  
-- OP 4.A.2: [K] Substituir termos complexos por equivalentes simples  
+## GOAL 2: Sintetizar risco para negócio (HTA 2.1 > 2.2)
 
-### Method 4.B: Validar com equipe
-- OP 4.B.1: [P] Enviar versão preliminar para equipe  
-- OP 4.B.2: [R] Aguardar feedback  
-- OP 4.B.3: [M] Ajustar conforme comentários  
+### METHOD 2.A: Definir KPIs de risco (HTA 2.1)
+- **OP 2.A.1:** [P] Selecionar lista de KPIs pré-aprovados  
+- **OP 2.A.2:** [B] Marcar indicadores aplicáveis (frequência, severidade, exposição)  
+- **OP 2.A.3:** [M] Conferir se todos são relevantes  
 
----
-
-## Goal 5: Preparar material de apresentação
-### Method 5.A: Criar slides
-- OP 5.A.1: [P] Abrir software de apresentação  
-- OP 5.A.2: [K] Inserir título da apresentação  
-- OP 5.A.3: [K] Inserir tópicos do sumário executivo  
-
-### Method 5.B: Inserir gráficos e dashboards
-- OP 5.B.1: [P] Selecionar botão "Adicionar gráfico"  
-- OP 5.B.2: [K] Escolher tipo (barra, pizza, linha)  
-- OP 5.B.3: [R] Visualizar gráfico gerado  
-- OP 5.B.4: [M] Validar se gráfico comunica bem a métrica  
-- **Selection Rule:** Se gráfico confuso > trocar tipo de visualização  
+### METHOD 2.B: Avaliar impacto no negócio (HTA 2.2)  
+(SEL. RULE: se falta de contexto → validar com compliance/owner antes de fechar impacto)  
+- **OP 2.B.1:** [K] Inserir impacto financeiro/reputacional/regulatório  
+- **OP 2.B.2:** [M] Comparar com casos semelhantes já registrados  
+- **OP 2.B.3:** [R] Ver confirmação do sistema ou feedback da área consultada  
 
 ---
 
-## Goal 6: Apresentar à diretoria
-### Method 6.A: Expor sumário
-- OP 6.A.1: [P] Abrir apresentação em tela cheia  
-- OP 6.A.2: [K] Falar tópicos principais  
-- OP 6.A.3: [M] Pausar para avaliar reação da diretoria  
+## GOAL 3: Redigir sumário executivo (HTA 3.1 > 3.2)
 
-### Method 6.B: Responder dúvidas
-- OP 6.B.1: [M] Interpretar pergunta feita pela diretoria  
-- OP 6.B.2: [K] Responder com clareza  
-- OP 6.B.3: [R] Esperar reação/feedback  
-- **Selection Rule:** Se pergunta exigir detalhe técnico > anexar relatório de Lucas
+### METHOD 3.A: Estruturar tópicos (HTA 3.1)
+- **OP 3.A.1:** [K] Escrever tópicos principais em bullets curtos  
+- **OP 3.A.2:** [M] Organizar em ordem de criticidade (alto > médio > baixo)  
 
----
-
-## Goal 7: Arquivar versão final
-### Method 7.A: Salvar relatório executivo
-- OP 7.A.1: [P] Mover cursor até "Salvar como PDF"  
-- OP 7.A.2: [B] Clicar em exportar  
-- OP 7.A.3: [R] Aguardar arquivo ser gerado  
-
-### Method 7.B: Indexar em histórico corporativo
-- OP 7.B.1: [P] Acessar sistema de gestão documental  
-- OP 7.B.2: [K] Inserir título e palavras-chave  
-- OP 7.B.3: [B] Clicar em “Publicar/Arquivar”  
-- OP 7.B.4: [M] Validar se documento foi indexado corretamente  
+### METHOD 3.B: Adaptar vocabulário (HTA 3.2)  
+(SEL. RULE: se houver jargão → substituir por termos executivos)  
+- **OP 3.B.1:** [K] Reescrever trechos técnicos em linguagem de negócio  
+- **OP 3.B.2:** [M] Validar clareza e evitar termos internos sem explicação  
 
 ---
 
-## Legenda (KLM)
-- **K (Keying):** Digitar no teclado (≈0.2s por tecla)  
-- **P (Pointing):** Mover cursor até alvo na tela (≈1.1s)  
-- **B (Button press):** Clicar botão do mouse (≈0.1s)  
-- **H (Homing):** Alternar mão entre teclado e mouse (≈0.4s)  
-- **M (Mental preparation):** Pensar/preparar próxima ação (≈1.2s)  
-- **R (Response):** Tempo de resposta do sistema (variável)  
+## GOAL 4: Revisar linguagem e clareza (HTA 4.1 > 4.2)
+
+### METHOD 4.A: Eliminar jargão (HTA 4.1)
+- **OP 4.A.1:** [K] Editar texto removendo termos técnicos  
+- **OP 4.A.2:** [M] Substituir por expressões simples ou glossário  
+
+### METHOD 4.B: Validar clareza (HTA 4.2)
+- **OP 4.B.1:** [P] Enviar sumário para colega (Segurança/Produto)  
+- **OP 4.B.2:** [R] Aguardar feedback  
+- **OP 4.B.3:** [M] Ajustar conforme sugestões  
 
 ---
 
-### Observação
-Esse GOMS-KLM da Marina cobre **todo o processo de transformar o relatório técnico em executivo**.  
-- Cada **Goal** é detalhado em **Methods e Operators KLM**.  
-- Incluímos **Selection Rules** para tratar casos práticos (prazo curto, gráficos confusos, perguntas inesperadas).  
-- Útil para demonstrar como a **gestora interage com a interface e aplica raciocínio** até a entrega final.
+## GOAL 5: Produzir material visual (HTA 5.1 + 5.2)
 
+### METHOD 5.A: Criar slides (HTA 5.1)
+- **OP 5.A.1:** [P] Abrir modelo corporativo  
+- **OP 5.A.2:** [K] Inserir tópicos resumidos  
+- **OP 5.A.3:** [M] Validar regra “1 ideia por slide”  
 
+### METHOD 5.B: Inserir gráficos (HTA 5.2)
+- **OP 5.B.1:** [B] Selecionar dados no relatório  
+- **OP 5.B.2:** [B] Clicar em “Gerar gráfico”  
+- **OP 5.B.3:** [R] Ver renderização do gráfico  
+- **OP 5.B.4:** [M] Ajustar rótulos/legenda se confuso  
+
+---
+
+## GOAL 6: Apresentar à diretoria (HTA 6.1 > 6.2)
+
+### METHOD 6.A: Expor sumário executivo (HTA 6.1)
+- **OP 6.A.1:** [M] Preparar pitch de 3–5 min  
+- **OP 6.A.2:** [P] Abrir slides  
+- **OP 6.A.3:** [B] Passar os slides durante apresentação  
+
+### METHOD 6.B: Responder dúvidas (HTA 6.2)  
+(SEL. RULE: se pergunta não estiver no roteiro → registrar para resposta posterior)  
+- **OP 6.B.1:** [M] Responder com linguagem executiva  
+- **OP 6.B.2:** [K] Anotar feedbacks e perguntas  
+- **OP 6.B.3:** [R] Confirmar aceitação da resposta pela diretoria  
+
+---
+
+## GOAL 7: Arquivar e registrar (HTA 7.1 > 7.2)
+
+### METHOD 7.A: Salvar versão final (HTA 7.1)
+- **OP 7.A.1:** [B] Salvar documento em drive/versionador  
+- **OP 7.A.2:** [K] Inserir nº da versão e data  
+- **OP 7.A.3:** [R] Ver confirmação de salvamento  
+
+### METHOD 7.B: Indexar histórico (HTA 7.2)
+- **OP 7.B.1:** [K] Adicionar tags (alvo, fonte, severidade, data)  
+- **OP 7.B.2:** [B] Publicar no repositório/KB  
+- **OP 7.B.3:** [R] Conferir indexação concluída  
+
+---
+
+## Regras de Seleção (globais alinhadas ao HTA)
+- **Excesso de detalhes técnicos:** aplicar METHOD 1.B mantendo apenas blocos executivos.  
+- **Indicadores irrelevantes:** priorizar KPIs da lista pré-aprovada.  
+- **Jargão técnico:** sempre revisar em 3.B + 4.A.  
+- **Slides poluídos:** aplicar regra 1 ideia/slide e paleta corporativa.  
+- **Dúvidas fora do escopo:** registrar em METHOD 6.B.2 para responder depois.  
+- **Versão final:** obrigatoriamente salvar em versionador e indexar em KB.  
+
+---
+
+## Legenda KLM
+**K** (Keying) ≈ 0,2s • **P** (Pointing) ≈ 1,1s • **B** (Button) ≈ 0,1s • **H** (Homing) ≈ 0,4s • **M** (Mental) ≈ 1,2s • **R** (Response) = variável
+
+______________
 
 # ConcurTaskTree - Marina (Consolidar Relatório Executivo)
 
