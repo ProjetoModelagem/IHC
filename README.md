@@ -478,6 +478,10 @@ _________________________
 
 
 <img width="16384" height="2574" alt="image" src="https://github.com/user-attachments/assets/6bdc93d0-be92-45a8-a930-24e826435219" />
+<img width="1519" height="506" alt="image" src="https://github.com/user-attachments/assets/2bfc6c84-e17a-4001-9e83-20ca38ddd748" />
+<img width="1626" height="416" alt="image" src="https://github.com/user-attachments/assets/a6abbe58-eca9-482c-b9ad-62ac2a995b89" />
+
+
 
 
 
@@ -654,6 +658,8 @@ ______________
 # ConcurTaskTree - Marina (Consolidar Relatório Executivo)
 
 <img width="16384" height="2574" alt="image" src="https://github.com/user-attachments/assets/c797180e-9e98-4085-9a1a-3108d61ac321" />
+<img width="1519" height="506" alt="image" src="https://github.com/user-attachments/assets/2bfc6c84-e17a-4001-9e83-20ca38ddd748" />
+<img width="1626" height="416" alt="image" src="https://github.com/user-attachments/assets/a6abbe58-eca9-482c-b9ad-62ac2a995b89" />
 
 
 _________________
