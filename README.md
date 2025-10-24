@@ -402,15 +402,6 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 
 ---
 
-## Regras de Seleção (globais alinhadas ao HTA)
-- **Prazo curto (<24h):** aplicar **METHOD 1.C** com fontes de alta cobertura (priorização) e **METHOD 2.B** com throttling.  
-- **Chave/API inválida:** retornar a **METHOD 2.A** (reinserção/validação).  
-- **Falha crítica em coleta:** **METHOD 3.A** reexecuta com backoff; se persistir, troca fonte.  
-- **FP alto:** repetir **METHOD 4.A** com regras mais estritas; só então **4.B**.  
-- **Revisão reprovada:** voltar a **METHOD 6.A** e repetir 6.A → 6.B → 6.C.  
-
----
-
 ### Legenda KLM
 **K** (Keying) ≈ 0,2s • **P** (Pointing) ≈ 1,1s • **B** (Button) ≈ 0,1s • **H** (Homing) ≈ 0,4s • **M** (Mental) ≈ 1,2s • **R** (Response) = variável
 
@@ -581,16 +572,6 @@ _________________________
 - **OP 7.B.1:** [K] Adicionar tags (alvo, fonte, severidade, data)  
 - **OP 7.B.2:** [B] Publicar no repositório/KB  
 - **OP 7.B.3:** [R] Conferir indexação concluída  
-
----
-
-## Regras de Seleção (globais alinhadas ao HTA)
-- **Excesso de detalhes técnicos:** aplicar METHOD 1.B mantendo apenas blocos executivos.  
-- **Indicadores irrelevantes:** priorizar KPIs da lista pré-aprovada.  
-- **Jargão técnico:** sempre revisar em 3.B + 4.A.  
-- **Slides poluídos:** aplicar regra 1 ideia/slide e paleta corporativa.  
-- **Dúvidas fora do escopo:** registrar em METHOD 6.B.2 para responder depois.  
-- **Versão final:** obrigatoriamente salvar em versionador e indexar em KB.  
 
 ---
 
