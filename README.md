@@ -337,55 +337,53 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 
 ## GOAL 2: Configurar coletas automáticas  (HTA: 2.1 > (2.2 + 2.3))
 
+###GOAL 2.1: Provisionar chaves\API  (HTA 2.1)
+#### **OP 2.1.1:** [K] Digitar
+#### **OP 2.1.2:** [B] Clicar em **salvar**
+#### **OP 2.1.3:** [M] Confirmar os dados
+
+### GOAL 2.2: Parametrizar consultas  (HTA 2.2)
+#### METHOD 2.2.A Inserir dados 
+(SEL. rule: dados baseados no alvo) 
+##### **OP 2.2.A.1** [K] Inserir dados (domínio/e-mail/IP/telefone)
+##### **OP 2.2.A.2:** [R] Confirmar os parametros
+
+### GOAL 2.3: Agendar\disparar varreduras (HTA 2.3)
+#### **OP 2.3.1:** [P] Mover até a posição
+#### **OP 2.3.2:** [B] Clicar em **agendar**
+#### **OP 2.3.3:** [B] Clicar em **disparar**
 
 ## GOAL 3: Monitorar execução  (HTA: (3.1 + 3.2 + 3.3)\*)
 
+### GOAL 3.1: Acompanhar progresso  (HTA 3.1)
+#### **OP 3.1.1:** [R] Ver lista de progresso
+#### **OP 3.1.2:** [M] Conferir amostras
+
+### GOAL 3.2: Tratar falhas  (HTA 3.2)
+
+### GOAL 3.3: Registrar logs de execução  (HTA 3.3)
 
 ## GOAL 4: Validar e evidenciar achados  (HTA: 4.1 > 4.2 > 4.3)
 
 ### GOAL 4.1: Deduplicar/remover falsos positivos  (HTA 4.1)
-#### **OP 4.1.1:** [B] Executar “Remover duplicados”
-#### **OP 4.1.2:** [R] Ver lista consolidada
-#### **OP 4.1.3:** [M] Conferir amostras de FP
 
 ### GOAL 4.2: Correlacionar dados entre fontes  (HTA 4.2)
-#### **OP 4.B.1:** [B] Rodar “Correlacionar por chave”
-#### **OP 4.B.2:** [R] Ver grupos correlatos
-#### **OP 4.B.3:** [M] Validar coerência dos vínculos
 
 ### GOAL 4.3: Evidenciar  (HTA 4.3)
-#### **OP 4.C.1:** [B] Abrir item do achado
-#### **OP 4.C.2:** [B] **Capturar evidência** (screenshot/URL/hash/timestamp)
-#### **OP 4.C.3:** [R] Confirmar evidência anexada
 
 ## GOAL 5: Classificar e priorizar riscos  (HTA: 5.1 > 5.2)
 
 ### GOAL 5.1: Avaliar impacto × probabilidade  (HTA 5.1)
-#### **OP 5.1.1:** [B] Abrir **Matriz de Riscos**
-#### **OP 5.1.2:** [B] Classificar item (Baixo/Médio/Alto)
-#### **OP 5.1.3:** [R] Ver severidade registrada
 
 ### GOAL 5.2: Mapear a requisitos/controles  (HTA 5.2)
-#### **OP 5.2.1:** [B] Selecionar norma (LGPD/ISO/NIST)
-#### **OP 5.2.2:** [B] Associar controle/requisito
-#### **OP 5.2.3:** [R] Ver mapeamento salvo
 
 ## GOAL 6: Montar relatório técnico  (HTA: 6.1 > 6.2 > 6.3 > 6.4)
 
 ### GOAL 6.1: Preencher template técnico  (HTA 6.1)
-#### **OP 6.1.1:** [K] Inserir título e contexto
-#### **OP 6.1.2:** [K] Descrever achado + evidência + risco
-#### **OP 6.1.3:** [B] **Salvar seção**
 
 ### GOAL 6.2: Inserir KPIs/gráficos  (HTA 6.2)
-#### **OP 6.2.1:** [B] **Gerar** gráfico (por severidade/fonte/tempo)
-#### **OP 6.2.2:** [R] Visualizar renderização
-#### **OP 6.2.3:** [M] Validar leitura
 
 ### GOAL 6.3: Revisão por pares  (HTA 6.3)
-#### **OP 6.3.1:** [B] Enviar para revisão
-#### **OP 6.3.2:** [R] Receber comentários
-#### **OP 6.3.3:** [M] Aplicar ajustes solicitados
 
 ### GOAL 6.4: Exportar PDF  (HTA 6.4)
 #### **OP 6.4.1:** [B] **Exportar PDF**
@@ -400,9 +398,7 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 #### **OP 7.1.4:** [R] Ver confirmação de envio
 
 ### GOAL 7.2: Registrar em histórico/KB  (HTA 7.2)
-#### **OP 7.2.1:** [B] Publicar artefatos (PDF + logs)
-#### **OP 7.2.2:** [K] Adicionar tags (alvo/fonte/severidade)
-#### **OP 7.2.3:** [R] Ver versão arquivada
+#### **OP 7.2.1:** [R] Ver versão arquivada
 
 ---
 
