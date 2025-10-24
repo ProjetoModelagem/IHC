@@ -473,110 +473,121 @@ _________________________
 
 ---
 
+
+# GOMS–KLM — Marina (Gerente de Segurança)
+
+**Goal 0:** Consolidar relatório OSINT em versão executiva para diretoria  
+(**Plano do HTA:** 1 > 2 > 3 > 4 > 5 > 6 > 7)
+
+---
+
 ## GOAL 1: Importar achados técnicos (HTA 1.1 > 1.2)
 
-### METHOD 1.A: Receber relatório técnico da equipe (HTA 1.1)
-- **OP 1.A.1:** [P] Abrir e acessar pasta/drive da equipe  
-- **OP 1.A.2:** [B] Clicar no relatório técnico mais recente  
-- **OP 1.A.3:** [R] Aguardar carregamento do arquivo  
-- **OP 1.A.4:** [M] Verificar checklist (escopo, achados, evidências, severidade)  
+###GOAL 1.1: Receber relatório técnico da equipe (HTA 1.1)
+- **OP 1.1.1:** [P] Abrir e acessar pasta/drive da equipe  
+- **OP 1.1.2:** [B] Clicar no relatório técnico mais recente  
+- **OP 1.1.3:** [R] Aguardar carregamento do arquivo  
+- **OP 1.1.4:** [M] Verificar checklist (escopo, achados, evidências, severidade)  
 
-### METHOD 1.B: Selecionar seções relevantes (HTA 1.2)  
+
+### GOAL 1.2: Selecionar seções relevantes para gestores (HTA 1.2)   
+### METHOD 1.2.A: Seleção das seções
 (SEL. RULE: manter apenas riscos prioritários, impactos, evidências-chave e próximos passos)  
-- **OP 1.B.1:** [P] Navegar pelas seções do relatório  
-- **OP 1.B.2:** [B] Destacar blocos importantes (riscos, impacto, evidências)  
-- **OP 1.B.3:** [M] Validar se conteúdo é relevante para gestores  
-- **OP 1.B.4:** [R] Conferir versão reduzida com apenas seções relevantes  
+- **OP 1.2.A.1:** [P] Navegar pelas seções do relatório  
+- **OP 1.2.A.2:** [B] Destacar blocos importantes (riscos, impacto, evidências)  
+- **OP 1.2.A.3:** [M] Validar se conteúdo é relevante para gestores  
+- **OP 1.2.A.4:** [R] Conferir versão reduzida com apenas seções relevantes  
+
 
 ---
 
 ## GOAL 2: Sintetizar risco para negócio (HTA 2.1 > 2.2)
 
-### METHOD 2.A: Definir KPIs de risco (HTA 2.1)
-- **OP 2.A.1:** [P] Selecionar lista de KPIs pré-aprovados  
-- **OP 2.A.2:** [B] Marcar indicadores aplicáveis (frequência, severidade, exposição)  
-- **OP 2.A.3:** [M] Conferir se todos são relevantes  
+### GOAL 2.1: Definir KPIs de risco (HTA 2.1)
+- **OP 2.1.1:** [P] Selecionar lista de KPIs pré-aprovados  
+- **OP 2.1.2:** [B] Marcar indicadores aplicáveis (frequência, severidade, exposição)  
+- **OP 2.1.3:** [M] Conferir se todos são relevantes  
 
-### METHOD 2.B: Avaliar impacto no negócio (HTA 2.2)  
-(SEL. RULE: se falta de contexto → validar com compliance/owner antes de fechar impacto)  
-- **OP 2.B.1:** [K] Inserir impacto financeiro/reputacional/regulatório  
-- **OP 2.B.2:** [M] Comparar com casos semelhantes já registrados  
-- **OP 2.B.3:** [R] Ver confirmação do sistema ou feedback da área consultada  
+### GOAL 2.2: Avaliar impacto no negócio (HTA 2.2)
+METHOD 2.2.A: Inserir impacto para avaliação
+(SEL. RULE: se há falta de contexto → validar com compliance/owner antes de fechar impacto)  
+- **OP 2.2.A.1:** [K] Inserir impacto financeiro/reputacional/regulatório  
+- **OP 2.2.A.2:** [M] Comparar com casos semelhantes já registrados  
+- **OP 2.2.A.3:** [R] Ver confirmação do sistema ou feedback da área consultada  
 
 ---
 
 ## GOAL 3: Redigir sumário executivo (HTA 3.1 > 3.2)
 
-### METHOD 3.A: Estruturar tópicos (HTA 3.1)
-- **OP 3.A.1:** [K] Escrever tópicos principais em bullets curtos  
-- **OP 3.A.2:** [M] Organizar em ordem de criticidade (alto > médio > baixo)  
+### GOAL 3.1: Estruturar tópicos principais (HTA 3.1)
+- **OP 3.1.1:** [K] Escrever tópicos principais em bullets curtos  
+- **OP 3.1.2:** [M] Organizar em ordem de criticidade (alto > médio > baixo)  
 
-### METHOD 3.B: Adaptar vocabulário (HTA 3.2)  
-(SEL. RULE: se houver jargão → substituir por termos executivos)  
-- **OP 3.B.1:** [K] Reescrever trechos técnicos em linguagem de negócio  
-- **OP 3.B.2:** [M] Validar clareza e evitar termos internos sem explicação  
+### GOAL 3.2: Adaptar vocabulário para linguagem não técnica
+- **OP 3.2.1:** [K] Reescrever trechos técnicos em linguagem de negócio  
+- **OP 3.2.2:** [M] Validar clareza e evitar termos internos sem explicação  
 
 ---
 
 ## GOAL 4: Revisar linguagem e clareza (HTA 4.1 > 4.2)
 
-### METHOD 4.A: Eliminar jargão (HTA 4.1)
-- **OP 4.A.1:** [K] Editar texto removendo termos técnicos  
-- **OP 4.A.2:** [M] Substituir por expressões simples ou glossário  
+### GOAL 4.1: Eliminar jargão técnico (HTA 4.1)
+- **OP 4.1.1:** [K] Editar texto removendo termos técnicos  
+- **OP 4.1.2:** [M] Substituir por expressões simples ou glossário  
 
-### METHOD 4.B: Validar clareza (HTA 4.2)
-- **OP 4.B.1:** [P] Enviar sumário para colega (Segurança/Produto)  
-- **OP 4.B.2:** [R] Aguardar feedback  
-- **OP 4.B.3:** [M] Ajustar conforme sugestões  
+
+### GOAL 4.2: Validar clareza com equipe (HTA 4.2)
+- **OP 4.2.1:** [P] Enviar sumário para colega (Segurança/Produto)  
+- **OP 4.2.2:** [R] Aguardar feedback  
+- **OP 4.2.3:** [M] Ajustar conforme sugestões  
 
 ---
 
 ## GOAL 5: Produzir material visual (HTA 5.1 + 5.2)
 
-### METHOD 5.A: Criar slides (HTA 5.1)
-- **OP 5.A.1:** [P] Abrir modelo corporativo  
-- **OP 5.A.2:** [K] Inserir tópicos resumidos  
-- **OP 5.A.3:** [M] Validar regra “1 ideia por slide”  
+### GOAL 5.1: Criar slides
+- **OP 5.1.1:** [P] Abrir modelo corporativo  
+- **OP 5.1.2:** [K] Inserir tópicos resumidos  
+- **OP 5.1.3:** [M] Validar regra “1 ideia por slide”  
 
-### METHOD 5.B: Inserir gráficos (HTA 5.2)
-- **OP 5.B.1:** [B] Selecionar dados no relatório  
-- **OP 5.B.2:** [B] Clicar em “Gerar gráfico”  
-- **OP 5.B.3:** [R] Ver renderização do gráfico  
-- **OP 5.B.4:** [M] Ajustar rótulos/legenda se confuso  
+### GOAL 5.2: Inserir gráficos (HTA 5.2)
+- **OP 5.2.1:** [B] Selecionar dados no relatório  
+- **OP 5.2.2:** [B] Clicar em “Gerar gráfico”  
+- **OP 5.2.3:** [R] Ver renderização do gráfico  
+- **OP 5.2.4:** [M] Ajustar rótulos/legenda, se confuso  
 
 ---
 
 ## GOAL 6: Apresentar à diretoria (HTA 6.1 > 6.2)
 
-### METHOD 6.A: Expor sumário executivo (HTA 6.1)
-- **OP 6.A.1:** [M] Preparar pitch de 3–5 min  
-- **OP 6.A.2:** [P] Abrir slides  
-- **OP 6.A.3:** [B] Passar os slides durante apresentação  
+### GOAL 6.1: Expor sumário executivo (HTA 6.1)
+- **OP 6.1.1:** [M] Preparar pitch de 3–5 min  
+- **OP 6.1.2:** [P] Abrir slides  
+- **OP 6.1.3:** [B] Passar os slides durante apresentação  
 
-### METHOD 6.B: Responder dúvidas (HTA 6.2)  
+### GOAL 6.2: Responder dúvidas e coletar feedback (6.2)
+### METHOD 6.2.A: Responder dúvidas (HTA 6.2)  
 (SEL. RULE: se pergunta não estiver no roteiro → registrar para resposta posterior)  
-- **OP 6.B.1:** [M] Responder com linguagem executiva  
-- **OP 6.B.2:** [K] Anotar feedbacks e perguntas  
-- **OP 6.B.3:** [R] Confirmar aceitação da resposta pela diretoria  
+- **OP 6.2.1:** [M] Responder com linguagem executiva  
+- **OP 6.2.2:** [K] Anotar feedbacks e perguntas  
+- **OP 6.2.3:** [R] Confirmar aceitação da resposta pela diretoria  
 
 ---
 
 ## GOAL 7: Arquivar e registrar (HTA 7.1 > 7.2)
 
-### METHOD 7.A: Salvar versão final (HTA 7.1)
-- **OP 7.A.1:** [B] Salvar documento em drive/versionador  
-- **OP 7.A.2:** [K] Inserir nº da versão e data  
-- **OP 7.A.3:** [R] Ver confirmação de salvamento  
+### GOAL 7.1: Salvar versão final aprovada (HTA 7.1)
+- **OP 7.1.1:** [B] Salvar documento em drive/versionador  
+- **OP 7.1.2:** [K] Inserir nº da versão e data  
+- **OP 7.1.3:** [R] Ver confirmação de salvamento  
 
-### METHOD 7.B: Indexar histórico (HTA 7.2)
-- **OP 7.B.1:** [K] Adicionar tags (alvo, fonte, severidade, data)  
-- **OP 7.B.2:** [B] Publicar no repositório/KB  
-- **OP 7.B.3:** [R] Conferir indexação concluída  
+### GOAL 7.2: Indexar em histórico/ KB corporativo (HTA 7.2)
+### METHOD 7.2.A: Adicionar tags baseado na reunião de apresentação
+- **OP 7.2.A.1:** [K] Adicionar tags (alvo, fonte, severidade, data)  
+- **OP 7.2.A.2:** [B] Publicar no repositório/KB  
+- **OP 7.2.A.3:** [R] Conferir indexação concluída  
 
 ---
-
-## Legenda KLM
-**K** (Keying) ≈ 0,2s • **P** (Pointing) ≈ 1,1s • **B** (Button) ≈ 0,1s • **H** (Homing) ≈ 0,4s • **M** (Mental) ≈ 1,2s • **R** (Response) = variável
 
 ______________
 
