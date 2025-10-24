@@ -271,7 +271,8 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 > **Plano 0:** **1 > 2 > 3 > 4 > 5 > 6 > 7**  
 > (Sequencial: preparar > coletar > monitorar > validar > classificar > relatar > registrar/entregar)  
 
-<img width="2743" height="712" alt="Untitled Diagram" src="https://github.com/user-attachments/assets/cdc6a7b8-888c-4924-832b-03ecdca20452" />
+<img width="2743" height="713" alt="HTA1" src="https://github.com/user-attachments/assets/169a1083-1f89-4bf8-a56c-7d08e53b611e" />
+
 
 ---
 
@@ -310,152 +311,98 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 
 ---
 # GOMS–KLM — Lucas (Analista de Pentest)
-**Goal 0:** Realizar investigação OSINT e entregar relatório técnico padronizado  
 (**Plano do HTA:** 1 > 2 > 3 > 4 > 5 > 6 > 7)
 
----
+#GOAL 0: Realizar investigação OSINT e entregar relatório técnico padronizado  
+##GOAL 1: Preparar alvo e contexto  (HTA: 1.1 > 1.2 > 1.3)
+###GOAL 1.1: Verificar contrato/consentimento  (HTA 1.1)
+#### **OP 1.1.1:** [P] Abrir módulo “Escopo/Compliance”
+#### **OP 1.1.2:** [K] Digitar nº do contrato/OS
+#### **OP 1.1.3:** [B] Clicar em **Validar**
+#### **OP 1.1.4:** [R] Aguardar retorno “Autorizado/Negado”
+#### **OP 1.1.5:** [M] Confirmar que a base legal está OK
 
-## GOAL 1: Preparar alvo e contexto  (HTA: 1.1 > 1.2 > 1.3)
+### GOAL 1.2: Definir escopo e restrições  (HTA 1.2)
+#### **OP 1.2.1** [K] Inserir alvo (domínio/e-mail/IP)
+#### **OP 1.2.2:** [K] Definir janelas/limites (horário, subdomínios, TLD)
+#### **OP 1.2.3:** [B] **Salvar escopo**
+#### **OP 1.2.4:** [R] Ver confirmação de escopo salvo
 
-### METHOD 1.A: Verificar contrato/consentimento  (HTA 1.1)
-(SEL. RULE: se documento ausente/expirado → interromper e solicitar upload/renovação)
-- **OP 1.A.1:** [P] Abrir módulo “Escopo/Compliance”
-- **OP 1.A.2:** [K] Digitar nº do contrato/OS
-- **OP 1.A.3:** [B] Clicar em **Validar**
-- **OP 1.A.4:** [R] Aguardar retorno “Autorizado/Negado”
-- **OP 1.A.5:** [M] Confirmar que a base legal está OK
-
-### METHOD 1.B: Definir escopo e restrições  (HTA 1.2)
-(SEL. RULE: se houver múltiplos ativos → registrar todos; se campo obrigatório vazio → bloquear avanço)
-- **OP 1.B.1:** [K] Inserir alvo (domínio/e-mail/IP)
-- **OP 1.B.2:** [K] Definir janelas/limites (horário, subdomínios, TLD)
-- **OP 1.B.3:** [B] **Salvar escopo**
-- **OP 1.B.4:** [R] Ver confirmação de escopo salvo
-
-### METHOD 1.C: Selecionar fontes OSINT  (HTA 1.3)
-(SEL. RULE: se **prazo < 24h** → priorizar fontes de **alta cobertura**; caso contrário → conjunto completo)
-- **OP 1.C.1:** [P] Abrir lista de fontes
-- **OP 1.C.2:** [B] Marcar **HIBP**
-- **OP 1.C.3:** [B] Marcar **Shodan**
-- **OP 1.C.4:** [B] Marcar **Pastebin** (se aplicável)
-- **OP 1.C.5:** [M] Revisar redundâncias e confirmar
-
----
+### GOAL 1.3: Selecionar fontes OSINT  (HTA 1.3)
+#### **OP 1.3.1:** [P] Abrir lista de fontes
+#### **OP 1.3.2:** [B] Marcar **HIBP**
+#### **OP 1.3.3:** [B] Marcar **Shodan**
+#### **OP 1.3.4:** [B] Marcar **Pastebin** (se aplicável)
+#### **OP 1.3.5:** [M] Revisar redundâncias e confirmar
 
 ## GOAL 2: Configurar coletas automáticas  (HTA: 2.1 > (2.2 + 2.3))
 
-### METHOD 2.A: Fluxo sequencial (quando UI não permite paralelismo)
-(SEL. RULE: usar quando a interface exige salvar parâmetros antes de iniciar)
-- **OP 2.A.1:** [K] Inserir chave/API da fonte (ex.: HIBP)
-- **OP 2.A.2:** [B] **Validar chave**
-- **OP 2.A.3:** [R] Ver “Chave válida”
-- **OP 2.A.4:** [K] Especificar **queries**/filtros (HTA 2.2)
-- **OP 2.A.5:** [B] **Salvar parâmetros**
-- **OP 2.A.6:** [B] **Iniciar varredura** (HTA 2.3)
-- **OP 2.A.7:** [R] Ver barra de progresso/ETA  
-(SEL. RULE: se **chave inválida** → voltar a **OP 2.A.1** com nova chave)
-
-### METHOD 2.B: Fluxo paralelo controlado (quando UI permite)  *(reflete o plano do HTA)*
-(SEL. RULE: usar quando é possível **parametrizar** uma fonte enquanto outra já está **coletando**)
-- **OP 2.B.1:** [K] Inserir e validar chave da **Fonte A**
-- **OP 2.B.2:** [B] **Iniciar varredura** da Fonte A
-- **OP 2.B.3:** [K] Em paralelo, parametrizar **Fonte B**
-- **OP 2.B.4:** [B] **Salvar** parâmetros da Fonte B e **Iniciar** sua varredura
-- **OP 2.B.5:** [M] Conferir que ambas executam sem conflito  
-(SEL. RULE: se ocorrer **rate limit** → ativar throttling/retries e reduzir fontes ativas)
-
----
 
 ## GOAL 3: Monitorar execução  (HTA: (3.1 + 3.2 + 3.3)\*)
-*(Ciclo iterativo até término, com registro de logs)*
 
-### METHOD 3.A: Acompanhar e tratar falhas  (HTA 3.1 + 3.2)
-(SEL. RULE: se **falha crítica** em fonte essencial → reexecutar; se quota esgotada → trocar chave/adiar)
-- **OP 3.A.1:** [R] Observar status por fonte (✔ / … / ✖)
-- **OP 3.A.2:** [M] Diagnosticar causa (timeout/quota/credencial)
-- **OP 3.A.3:** [B] **Reexecutar** ou **trocar** para fonte alternativa
-- **OP 3.A.4:** [R] Ver resultado da nova tentativa
-
-### METHOD 3.B: Registrar logs de execução  (HTA 3.3)
-- **OP 3.B.1:** [B] Abrir painel de logs
-- **OP 3.B.2:** [R] Conferir eventos (start/stop/erros)
-- **OP 3.B.3:** [B] **Exportar** logs (se necessário)
-
----
 
 ## GOAL 4: Validar e evidenciar achados  (HTA: 4.1 > 4.2 > 4.3)
 
-### METHOD 4.A: Deduplicar/remover falsos positivos  (HTA 4.1)
-(SEL. RULE: se **FP acima do limiar** → reforçar regras e repetir deduplicação)
-- **OP 4.A.1:** [B] Executar “Remover duplicados”
-- **OP 4.A.2:** [R] Ver lista consolidada
-- **OP 4.A.3:** [M] Conferir amostras de FP
+### GOAL 4.1: Deduplicar/remover falsos positivos  (HTA 4.1)
+#### **OP 4.1.1:** [B] Executar “Remover duplicados”
+#### **OP 4.1.2:** [R] Ver lista consolidada
+#### **OP 4.1.3:** [M] Conferir amostras de FP
 
-### METHOD 4.B: Correlacionar dados entre fontes  (HTA 4.2)
-(SEL. RULE: se campos não normalizados → normalizar (e-mail, domínio, IP) antes de correlacionar)
-- **OP 4.B.1:** [B] Rodar “Correlacionar por chave”
-- **OP 4.B.2:** [R] Ver grupos correlatos
-- **OP 4.B.3:** [M] Validar coerência dos vínculos
+### GOAL 4.2: Correlacionar dados entre fontes  (HTA 4.2)
+#### **OP 4.B.1:** [B] Rodar “Correlacionar por chave”
+#### **OP 4.B.2:** [R] Ver grupos correlatos
+#### **OP 4.B.3:** [M] Validar coerência dos vínculos
 
-### METHOD 4.C: Evidenciar  (HTA 4.3)
-- **OP 4.C.1:** [B] Abrir item do achado
-- **OP 4.C.2:** [B] **Capturar evidência** (screenshot/URL/hash/timestamp)
-- **OP 4.C.3:** [R] Confirmar evidência anexada
-
----
+### GOAL 4.3: Evidenciar  (HTA 4.3)
+#### **OP 4.C.1:** [B] Abrir item do achado
+#### **OP 4.C.2:** [B] **Capturar evidência** (screenshot/URL/hash/timestamp)
+#### **OP 4.C.3:** [R] Confirmar evidência anexada
 
 ## GOAL 5: Classificar e priorizar riscos  (HTA: 5.1 > 5.2)
 
-### METHOD 5.A: Avaliar impacto × probabilidade  (HTA 5.1)
-- **OP 5.A.1:** [B] Abrir **Matriz de Riscos**
-- **OP 5.A.2:** [B] Classificar item (Baixo/Médio/Alto)
-- **OP 5.A.3:** [R] Ver severidade registrada
+### GOAL 5.1: Avaliar impacto × probabilidade  (HTA 5.1)
+#### **OP 5.1.1:** [B] Abrir **Matriz de Riscos**
+#### **OP 5.1.2:** [B] Classificar item (Baixo/Médio/Alto)
+#### **OP 5.1.3:** [R] Ver severidade registrada
 
-### METHOD 5.B: Mapear a requisitos/controles  (HTA 5.2)
-(SEL. RULE: se item não mapeável → registrar em “Observações”)
-- **OP 5.B.1:** [B] Selecionar norma (LGPD/ISO/NIST)
-- **OP 5.B.2:** [B] Associar controle/requisito
-- **OP 5.B.3:** [R] Ver mapeamento salvo
-
----
+### GOAL 5.2: Mapear a requisitos/controles  (HTA 5.2)
+#### **OP 5.2.1:** [B] Selecionar norma (LGPD/ISO/NIST)
+#### **OP 5.2.2:** [B] Associar controle/requisito
+#### **OP 5.2.3:** [R] Ver mapeamento salvo
 
 ## GOAL 6: Montar relatório técnico  (HTA: 6.1 > 6.2 > 6.3 > 6.4)
 
-### METHOD 6.A: Preencher template técnico  (HTA 6.1)
-- **OP 6.A.1:** [K] Inserir título e contexto
-- **OP 6.A.2:** [K] Descrever achado + evidência + risco
-- **OP 6.A.3:** [B] **Salvar seção**
+### GOAL 6.1: Preencher template técnico  (HTA 6.1)
+#### **OP 6.1.1:** [K] Inserir título e contexto
+#### **OP 6.1.2:** [K] Descrever achado + evidência + risco
+#### **OP 6.1.3:** [B] **Salvar seção**
 
-### METHOD 6.B: Inserir KPIs/gráficos  (HTA 6.2)
-(SEL. RULE: se gráfico confuso → trocar tipo/legenda até ficar compreensível)
-- **OP 6.B.1:** [B] **Gerar** gráfico (por severidade/fonte/tempo)
-- **OP 6.B.2:** [R] Visualizar renderização
-- **OP 6.B.3:** [M] Validar leitura
+### GOAL 6.2: Inserir KPIs/gráficos  (HTA 6.2)
+#### **OP 6.2.1:** [B] **Gerar** gráfico (por severidade/fonte/tempo)
+#### **OP 6.2.2:** [R] Visualizar renderização
+#### **OP 6.2.3:** [M] Validar leitura
 
-### METHOD 6.C: Revisão por pares  (HTA 6.3)
-(SEL. RULE: se **reprovado** → retornar ao **METHOD 6.A** para correções)
-- **OP 6.C.1:** [B] Enviar para revisão
-- **OP 6.C.2:** [R] Receber comentários
-- **OP 6.C.3:** [M] Aplicar ajustes solicitados
+### GOAL 6.3: Revisão por pares  (HTA 6.3)
+#### **OP 6.3.1:** [B] Enviar para revisão
+#### **OP 6.3.2:** [R] Receber comentários
+#### **OP 6.3.3:** [M] Aplicar ajustes solicitados
 
-### METHOD 6.D: Exportar PDF  (HTA 6.4)
-- **OP 6.D.1:** [B] **Exportar PDF**
-- **OP 6.D.2:** [R] Conferir arquivo gerado
-
----
+### GOAL 6.4: Exportar PDF  (HTA 6.4)
+#### **OP 6.4.1:** [B] **Exportar PDF**
+#### **OP 6.4.2:** [R] Conferir arquivo gerado
 
 ## GOAL 7: Entregar e arquivar  (HTA: 7.1 > 7.2)
 
-### METHOD 7.A: Enviar ao cliente  (HTA 7.1)
-- **OP 7.A.1:** [B] Anexar PDF final
-- **OP 7.A.2:** [K] Inserir destinatários
-- **OP 7.A.3:** [B] **Enviar**
-- **OP 7.A.4:** [R] Ver confirmação de envio
+### GOAL 7.1: Enviar ao cliente  (HTA 7.1)
+#### **OP 7.1.1:** [B] Anexar PDF final
+#### **OP 7.1.2:** [K] Inserir destinatários
+#### **OP 7.1.3:** [B] **Enviar**
+#### **OP 7.1.4:** [R] Ver confirmação de envio
 
-### METHOD 7.B: Registrar em histórico/KB  (HTA 7.2)
-- **OP 7.B.1:** [B] Publicar artefatos (PDF + logs)
-- **OP 7.B.2:** [K] Adicionar tags (alvo/fonte/severidade)
-- **OP 7.B.3:** [R] Ver versão arquivada
+### GOAL 7.2: Registrar em histórico/KB  (HTA 7.2)
+#### **OP 7.2.1:** [B] Publicar artefatos (PDF + logs)
+#### **OP 7.2.2:** [K] Adicionar tags (alvo/fonte/severidade)
+#### **OP 7.2.3:** [R] Ver versão arquivada
 
 ---
 
@@ -498,7 +445,8 @@ _________________________
 > **Plano 0:** **1 > 2 > 3 > 4 > 5 > 6 > 7**  
 > (Sequencial: importar > selecionar métricas > redigir sumário > revisar > preparar apresentação > apresentar > arquivar)
 
-<img width="2742" height="713" alt="Untitled Diagram-Page-2" src="https://github.com/user-attachments/assets/62e99d40-1ba2-42ed-b5e4-af891bdf0484" />
+<img width="2743" height="712" alt="HTA2" src="https://github.com/user-attachments/assets/2139e5af-5503-4b39-a1ad-045d2e2ebcc6" />
+
 
 ---
 
