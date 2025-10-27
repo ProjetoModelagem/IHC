@@ -646,11 +646,12 @@ _________________
 - **Objetivo:** confirmar em mais pessoas quais são as maiores necessidades e problemas.
 - **Como aplicar:** formulário on-line (por exemplo Google Forms) com perguntas simples de múltipla escolha e algumas abertas; tempo de resposta de 5 a 8 minutos.
 - **Exemplo de perguntas:** cargo e tempo de experiência, ferramentas que usa, grau de dificuldade em cada etapa (escala de 1 a 5), quais indicadores são mais importantes no relatório.
-
+- **Link:** https://docs.google.com/forms/d/e/1FAIpQLSdCkHZEQvKec9_t_PKqCh25AAAMZiIz3A1WhI2Ic2zsrxIIPw/viewform?usp=dialog
 
 ### 3.2 Observação do trabalho
 - **Objetivo:** ver como o analista realmente trabalha no dia a dia para descobrir detalhes que não aparecem em entrevistas.
 - **Como aplicar:** acompanhar a pessoa durante cerca de 1 hora enquanto ela faz uma investigação de teste; anotar etapas, erros e tempo gasto, pedindo sempre consentimento.
+
 
 
 # Entrega 8 – Características, Princípios e Metas
