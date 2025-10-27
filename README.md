@@ -674,13 +674,20 @@ _________________
   - **Classificação de riscos:** prioriza informações para tomada de decisão.  
   - **Geração de relatórios técnicos:** detalhamento com evidências.  
   - **Geração de relatórios executivos:** resumo com KPIs e gráficos para gestores.  
-  - **Exportação em PDF/PPT:** facilita a apresentação e compartilhamento.  
+  - **Exportação em PDF/PPT:** facilita a apresentação e compartilhamento.
+  - **Interface amigável e responsiva:** Permite uso fluido em desktop e mobile com layout limpo, intuitivo e foco em acessibilidade.
+  - **Feedback visual para status da análise:** Ícones e barras de progresso indicam se a coleta está em andamento, concluída ou se houve erro.
+  - **Dashboard de resultados interativo:** Oferece filtros por tipo de vazamento, fonte e data, tornando a navegação mais eficiente.
+  - **Sugestões proativas com base nos achados:** A interface pode sugerir boas práticas ou ações a partir do tipo de exposição detectada.
 
 - **Lista de Restrições da Plataforma (com explicação):**  
   - **Dependência de fontes externas (APIs OSINT):** se a API estiver fora do ar, a coleta falha.  
   - **Conexão com internet obrigatória:** não há uso offline.  
   - **Limite de performance em consultas massivas:** coletas muito extensas podem ser lentas.  
-  - **Uso apenas com dados autorizados:** não pode ser aplicado em alvos reais sem permissão (ética e legalidade).  
+  - **Uso apenas com dados autorizados:** não pode ser aplicado em alvos reais sem permissão (ética e legalidade).
+  - **Interface ainda dependente de navegação sequencial:** O usuário precisa seguir passos em sequência, o que pode impactar a flexibilidade do uso.
+  - **Falta de customização completa dos dashboards:** Embora interativos, os painéis têm filtros limitados e não permitem customização avançada por parte do usuário.
+  - **Acessibilidade parcial:** Apesar de responsiva, a interface ainda não atende totalmente critérios WCAG para usuários com deficiência visual.
 
 ---
 
@@ -688,10 +695,10 @@ _________________
 
 | Princípio | Justificativa |
 |-----------|---------------|
-| **LGPD e Privacidade** | O sistema não armazena dados pessoais sem consentimento e usa apenas informações autorizadas para testes. |
-| **Acessibilidade (WCAG)** | Interfaces simples, contraste adequado e elementos claros para usuários com diferentes níveis de experiência. |
-| **Usabilidade (ISO 9241)** | Garantir que usuários (analistas e gestores) completem tarefas com eficácia e sem retrabalho. |
-| **Segurança da Informação** | Dados coletados ficam restritos, sem exposição pública, respeitando confidencialidade. |
+| **LGPD e Privacidade** | O sistema não armazena dados pessoais sem consentimento e usa apenas informações autorizadas para testes. https://www.gov.br/lgpd|
+| **Acessibilidade (WCAG)** | Interfaces simples, contraste adequado e elementos claros para usuários com diferentes níveis de experiência. https://www.w3.org/WAI/standards-guidelines/wcag/|
+| **Usabilidade (ISO 9241)** | Garantir que usuários (analistas e gestores) completem tarefas com eficácia e sem retrabalho. https://www.iso.org/standard/77520.html|
+| **Segurança da Informação** | Dados coletados ficam restritos, sem exposição pública, respeitando confidencialidade. https://www.iso.org/isoiec-27001-information-security.html|
 
 ---
 
@@ -703,7 +710,13 @@ _________________
   - A interface deve reduzir a necessidade de retrabalho e duplicação de dados.  
 
 - **Quantitativas:**  
-
+| Critério Nielsen              | Meta (%) | Justificativa                                                                                                                                               |
+| ----------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Facilidade de aprendizado** | 90%      | Usuários (analistas e gestores) devem conseguir entender e operar as funções principais da plataforma em até 30 minutos sem treinamento extensivo.          |
+| **Eficiência de uso**         | 85%      | Após o aprendizado inicial, os usuários devem ser capazes de executar tarefas críticas (como gerar relatórios ou classificar riscos) em menos de 3 minutos. |
+| **Memorabilidade**            | 80%      | Usuários que retornam à plataforma após um período (ex: 2 semanas) devem conseguir reutilizá-la sem necessidade de reaprendizado.                           |
+| **Baixa taxa de erros**       | 90%      | O sistema deve prevenir erros como envio incorreto de dados ou duplicação de achados, com feedbacks claros e validações automáticas.                        |
+| **Satisfação do usuário**     | 85%      | Usuários devem atribuir nota ≥ 4 em 5 (em pesquisa de satisfação sobre uso geral da interface e clareza dos relatórios).                                    |
 
 
 ---
