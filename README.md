@@ -410,11 +410,8 @@ _________________________
 
 # ConcurTaskTree - Lucas (Executar Varredura OSINT)
 
-
-<img width="16384" height="2574" alt="image" src="https://github.com/user-attachments/assets/6bdc93d0-be92-45a8-a930-24e826435219" />
-<img width="1519" height="506" alt="image" src="https://github.com/user-attachments/assets/2bfc6c84-e17a-4001-9e83-20ca38ddd748" />
-<img width="1626" height="416" alt="image" src="https://github.com/user-attachments/assets/a6abbe58-eca9-482c-b9ad-62ac2a995b89" />
-
+<img width="988" height="593" alt="image" src="https://github.com/user-attachments/assets/8c5800c4-a7ae-4675-aded-dbcd3795f2ec" />
+<img width="906" height="539" alt="image" src="https://github.com/user-attachments/assets/0c93b66b-fbfc-4107-a91a-707fc03e0094" />
 
 
 
@@ -593,9 +590,9 @@ ______________
 
 # ConcurTaskTree - Marina (Consolidar Relatório Executivo)
 
-<img width="16384" height="2574" alt="image" src="https://github.com/user-attachments/assets/c797180e-9e98-4085-9a1a-3108d61ac321" />
-<img width="1519" height="506" alt="image" src="https://github.com/user-attachments/assets/2bfc6c84-e17a-4001-9e83-20ca38ddd748" />
-<img width="1626" height="416" alt="image" src="https://github.com/user-attachments/assets/a6abbe58-eca9-482c-b9ad-62ac2a995b89" />
+<img width="1013" height="642" alt="image" src="https://github.com/user-attachments/assets/89587049-ee68-4cf5-9110-fe4b4af702dd" />
+<img width="842" height="699" alt="image" src="https://github.com/user-attachments/assets/228d761f-1269-4127-bb91-872c194b0719" />
+
 
 
 _________________
