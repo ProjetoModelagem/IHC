@@ -721,16 +721,71 @@ _________________
 ## Entrega 9 - 13/10/2025 [Em andamento]
 
 ### 1) Cenários de Interação
-(Narrar como seria a interação na solução. Destacar diferenças em relação ao cenário problema.)
 
-### 2) Design Centrado na Comunicação
-(Representar falas e signos em formato de diálogo U/D.)
+**Usuário Lucas - Analista de Pentest (Técnico)**
+### Fluxo principal: **Investigação → Correlação → Relatório Técnico**
+Lucas utiliza o sistema “Was I Hacked?” para executar uma investigação OSINT técnica. Ele inicia a varredura automatizada, configura fontes e parâmetros, e acompanha o progresso em tempo real. O painel técnico apresenta logs detalhados, status das APIs, e deduplicação automática dos achados.
+Diferente do cenário anterior, o sistema agora valida as credenciais antes da execução, exibe métricas de precisão da coleta e permite exportar relatórios técnicos completos com evidências (hashes, prints e timestamps).
+O foco de Lucas é a profundidade técnica e automação de coleta.
+
+**Usuária Marina - Gerente de Segurança (Executiva)**
+### Fluxo principal: **Consolidação → Interpretação → Comunicação Estratégica**
+Marina acessa o sistema para consolidar os achados técnicos de Lucas em um relatório executivo voltado à diretoria.
+Ela recebe um resumo automatizado com KPIs de risco, impacto financeiro e reputacional, e um painel visual pronto para apresentação.
+Diferente do cenário-problema, Marina agora não depende mais de relatórios manuais — pode gerar, revisar e versionar o documento final diretamente na plataforma.
+O foco de Marina é a síntese estratégica e clareza executiva.
+
+
+## 2) Design Centrado na Comunicação
+
+### Lucas - Diálogo Técnico (Analista de Pentest)
+| **Tópico > Subtópico**     | **Falas e Signos**                                                                                                         |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| iniciar investigação OSINT | **U:** Quero iniciar uma coleta completa sobre o domínio alvo. <br> **D:** Configure o escopo e as fontes OSINT desejadas. |
+| definir escopo             | **U:** O domínio será *empresa.com*, incluir subdomínios? <br> **D:** Sim, marque o checkbox “Incluir subdomínios”.        |
+| provisionar APIs           | **U:** Minhas chaves estão expiradas? <br> **D:** A chave HIBP precisa ser renovada. Deseja atualizar agora?               |
+| acompanhar varredura       | **U:** Está demorando muito. O que está acontecendo? <br> **D:** A API Shodan está com alto tempo de resposta.             |
+| validar achados            | **U:** Há muitos falsos positivos. <br> **D:** Ative a deduplicação automática por e-mail e IP.                            |
+| gerar relatório técnico    | **U:** Quero o relatório completo em PDF. <br> **D:** Clique em *Exportar → Relatório Técnico (PDF)*.                      |
+| arquivar histórico         | **U:** Onde ficam os logs antigos? <br> **D:** Acesse *Histórico → Casos OSINT anteriores*.                                |
+
+### Marina - Diálogo Executivo (Gerente de Segurança)
+
+| **Tópico > Subtópico**      | **Falas e Signos**                                                                                                          |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| importar achados técnicos   | **U:** Lucas terminou o relatório técnico, posso importar direto? <br> **D:** Sim, clique em *Importar relatório técnico*.  |
+| sintetizar riscos           | **U:** Quais riscos devo priorizar? <br> **D:** Estes 3 apresentam maior impacto financeiro e regulatório.                  |
+| definir KPIs                | **U:** Quero ver frequência e severidade. <br> **D:** KPIs ajustados no painel principal.                                   |
+| gerar sumário executivo     | **U:** O relatório está muito técnico. <br> **D:** Clique em *Simplificar linguagem*. O sistema converterá termos técnicos. |
+| revisar clareza e jargão    | **U:** Posso revisar com o time de produto? <br> **D:** Envie uma cópia via *Revisão colaborativa*.                         |
+| criar slides para diretoria | **U:** Preciso preparar a reunião. <br> **D:** Exporte o relatório em formato *Apresentação Corporativa (PPT)*.             |
+| arquivar versão final       | **U:** Está aprovada pela diretoria. <br> **D:** Arquive esta versão com tags de data e severidade.                         |
+
+
 
 ### 3) Mapa de Objetivos
-(Colocar diagramas individuais e um consolidado.)
+
+#### Lucas
+
+
+
+#### Marina
+
+
+
+
+
 
 ### 4) Esquema Conceitual de Signos
-(Tabela com signos, origem, conteúdo, restrições, prevenção e recuperação.)
+
+| Signo                         | Origem                          | Conteúdo                                                | Restrições                     | Prevenção / Recuperação                        |
+| ----------------------------- | ------------------------------- | ------------------------------------------------------- | ------------------------------ | ---------------------------------------------- |
+| Alerta "credenciais expostas" | Sistema (scanner de vazamentos) | Quantidade de logins encontrados com domínio da empresa | Apenas domínios permitidos     | Cross-check com bases internas                 |
+| Relatório técnico (PDF)       | Geração sob demanda             | Detalhamento por incidente e impacto                    | Restrições de acesso por nível | Logs de acesso, exportação autenticada         |
+| Painel executivo              | Dashboard analítico             | Métricas de exposição e risco em formato visual         | Abstração de dados sensíveis   | Atualização periódica e controle de permissões |
+| Botão "Exportar CSV"          | Interface da plataforma         | Dados brutos dos vazamentos                             | Permissões de uso restritas    | Controle de versão e rastreamento de download  |
+| Gráfico de tendências         | Módulo de visualização          | Evolução temporal das exposições                        | Requer interpretação cuidadosa | Tooltip e explicações embutidas                |
+
 
 ---
 
