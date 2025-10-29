@@ -772,13 +772,61 @@ O foco de Marina é a síntese estratégica e clareza executiva.
 
 ### 4) Esquema Conceitual de Signos
 
-| Signo                         | Origem                          | Conteúdo                                                | Restrições                     | Prevenção / Recuperação                        |
-| ----------------------------- | ------------------------------- | ------------------------------------------------------- | ------------------------------ | ---------------------------------------------- |
-| Alerta "credenciais expostas" | Sistema (scanner de vazamentos) | Quantidade de logins encontrados com domínio da empresa | Apenas domínios permitidos     | Cross-check com bases internas                 |
-| Relatório técnico (PDF)       | Geração sob demanda             | Detalhamento por incidente e impacto                    | Restrições de acesso por nível | Logs de acesso, exportação autenticada         |
-| Painel executivo              | Dashboard analítico             | Métricas de exposição e risco em formato visual         | Abstração de dados sensíveis   | Atualização periódica e controle de permissões |
-| Botão "Exportar CSV"          | Interface da plataforma         | Dados brutos dos vazamentos                             | Permissões de uso restritas    | Controle de versão e rastreamento de download  |
-| Gráfico de tendências         | Módulo de visualização          | Evolução temporal das exposições                        | Requer interpretação cuidadosa | Tooltip e explicações embutidas                |
+
+# Esquema Conceitual de Signos — Lucas (Analista / Operação Técnica)
+
+Legenda das colunas de ruptura comunicativa
+
+PP (Prevenção Passiva): rótulos claros, exemplos no placeholder, estados desabilitados, affordances.
+PA (Prevenção Ativa): validações em tempo-real, confirmações antes de ações críticas.
+AL (Alerta/Apoiada): banners, toasts, badges, contadores.
+RA (Recuperação Apoiada): “desfazer”, rollback, retry guiado, auto-preenchimento.
+CE (Captura de Erro): mensagens com causa + ação recomendada + referência (código/artefato).
+
+
+| **Signo**                                                       | **Definição de conteúdo**                   | **Interação e projeto de interação (semiótica)**                                  | **PP** |                   **PA** | **AL** |              **RA** | **CE** |
+| --------------------------------------------------------------- | ------------------------------------------- | --------------------------------------------------------------------------------- | -----: | -----------------------: | -----: | ------------------: | -----: |
+| Campo **Alvo** (domínio/e-mail/IP)                              | Identifica univocamente o alvo da varredura | Metamensagem: “o sistema espera um identificador válido; mostro formatos aceitos” |      ✓ |                        ✓ |        |                     |        |
+| **Placeholder** com exemplos (`ex: empresa.com`)                | Exemplifica formato aceito                  | Reduz ambiguidade sem exigir interação                                            |      ✓ |                          |        |                     |        |
+| **Validação em tempo real** do Alvo                             | Checa padrão/duplicidade                    | “Eu (sistema) verifico enquanto você digita para evitar retrabalho”               |        |                        ✓ |        |                     |        |
+| **Selector de Fontes OSINT** (checkboxes)                       | Define escopo de coleta por fonte           | Comunica liberdade com limites (licenças e rate limit)                            |      ✓ |                          |        |                     |        |
+| **Preset de Coleta** (PF/PJ/credenciais/infra)                  | Agrupa fontes típicas                       | Explicita estratégia do designer para acelerar rotina                             |      ✓ |                          |        |                     |        |
+| **Badge de Rate-limit** por fonte                               | Indica cota restante/tempo                  | Evita frustração por falhas silenciosas                                           |        |                          |      ✓ |                     |        |
+| **Botão Disparar/Agendar** (primário)                           | Inicia execução imediata ou agenda job      | Diferencia ação irreversível de operação comum                                    |      ✓ | ✓ (confirma data/escopo) |        |                     |        |
+| **Painel de Progresso** (stepper + % + logs)                    | Mostra estado da coleta                     | “Converso com você durante a execução; eis o que está acontecendo”                |        |                          |      ✓ |                     |        |
+| **Circuit-breaker** de falhas (job)                             | Pausa ao detectar loop de erro              | Evita cascata de erros e desperdício de cota                                      |        |                        ✓ |      ✓ |    ✓ (retry guiado) |        |
+| **Mensagem de erro de credencial/API**                          | Falha de autenticação                       | Explica causa, impacto e ação (reconfigurar chave)                                |        |                          |        |                     |      ✓ |
+| **Normalização & Deduplicação** (chip “n duplicatas removidas”) | Evidencia limpeza                           | Reforça confiança na qualidade do dado                                            |      ✓ |                          |      ✓ |                     |        |
+| **Cartão de Achado** (evidência com hash, timestamp, fonte)     | Unidade semiótica do achado                 | Projeta auditabilidade: “posso ser verificado”                                    |      ✓ |                          |        |                     |        |
+| **Ação “Capturar Evidência”** (screenshot + hash)               | Gera prova reprodutível                     | Padroniza coleta “forense”                                                        |        |                        ✓ |        | ✓ (regerar captura) |        |
+| **Classificador de Risco** (Impacto×Probabilidade)              | Priorização explícita                       | Externaliza critérios do designer (matriz)                                        |      ✓ |                          |        |                     |        |
+| **Tooltip de Critério** (ex.: “Impacto Alto = …”)               | Define termos                               | Evita subjetividade                                                               |      ✓ |                          |        |                     |        |
+| **Template de Relatório Técnico**                               | Estrutura narrativa e KPIs                  | “Este é o caminho ‘correto’ para relatar”                                         |      ✓ |                          |        |                     |        |
+| **Exportar PDF/CSV** com pré-cheque                             | Verifica campos obrigatórios                | Impede exportação inconsistente                                                   |        |                        ✓ |        |                     |        |
+| **Toast de Exportação Concluída** (link para arquivo)           | Feedback pós-ação                           | Fecha o ciclo comunicativo                                                        |        |                          |      ✓ |                     |        |
+| **Enviar ao Cliente** (review gate + confirmação)               | Etapa de saída                              | Força revisão por pares antes do envio                                            |        |                        ✓ |        |                     |        |
+| **Registro em KB** (auto-tags)                                  | Memória organizacional                      | “Sua descoberta fica pesquisável depois”                                          |      ✓ |                          |      ✓ |                     |        |
+
+
+#Esquema Conceitual de Signos — Marina (Gerente / Versão Executiva)
+
+| **Signo**                                             | **Definição de conteúdo**            | **Interação e projeto de interação (semiótica)**            | **PP** |                   **PA** | **AL** |                   **RA** | **CE** |
+| ----------------------------------------------------- | ------------------------------------ | ----------------------------------------------------------- | -----: | -----------------------: | -----: | -----------------------: | -----: |
+| **Painel Executivo** (cards de KPI)                   | Panorama agregado para decisão       | “Falo a língua do negócio: pouco texto, números acionáveis” |      ✓ |                          |        |                          |        |
+| **KPI Severidade Média/Alta** (chips por período)     | Situação de risco no tempo           | Direciona foco de atenção                                   |      ✓ |                          |      ✓ |                          |        |
+| **Filtro de Contexto** (unidade, produto, período)    | Enquadramento da análise             | Evita leituras enviesadas                                   |      ✓ |                          |        |                          |        |
+| **Lista Top Riscos** (ranked)                         | Prioridades com racional             | Evidencia critérios do designer (governança)                |      ✓ |                          |        |                          |        |
+| **Link “Ver Evidência-Chave”**                        | Traço auditável para técnico         | Mantém narrativa executiva com profundidade sob demanda     |      ✓ |                          |        |                          |        |
+| **Glossário Inline** (tooltip)                        | Tradução de termos                   | Reduz jargão e ruído                                        |      ✓ |                          |        |                          |        |
+| **Slide Template 10-20-30**                           | Estrutura da apresentação            | Garante consistência e ritmo                                |      ✓ |                          |        |                          |        |
+| **Gerador de Gráficos** (paleta corporativa)          | Visual padrão de risco               | Evita gráficos confusos                                     |      ✓ |   ✓ (valida dados antes) |        |                          |        |
+| **Roteiro de Q&A** (drawer lateral)                   | Respostas pré-validadas              | “Antecipamos perguntas críticas”                            |      ✓ |                          |        |                          |        |
+| **Indicador de Tempo de Apresentação**                | Barra regressiva                     | Ajuda a cumprir 3–5 min de pitch                            |        |                          |      ✓ |                          |        |
+| **Exportar “Resumo Executivo”**                       | PDF enxuto + anexo técnico           | Separa audiência e profundidade                             |      ✓ | ✓ (pré-cheque de seções) |        |                          |        |
+| **Registro de Decisão** (MoM)                         | Captura direcionamentos da diretoria | Fecha o ciclo semiótico (efeitos práticos)                  |        |                          |        | ✓ (editar/ratificar ata) |        |
+| **Publicar no KB** (tags: alvo/fonte/severidade/data) | Encontrabilidade futura              | Sustenta aprendizado organizacional                         |      ✓ |                          |        |                          |        |
+| **Banner de Dados Desatualizados**                    | Sinaliza staleness                   | Evita decisões com base em dados velhos                     |        |                          |      ✓ |                          |        |
+| **Mensagem de Erro de Acesso** (permissão)            | Restrições por papel                 | Claras instruções para solicitar acesso                     |        |                          |        |                          |      ✓ |
 
 
 ---
