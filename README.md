@@ -718,7 +718,7 @@ _________________
 
 ---
 
-## Entrega 9 - 13/10/2025 [Em andamento]
+## Entrega 9 - 13/10/2025 [Concluído]
 
 ### 1) Cenários de Interação
 
@@ -765,13 +765,7 @@ O foco de Marina é a síntese estratégica e clareza executiva.
 
 ### 3) Mapa de Objetivos
 
-#### Lucas
-
-
-
-#### Marina
-
-
+<img width="1013" height="789" alt="image" src="https://github.com/user-attachments/assets/3a04db65-6200-4d93-8b1e-508efbe63bdd" />
 
 
 
