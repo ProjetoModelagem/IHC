@@ -313,55 +313,65 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 # GOMS–KLM — Lucas (Analista de Pentest)
 (**Plano do HTA:** 1 > 2 > 3 > 4 > 5 > 6 > 7)
 
-#GOAL 0: Realizar investigação OSINT e entregar relatório técnico padronizado  
-##GOAL 1: Preparar alvo e contexto  (HTA: 1.1 > 1.2 > 1.3)
-###GOAL 1.1: Verificar contrato/consentimento  (HTA 1.1)
-#### **OP 1.1.1:** [P] Abrir módulo “Escopo/Compliance”
-#### **OP 1.1.2:** [K] Digitar nº do contrato/OS
-#### **OP 1.1.3:** [B] Clicar em **Validar**
-#### **OP 1.1.4:** [R] Aguardar retorno “Autorizado/Negado”
-#### **OP 1.1.5:** [M] Confirmar que a base legal está OK
+## GOAL 0: Realizar investigação OSINT e entregar relatório técnico padronizado  
+
+---
+
+## GOAL 1: Preparar alvo e contexto  (HTA: 1.1 > 1.2 > 1.3)
+
+### GOAL 1.1: Verificar contrato/consentimento  (HTA 1.1)
+**OP 1.1.1:** [P] Abrir módulo “Escopo/Compliance”  
+**OP 1.1.2:** [K] Digitar nº do contrato/OS  
+**OP 1.1.3:** [B] Clicar em **Validar**  
+**OP 1.1.4:** [R] Aguardar retorno “Autorizado/Negado”  
+**OP 1.1.5:** [M] Confirmar que a base legal está OK  
 
 ### GOAL 1.2: Definir escopo e restrições  (HTA 1.2)
-#### **OP 1.2.1** [K] Inserir alvo (domínio/e-mail/IP)
-#### **OP 1.2.2:** [K] Definir janelas/limites (horário, subdomínios, TLD)
-#### **OP 1.2.3:** [B] **Salvar escopo**
-#### **OP 1.2.4:** [R] Ver confirmação de escopo salvo
+**OP 1.2.1:** [K] Inserir alvo (domínio/e-mail/IP)  
+**OP 1.2.2:** [K] Definir janelas/limites (horário, subdomínios, TLD)  
+**OP 1.2.3:** [B] **Salvar escopo**  
+**OP 1.2.4:** [R] Ver confirmação de escopo salvo  
 
 ### GOAL 1.3: Selecionar fontes OSINT  (HTA 1.3)
-#### **OP 1.3.1:** [P] Abrir lista de fontes
-#### **OP 1.3.2:** [B] Marcar **HIBP**
-#### **OP 1.3.3:** [B] Marcar **Shodan**
-#### **OP 1.3.4:** [B] Marcar **Pastebin** (se aplicável)
-#### **OP 1.3.5:** [M] Revisar redundâncias e confirmar
+**OP 1.3.1:** [P] Abrir lista de fontes  
+**OP 1.3.2:** [B] Marcar **HIBP**  
+**OP 1.3.3:** [B] Marcar **Shodan**  
+**OP 1.3.4:** [B] Marcar **Pastebin** (se aplicável)  
+**OP 1.3.5:** [M] Revisar redundâncias e confirmar  
+
+---
 
 ## GOAL 2: Configurar coletas automáticas  (HTA: 2.1 > (2.2 + 2.3))
 
-###GOAL 2.1: Provisionar chaves\API  (HTA 2.1)
-#### **OP 2.1.1:** [K] Digitar
-#### **OP 2.1.2:** [B] Clicar em **salvar**
-#### **OP 2.1.3:** [M] Confirmar os dados
+### GOAL 2.1: Provisionar chaves/API  (HTA 2.1)
+**OP 2.1.1:** [K] Digitar  
+**OP 2.1.2:** [B] Clicar em **Salvar**  
+**OP 2.1.3:** [M] Confirmar os dados  
 
 ### GOAL 2.2: Parametrizar consultas  (HTA 2.2)
-#### METHOD 2.2.A Inserir dados 
-(SEL. rule: dados baseados no alvo) 
-##### **OP 2.2.A.1** [K] Inserir dados (domínio/e-mail/IP/telefone)
-##### **OP 2.2.A.2:** [R] Confirmar os parametros
+**METHOD 2.2.A:** Inserir dados  
+(Seleção baseada no alvo)  
+**OP 2.2.A.1:** [K] Inserir dados (domínio/e-mail/IP/telefone)  
+**OP 2.2.A.2:** [R] Confirmar os parâmetros  
 
-### GOAL 2.3: Agendar\disparar varreduras (HTA 2.3)
-#### **OP 2.3.1:** [P] Mover até a posição
-#### **OP 2.3.2:** [B] Clicar em **agendar**
-#### **OP 2.3.3:** [B] Clicar em **disparar**
+### GOAL 2.3: Agendar/disparar varreduras (HTA 2.3)
+**OP 2.3.1:** [P] Mover até a posição  
+**OP 2.3.2:** [B] Clicar em **Agendar**  
+**OP 2.3.3:** [B] Clicar em **Disparar**  
 
-## GOAL 3: Monitorar execução  (HTA: (3.1 + 3.2 + 3.3)\*)
+---
+
+## GOAL 3: Monitorar execução  (HTA: (3.1 + 3.2 + 3.3)*)
 
 ### GOAL 3.1: Acompanhar progresso  (HTA 3.1)
-#### **OP 3.1.1:** [R] Ver lista de progresso
-#### **OP 3.1.2:** [M] Conferir amostras
+**OP 3.1.1:** [R] Ver lista de progresso  
+**OP 3.1.2:** [M] Conferir amostras  
 
 ### GOAL 3.2: Tratar falhas  (HTA 3.2)
 
 ### GOAL 3.3: Registrar logs de execução  (HTA 3.3)
+
+---
 
 ## GOAL 4: Validar e evidenciar achados  (HTA: 4.1 > 4.2 > 4.3)
 
@@ -371,11 +381,15 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 
 ### GOAL 4.3: Evidenciar  (HTA 4.3)
 
+---
+
 ## GOAL 5: Classificar e priorizar riscos  (HTA: 5.1 > 5.2)
 
 ### GOAL 5.1: Avaliar impacto × probabilidade  (HTA 5.1)
 
 ### GOAL 5.2: Mapear a requisitos/controles  (HTA 5.2)
+
+---
 
 ## GOAL 6: Montar relatório técnico  (HTA: 6.1 > 6.2 > 6.3 > 6.4)
 
@@ -386,19 +400,22 @@ Ela sente insegurança ao consolidar os relatórios, pois teme que informações
 ### GOAL 6.3: Revisão por pares  (HTA 6.3)
 
 ### GOAL 6.4: Exportar PDF  (HTA 6.4)
-#### **OP 6.4.1:** [B] **Exportar PDF**
-#### **OP 6.4.2:** [R] Conferir arquivo gerado
+**OP 6.4.1:** [B] **Exportar PDF**  
+**OP 6.4.2:** [R] Conferir arquivo gerado  
+
+---
 
 ## GOAL 7: Entregar e arquivar  (HTA: 7.1 > 7.2)
 
 ### GOAL 7.1: Enviar ao cliente  (HTA 7.1)
-#### **OP 7.1.1:** [B] Anexar PDF final
-#### **OP 7.1.2:** [K] Inserir destinatários
-#### **OP 7.1.3:** [B] **Enviar**
-#### **OP 7.1.4:** [R] Ver confirmação de envio
+**OP 7.1.1:** [B] Anexar PDF final  
+**OP 7.1.2:** [K] Inserir destinatários  
+**OP 7.1.3:** [B] **Enviar**  
+**OP 7.1.4:** [R] Ver confirmação de envio  
 
 ### GOAL 7.2: Registrar em histórico/KB  (HTA 7.2)
-#### **OP 7.2.1:** [R] Ver versão arquivada
+**OP 7.2.1:** [R] Ver versão arquivada  
+
 
 ---
 
@@ -470,119 +487,109 @@ _________________________
 
 ---
 
-
-# GOMS–KLM — Marina (Gerente de Segurança)
-
-**Goal 0:** Consolidar relatório OSINT em versão executiva para diretoria  
-(**Plano do HTA:** 1 > 2 > 3 > 4 > 5 > 6 > 7)
-
----
-
 ## GOAL 1: Importar achados técnicos (HTA 1.1 > 1.2)
 
-###GOAL 1.1: Receber relatório técnico da equipe (HTA 1.1)
-- **OP 1.1.1:** [P] Abrir e acessar pasta/drive da equipe  
-- **OP 1.1.2:** [B] Clicar no relatório técnico mais recente  
-- **OP 1.1.3:** [R] Aguardar carregamento do arquivo  
-- **OP 1.1.4:** [M] Verificar checklist (escopo, achados, evidências, severidade)  
+### GOAL 1.1: Receber relatório técnico da equipe (HTA 1.1)
+**OP 1.1.1:** [P] Abrir e acessar pasta/drive da equipe  
+**OP 1.1.2:** [B] Clicar no relatório técnico mais recente  
+**OP 1.1.3:** [R] Aguardar carregamento do arquivo  
+**OP 1.1.4:** [M] Verificar checklist (escopo, achados, evidências, severidade)  
 
-
-### GOAL 1.2: Selecionar seções relevantes para gestores (HTA 1.2)   
-### METHOD 1.2.A: Seleção das seções
+### GOAL 1.2: Selecionar seções relevantes para gestores (HTA 1.2)  
+**METHOD 1.2.A:** Seleção das seções  
 (SEL. RULE: manter apenas riscos prioritários, impactos, evidências-chave e próximos passos)  
-- **OP 1.2.A.1:** [P] Navegar pelas seções do relatório  
-- **OP 1.2.A.2:** [B] Destacar blocos importantes (riscos, impacto, evidências)  
-- **OP 1.2.A.3:** [M] Validar se conteúdo é relevante para gestores  
-- **OP 1.2.A.4:** [R] Conferir versão reduzida com apenas seções relevantes  
-
+**OP 1.2.A.1:** [P] Navegar pelas seções do relatório  
+**OP 1.2.A.2:** [B] Destacar blocos importantes (riscos, impacto, evidências)  
+**OP 1.2.A.3:** [M] Validar se conteúdo é relevante para gestores  
+**OP 1.2.A.4:** [R] Conferir versão reduzida com apenas seções relevantes  
 
 ---
 
 ## GOAL 2: Sintetizar risco para negócio (HTA 2.1 > 2.2)
 
 ### GOAL 2.1: Definir KPIs de risco (HTA 2.1)
-- **OP 2.1.1:** [P] Selecionar lista de KPIs pré-aprovados  
-- **OP 2.1.2:** [B] Marcar indicadores aplicáveis (frequência, severidade, exposição)  
-- **OP 2.1.3:** [M] Conferir se todos são relevantes  
+**OP 2.1.1:** [P] Selecionar lista de KPIs pré-aprovados  
+**OP 2.1.2:** [B] Marcar indicadores aplicáveis (frequência, severidade, exposição)  
+**OP 2.1.3:** [M] Conferir se todos são relevantes  
 
-### GOAL 2.2: Avaliar impacto no negócio (HTA 2.2)
-METHOD 2.2.A: Inserir impacto para avaliação
+### GOAL 2.2: Avaliar impacto no negócio (HTA 2.2)  
+**METHOD 2.2.A:** Inserir impacto para avaliação  
 (SEL. RULE: se há falta de contexto → validar com compliance/owner antes de fechar impacto)  
-- **OP 2.2.A.1:** [K] Inserir impacto financeiro/reputacional/regulatório  
-- **OP 2.2.A.2:** [M] Comparar com casos semelhantes já registrados  
-- **OP 2.2.A.3:** [R] Ver confirmação do sistema ou feedback da área consultada  
+**OP 2.2.A.1:** [K] Inserir impacto financeiro/reputacional/regulatório  
+**OP 2.2.A.2:** [M] Comparar com casos semelhantes já registrados  
+**OP 2.2.A.3:** [R] Ver confirmação do sistema ou feedback da área consultada  
 
 ---
 
 ## GOAL 3: Redigir sumário executivo (HTA 3.1 > 3.2)
 
 ### GOAL 3.1: Estruturar tópicos principais (HTA 3.1)
-- **OP 3.1.1:** [K] Escrever tópicos principais em bullets curtos  
-- **OP 3.1.2:** [M] Organizar em ordem de criticidade (alto > médio > baixo)  
+**OP 3.1.1:** [K] Escrever tópicos principais em bullets curtos  
+**OP 3.1.2:** [M] Organizar em ordem de criticidade (alto > médio > baixo)  
 
 ### GOAL 3.2: Adaptar vocabulário para linguagem não técnica
-- **OP 3.2.1:** [K] Reescrever trechos técnicos em linguagem de negócio  
-- **OP 3.2.2:** [M] Validar clareza e evitar termos internos sem explicação  
+**OP 3.2.1:** [K] Reescrever trechos técnicos em linguagem de negócio  
+**OP 3.2.2:** [M] Validar clareza e evitar termos internos sem explicação  
 
 ---
 
 ## GOAL 4: Revisar linguagem e clareza (HTA 4.1 > 4.2)
 
 ### GOAL 4.1: Eliminar jargão técnico (HTA 4.1)
-- **OP 4.1.1:** [K] Editar texto removendo termos técnicos  
-- **OP 4.1.2:** [M] Substituir por expressões simples ou glossário  
-
+**OP 4.1.1:** [K] Editar texto removendo termos técnicos  
+**OP 4.1.2:** [M] Substituir por expressões simples ou glossário  
 
 ### GOAL 4.2: Validar clareza com equipe (HTA 4.2)
-- **OP 4.2.1:** [P] Enviar sumário para colega (Segurança/Produto)  
-- **OP 4.2.2:** [R] Aguardar feedback  
-- **OP 4.2.3:** [M] Ajustar conforme sugestões  
+**OP 4.2.1:** [P] Enviar sumário para colega (Segurança/Produto)  
+**OP 4.2.2:** [R] Aguardar feedback  
+**OP 4.2.3:** [M] Ajustar conforme sugestões  
 
 ---
 
 ## GOAL 5: Produzir material visual (HTA 5.1 + 5.2)
 
 ### GOAL 5.1: Criar slides
-- **OP 5.1.1:** [P] Abrir modelo corporativo  
-- **OP 5.1.2:** [K] Inserir tópicos resumidos  
-- **OP 5.1.3:** [M] Validar regra “1 ideia por slide”  
+**OP 5.1.1:** [P] Abrir modelo corporativo  
+**OP 5.1.2:** [K] Inserir tópicos resumidos  
+**OP 5.1.3:** [M] Validar regra “1 ideia por slide”  
 
 ### GOAL 5.2: Inserir gráficos (HTA 5.2)
-- **OP 5.2.1:** [B] Selecionar dados no relatório  
-- **OP 5.2.2:** [B] Clicar em “Gerar gráfico”  
-- **OP 5.2.3:** [R] Ver renderização do gráfico  
-- **OP 5.2.4:** [M] Ajustar rótulos/legenda, se confuso  
+**OP 5.2.1:** [B] Selecionar dados no relatório  
+**OP 5.2.2:** [B] Clicar em “Gerar gráfico”  
+**OP 5.2.3:** [R] Ver renderização do gráfico  
+**OP 5.2.4:** [M] Ajustar rótulos/legenda, se confuso  
 
 ---
 
 ## GOAL 6: Apresentar à diretoria (HTA 6.1 > 6.2)
 
 ### GOAL 6.1: Expor sumário executivo (HTA 6.1)
-- **OP 6.1.1:** [M] Preparar pitch de 3–5 min  
-- **OP 6.1.2:** [P] Abrir slides  
-- **OP 6.1.3:** [B] Passar os slides durante apresentação  
+**OP 6.1.1:** [M] Preparar pitch de 3–5 min  
+**OP 6.1.2:** [P] Abrir slides  
+**OP 6.1.3:** [B] Passar os slides durante apresentação  
 
-### GOAL 6.2: Responder dúvidas e coletar feedback (6.2)
-### METHOD 6.2.A: Responder dúvidas (HTA 6.2)  
+### GOAL 6.2: Responder dúvidas e coletar feedback (HTA 6.2)  
+**METHOD 6.2.A:** Responder dúvidas  
 (SEL. RULE: se pergunta não estiver no roteiro → registrar para resposta posterior)  
-- **OP 6.2.1:** [M] Responder com linguagem executiva  
-- **OP 6.2.2:** [K] Anotar feedbacks e perguntas  
-- **OP 6.2.3:** [R] Confirmar aceitação da resposta pela diretoria  
+**OP 6.2.1:** [M] Responder com linguagem executiva  
+**OP 6.2.2:** [K] Anotar feedbacks e perguntas  
+**OP 6.2.3:** [R] Confirmar aceitação da resposta pela diretoria  
 
 ---
 
 ## GOAL 7: Arquivar e registrar (HTA 7.1 > 7.2)
 
 ### GOAL 7.1: Salvar versão final aprovada (HTA 7.1)
-- **OP 7.1.1:** [B] Salvar documento em drive/versionador  
-- **OP 7.1.2:** [K] Inserir nº da versão e data  
-- **OP 7.1.3:** [R] Ver confirmação de salvamento  
+**OP 7.1.1:** [B] Salvar documento em drive/versionador  
+**OP 7.1.2:** [K] Inserir nº da versão e data  
+**OP 7.1.3:** [R] Ver confirmação de salvamento  
 
-### GOAL 7.2: Indexar em histórico/ KB corporativo (HTA 7.2)
-### METHOD 7.2.A: Adicionar tags baseado na reunião de apresentação
-- **OP 7.2.A.1:** [K] Adicionar tags (alvo, fonte, severidade, data)  
-- **OP 7.2.A.2:** [B] Publicar no repositório/KB  
-- **OP 7.2.A.3:** [R] Conferir indexação concluída  
+### GOAL 7.2: Indexar em histórico/KB corporativo (HTA 7.2)  
+**METHOD 7.2.A:** Adicionar tags baseado na reunião de apresentação  
+**OP 7.2.A.1:** [K] Adicionar tags (alvo, fonte, severidade, data)  
+**OP 7.2.A.2:** [B] Publicar no repositório/KB  
+**OP 7.2.A.3:** [R] Conferir indexação concluída  
+
 
 ---
 
