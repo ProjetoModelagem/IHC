@@ -713,14 +713,16 @@ _________________
   - O relatório executivo deve ser compreendido por gestores sem conhecimento técnico.  
   - A interface deve reduzir a necessidade de retrabalho e duplicação de dados.  
 
-- **Quantitativas:**  
-| Critério Nielsen              | Meta (%) | Justificativa                                                                                                                                               |
-| ----------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Facilidade de aprendizado** | 90%      | Usuários (analistas e gestores) devem conseguir entender e operar as funções principais da plataforma em até 30 minutos sem treinamento extensivo.          |
-| **Eficiência de uso**         | 85%      | Após o aprendizado inicial, os usuários devem ser capazes de executar tarefas críticas (como gerar relatórios ou classificar riscos) em menos de 3 minutos. |
-| **Memorabilidade**            | 80%      | Usuários que retornam à plataforma após um período (ex: 2 semanas) devem conseguir reutilizá-la sem necessidade de reaprendizado.                           |
-| **Baixa taxa de erros**       | 90%      | O sistema deve prevenir erros como envio incorreto de dados ou duplicação de achados, com feedbacks claros e validações automáticas.                        |
-| **Satisfação do usuário**     | 85%      | Usuários devem atribuir nota ≥ 4 em 5 (em pesquisa de satisfação sobre uso geral da interface e clareza dos relatórios).                                    |
+- **Quantitativas:**
+
+| Critério Nielsen              | Meta (%) | Justificativa |
+|-------------------------------|-----------|----------------|
+| **Facilidade de aprendizado** | 90% | Usuários (analistas e gestores) devem conseguir entender e operar as funções principais da plataforma em até 30 minutos, sem treinamento extensivo. |
+| **Eficiência de uso**         | 85% | Após o aprendizado inicial, os usuários devem ser capazes de executar tarefas críticas (como gerar relatórios ou classificar riscos) em menos de 3 minutos. |
+| **Memorabilidade**            | 80% | Usuários que retornam à plataforma após um período (ex: 2 semanas) devem conseguir reutilizá-la sem necessidade de reaprendizado. |
+| **Baixa taxa de erros**       | 90% | O sistema deve prevenir erros como envio incorreto de dados ou duplicação de achados, com feedbacks claros e validações automáticas. |
+| **Satisfação do usuário**     | 85% | Usuários devem atribuir nota ≥ 4 em 5 (em pesquisa de satisfação sobre uso geral da interface e clareza dos relatórios). |
+
 
 
 ---
