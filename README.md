@@ -786,8 +786,7 @@ O foco de Marina é a síntese estratégica e clareza executiva.
 
 ### 3) Mapa de Objetivos
 
-<img width="1013" height="789" alt="image" src="https://github.com/user-attachments/assets/3a04db65-6200-4d93-8b1e-508efbe63bdd" />
-
+<img width="984" height="788" alt="image" src="https://github.com/user-attachments/assets/1b3c57aa-5b61-4115-9dac-b5bcdcd13bd5" />
 
 
 
