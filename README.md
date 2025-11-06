@@ -891,62 +891,56 @@ CE (Captura de Erro): mensagens com causa + ação recomendada + referência (c�
 ## *D:*
 Determinar objetivos da avaliação
 
-Objetivo geral: Avaliar se a ferramenta Was I Hacked? facilita a coleta automatizada de OSINT e a geração de relatórios (técnicos e executivos) de forma eficiente, precisa e compreensível para as personas Lucas e Marina.
+Verificar se a ferramenta Was I Hacked? reduz o tempo de coleta e consolidação de dados OSINT em comparação ao processo manual.
 
-Objetivos específicos (para cada persona):
+Checar se analistas (Lucas) conseguem executar varreduras OSINT, validar achados, gerar relatórios técnicos e enviar ao cliente sem dificuldades ou erros graves.
 
-Lucas – verificar se a interface reduz o tempo de coleta manual, a deduplicação de achados e a montagem de relatórios técnicos, com foco em automação e profundidade técnica.
+Avaliar se gestores (Marina) conseguem importar relatórios técnicos, sintetizar riscos, redigir sumários executivos e apresentar métricas à diretoria de forma clara e rápida.
 
-Marina – avaliar se a interface consolida achados técnicos em relatórios executivos claros, compreensíveis e com KPIs adequados para tomada de decisões.
+Garantir que o design atende aos princípios de LGPD, acessibilidade, usabilidade (ISO 9241) e segurança definidos na entrega 8.
 
 ## *E:*
-Explorar perguntas
+Explorar as perguntas que serão respondidas pelo teste
 
-Perguntas para Lucas:
-
-- O fluxo de preparação (escopo e compliance) é claro? Os usuários entendem como limitar a coleta?
-- A validação de chaves/API e o agendamento de varreduras são intuitivos?
-- O painel de progresso e os logs facilitam o monitoramento?
-- A deduplicação e correlação de achados são confiáveis?
-- O relatório técnico atende às necessidades da equipe técnica?
-
-Perguntas para Marina:
-
--É fácil importar um relatório técnico e selecionar as seções relevantes?
-- Os KPIs e métricas de impacto são claros?
-- O glossário e a tradução de jargões são suficientes?
-- A criação de slides e a exportação do sumário executivo são eficientes?
-- A interface ajuda a registrar decisões e arquivar relatórios?
+- Eficiência: quanto tempo leva para completar as tarefas principais (varredura, validação, geração de relatório técnico, consolidação executiva)? Existe queda significativa em relação ao processo manual?
+- Efetividade: os usuários conseguem concluir todas as etapas sem retrabalho? Quais erros, confusões ou passos em falso ocorrem?
+- Compreensão: os analistas entendem os rótulos (alvo, fontes, KPIs) e feedbacks? Os gestores compreendem os KPIs, gráficos e termos técnicos no resumo executivo?
+- Satisfação: qual o nível de satisfação dos participantes com a interface, relatórios e fluxo de trabalho?
+- Aprendizado e memorabilidade: usuários conseguem relembrar o fluxo após um intervalo (por exemplo, duas semanas) sem suporte adicional?
+- Aderência a princípios éticos: os participantes percebem que o sistema respeita privacidade e segurança dos dados?
 
 ## *C:*
 Escolher métodos de avaliação
-- Avaliação heurística: usar especialistas em IHC para identificar problemas de usabilidade na interface de Lucas e de Marina.
-- Testes com usuários: selecionar participantes que representem as personas (analistas de pentest e gestores de segurança). Pedir que realizem tarefas típicas (ex.: configurar varreduras, validar achados, sintetizar relatório executivo).
-- Questionários pós-teste: medir percepção de facilidade de uso, satisfação e compreensão dos relatórios.
-- Observação direta e tabela de eventos: registrar tempo de execução, erros e comentários.
-- Entrevistas rápidas: capturar feedback qualitativo ao final de cada sessão.
+- Avaliação heurística: antes de envolver usuários, aplicar uma revisão com base nas heurísticas de Nielsen (consistência, prevenção de erros, feedback, etc.) para identificar problemas evidentes.
+- Testes com usuários (think‑aloud): sessões presenciais ou remotas onde analistas executam as tarefas (varredura, parametrização, deduplicação, geração de relatório técnico) e gestores consolidam relatórios, falando em voz alta sobre o que entendem, dúvidas e decisões.
+- Teste moderado de cenário: criar cenários realistas (investigar vazamento de domínio X, consolidar relatório para diretoria Y) e medir tempo de execução, taxa de sucesso e erros.
+- Questionários pós‑tarefa: incluir perguntas de satisfação (escala SUS ou de 1–5), facilidade de aprendizado, clareza das informações e percepção de segurança/privacidade.
+- Análise de logs (se possível): registrar interações no sistema para analisar pontos de abandono, cliques repetidos e erros sistêmicos.
 
 ## *I:*
-Identificar questões práticas
-- Recrutamento: 4–6 participantes por persona. Garantir variedade de experiência (junior e sênior).
-- Ambiente: laboratório tranquilo, computador com acesso ao sistema e softwares de gravação.
-- Duração: sessões de 45–60 minutos (incluindo briefing, execução das tarefas e debriefing).
-- Recursos: formulários de consentimento, questionário demográfico, roteiro de tarefas, tabela de observação, formulários de heurística (para avaliadores), ferramentas de gravação de tela/áudio.
-- Cronograma: preparação dos materiais, execução dos testes, análise e relatório final.
+Identificar questões práticas para execução
+- Participantes: recrutar 5–8 analistas de segurança com experiência em OSINT (similar a Lucas) e 5–8 gestores ou compliance managers (perfil da Marina). Garantir diversidade de experiência e familiaridade com ferramentas.
+- Tarefas definidas:
+  - Para analistas: (a) preparar escopo (inserir alvo, definir limites); (b) configurar coletas (APIs, parâmetros); (c) acompanhar a execução e tratar falhas; (d) deduplicar e evidenciar achados; (e) classificar riscos; (f) gerar e exportar relatório técnico.
+  - Para gestores: (a) importar relatório técnico; (b) selecionar seções relevantes; (c) definir KPIs e avaliar impacto; (d) redigir sumário executivo; (e) revisar clareza; (f) produzir material visual e apresentar à diretoria; (g) arquivar decisões.
+- Ambiente: laboratório de usabilidade ou sessão remota gravada. Cada participante utiliza um computador com acesso à ferramenta (versão de teste). Há um moderador observando, um cronômetro e captura de tela/vídeo.
+- Métricas: tempo de conclusão de cada tarefa, número de cliques/etapas, taxa de sucesso, número de erros, anotações de dúvidas e feedback verbal.
+- Recursos: versões atualizadas dos protótipos ou do sistema, formulário de observação, sistema de gravação, formulários SUS.
 
 ## *D:*
-Decidir sobre as questões éticas
-- Consentimento informado: explicitar objetivo, duração, gravação e uso dos dados; permitir desistência a qualquer momento.
-- Privacidade e anonimato: anonimizar dados pessoais; evitar armazenar informações sensíveis (senhas, IPs reais); seguir LGPD.
-- Debriefing: explicar que a avaliação busca tendências de problemas, não conclusões absolutas.
-
+Decidir como lidar com questões éticas
+- Consentimento informado: antes de cada sessão, apresentar e solicitar assinatura do termo de consentimento explicando o objetivo do teste, o tempo estimado, a gravação da sessão e a possibilidade de retirada a qualquer momento.
+- Privacidade e LGPD: deixar claro que nenhum dado pessoal real será coletado; usar alvos fictícios ou anonimizados. Garantir que as gravações serão usadas apenas para fins de melhoria de usabilidade.
+- Confidencialidade: anonimizar todos os registros e publicar resultados apenas de forma agregada.
+- Desconforto ou pressão: garantir que os participantes não se sintam avaliados — é o sistema que está sendo testado. Moderadores devem intervir apenas para questões de segurança ou ética.
+- Inclusão: oferecer acessibilidade para participantes com necessidades especiais (por exemplo, legendas, leitores de tela).
 ## *E:*
-Avaliar e apresentar resultados
-- Análise quantitativa: tempo de execução, taxa de sucesso, número de erros e pontuações em questionários (aplicando metas de usabilidade definidas na Entrega 8).
-- Análise qualitativa: insights de observação, comentários dos usuários, problemas heurísticos.
-- Relato dos resultados: enfatizar que os resultados mostram tendências de problemas e não garantias de ocorrência.
-- Agrupar problemas por severidade e frequência; propor recomendações de redesign.
-- Comparação com metas: verificar se as metas de usabilidade (facilidade de aprendizado, eficiência, memorabilidade, baixa taxa de erros e satisfação) foram atendidas.
+Avaliar, interpretar e apresentar os resultados
+- Compilar dados quantitativos: calcular médias de tempo, taxas de sucesso, frequência de erros e pontuação de satisfação (SUS). Comparar com metas de usabilidade definidas na entrega 8.
+- Classificar problemas: agrupar achados por gravidade (crítico, severo, moderado, menor) e frequência. Relacionar cada problema às heurísticas violadas.
+- Interpretar dados qualitativos: transcrever comentários dos participantes, identificar padrões de confusão ou frustração, e destacá‑los com exemplos.
+- Priorizar recomendações: sugerir melhorias de design para etapas que apresentaram maior carga cognitiva (p. ex., seleção de fontes OSINT, matriz de risco, glossário). Verificar se novas funcionalidades (alertas, automatizações) são necessárias.
+- Relatar tendências: enfatizar que a avaliação aponta tendências de problemas e não garante que todos ocorrerão no uso real. Se não forem encontrados problemas, isso não significa necessariamente que a interface tem alta qualidade; apenas que, naquele contexto, não foram reveladas questões de uso.
 
 
 ### b) Lista de Instrumentos
