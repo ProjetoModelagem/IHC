@@ -888,7 +888,7 @@ CE (Captura de Erro): mensagens com causa + ação recomendada + referência (c�
 ## Entrega 12 - 03/11/2025 [Em andamento]
 
 ### a) Planejamento de Usabilidade (Método DECIDE)
-- *D:*
+## *D:*
 Determinar objetivos da avaliação
 
 Objetivo geral: Avaliar se a ferramenta Was I Hacked? facilita a coleta automatizada de OSINT e a geração de relatórios (técnicos e executivos) de forma eficiente, precisa e compreensível para as personas Lucas e Marina.
@@ -899,7 +899,7 @@ Lucas – verificar se a interface reduz o tempo de coleta manual, a deduplicaç
 
 Marina – avaliar se a interface consolida achados técnicos em relatórios executivos claros, compreensíveis e com KPIs adequados para tomada de decisões.
 
-- *E:*
+## *E:*
 Explorar perguntas
 
 Perguntas para Lucas:
@@ -918,7 +918,7 @@ Perguntas para Marina:
 - A criação de slides e a exportação do sumário executivo são eficientes?
 - A interface ajuda a registrar decisões e arquivar relatórios?
 
-- *C:*
+## *C:*
 Escolher métodos de avaliação
 - Avaliação heurística: usar especialistas em IHC para identificar problemas de usabilidade na interface de Lucas e de Marina.
 - Testes com usuários: selecionar participantes que representem as personas (analistas de pentest e gestores de segurança). Pedir que realizem tarefas típicas (ex.: configurar varreduras, validar achados, sintetizar relatório executivo).
@@ -926,7 +926,7 @@ Escolher métodos de avaliação
 - Observação direta e tabela de eventos: registrar tempo de execução, erros e comentários.
 - Entrevistas rápidas: capturar feedback qualitativo ao final de cada sessão.
 
-- *I:*
+## *I:*
 Identificar questões práticas
 - Recrutamento: 4–6 participantes por persona. Garantir variedade de experiência (junior e sênior).
 - Ambiente: laboratório tranquilo, computador com acesso ao sistema e softwares de gravação.
@@ -934,13 +934,13 @@ Identificar questões práticas
 - Recursos: formulários de consentimento, questionário demográfico, roteiro de tarefas, tabela de observação, formulários de heurística (para avaliadores), ferramentas de gravação de tela/áudio.
 - Cronograma: preparação dos materiais, execução dos testes, análise e relatório final.
 
-- *D:*
+## *D:*
 Decidir sobre as questões éticas
 - Consentimento informado: explicitar objetivo, duração, gravação e uso dos dados; permitir desistência a qualquer momento.
 - Privacidade e anonimato: anonimizar dados pessoais; evitar armazenar informações sensíveis (senhas, IPs reais); seguir LGPD.
 - Debriefing: explicar que a avaliação busca tendências de problemas, não conclusões absolutas.
 
-- *E:*
+## *E:*
 Avaliar e apresentar resultados
 - Análise quantitativa: tempo de execução, taxa de sucesso, número de erros e pontuações em questionários (aplicando metas de usabilidade definidas na Entrega 8).
 - Análise qualitativa: insights de observação, comentários dos usuários, problemas heurísticos.
