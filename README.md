@@ -861,7 +861,20 @@ CE (Captura de Erro): mensagens com causa + ação recomendada + referência (c�
 
 ### MOLIC
 - *Nome do Cenário:*  
-- *Diagrama:*  
+- *Diagrama:*
+
+### Lucas
+<img width="691" height="720" alt="image" src="https://github.com/user-attachments/assets/d69265ca-3d41-4938-b766-eb0dfdc6a7d6" />
+<img width="614" height="511" alt="image" src="https://github.com/user-attachments/assets/22907617-2909-431f-a0b3-a21385e5c368" />
+<img width="435" height="365" alt="image" src="https://github.com/user-attachments/assets/4cedb6b2-0d71-4ffe-88dd-7fa7d54c7623" />
+
+
+
+### Marina
+<img width="561" height="444" alt="image" src="https://github.com/user-attachments/assets/588cf855-96bb-4557-b562-071d59db6409" />
+<img width="584" height="436" alt="image" src="https://github.com/user-attachments/assets/89f4cc07-7830-46f2-a380-4c48b9a20f12" />
+<img width="438" height="312" alt="image" src="https://github.com/user-attachments/assets/96832f24-ac16-47fb-b53d-bb4537adbc34" />
+
 
 ---
 
