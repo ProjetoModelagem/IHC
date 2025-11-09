@@ -864,15 +864,18 @@ CE (Captura de Erro): mensagens com causa + ação recomendada + referência (c�
 - *Diagrama:*
 
 ### Lucas
-<img width="543" height="568" alt="image" src="https://github.com/user-attachments/assets/5243550e-6373-4398-8efb-0e9188c97167" />
-<img width="594" height="409" alt="image" src="https://github.com/user-attachments/assets/3dde1f43-4101-4669-a726-f6a8261c9f61" />
-<img width="276" height="235" alt="image" src="https://github.com/user-attachments/assets/0e5d1947-53f5-4af2-acb3-90825368b5a0" />
+<img width="375" height="699" alt="image" src="https://github.com/user-attachments/assets/ef61db34-7dab-4c15-a941-5c128141746e" />
+<img width="538" height="777" alt="image" src="https://github.com/user-attachments/assets/b26f18c5-a086-479a-a221-101ab28496a6" />
+<img width="487" height="541" alt="image" src="https://github.com/user-attachments/assets/7c51bce0-bd09-4b2b-b94f-735cc540ae42" />
+<img width="445" height="371" alt="image" src="https://github.com/user-attachments/assets/9f4fe8ce-413c-4c8a-886e-74b035e75744" />
 
 
 
 ### Marina
-<img width="621" height="433" alt="image" src="https://github.com/user-attachments/assets/e490a777-6930-4b53-8101-282409733310" />
-<img width="727" height="367" alt="image" src="https://github.com/user-attachments/assets/99ad8ed9-a53a-415c-9484-46e2f4c37093" />
+<img width="741" height="676" alt="image" src="https://github.com/user-attachments/assets/bf51cd88-0902-447c-9290-8d0645c3c4c2" />
+<img width="572" height="605" alt="image" src="https://github.com/user-attachments/assets/d22db5cb-fad0-474b-a167-7a014a9b0c4e" />
+<img width="639" height="499" alt="image" src="https://github.com/user-attachments/assets/81a828d8-cf0c-4562-91da-d6accc61f023" />
+<img width="336" height="515" alt="image" src="https://github.com/user-attachments/assets/72a8b5a2-e198-46b9-a5ff-140bd2470e92" />
 
 
 
@@ -962,34 +965,159 @@ Avaliar, interpretar e apresentar os resultados
 ## Entrega 13 - 10/11/2025 [Em andamento]
 
 ### A) Avaliação de IHC através de inspeção HEURÍSTICA
-(Para cada tela, listar violações de heurísticas de Nielsen com severidade 0 a 4.)
+| Heurística violada                       | Problema identificado (severidade)                                                                                                                    | Justificativa                                                                              |
+| ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Visibilidade do estado do sistema**    | **H3 (major)**: após escolher fontes OSINT, o botão “Continuar” não fica visivelmente inativo até que todos os campos obrigatórios sejam preenchidos. | Falta de feedback sobre o requisito impede o usuário de saber por que não pode prosseguir. |
+| **Consistência e padrões**               | **H2 (minor)**: rótulos “alvo”, “domínio” e “fonte” são usados de forma intercambiável sem padronização.                                              | Nomes diferentes para o mesmo conceito confundem usuários inexperientes.                   |
+| **Prevenção de erros**                   | **H3 (major)**: campos permitem inserir IP sem validação imediata; erros só são mostrados no passo final.                                             | Deviam ser validados em tempo real para evitar retrabalho.                                 |
+| **Reconhecimento em vez de memorização** | **H2 (minor)**: a lista de fontes OSINT não indica brevemente o tipo de dado (e.g., “HIBP – vazamentos de credenciais”).                              | Usuários precisam lembrar o que cada fonte faz.                                            |
+
+| Heurística violada                       | Problema identificado (severidade)                                                                                                     | Justificativa                                                                        |
+| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| **Consistência e padrões**               | **H3 (major)**: alguns campos de credenciais usam o formato `<API_KEY>`, enquanto outros exigem a inclusão de um prefixo (“Bearer …”). | Padrões distintos dificultam o preenchimento e podem causar falhas de autenticação.  |
+| **Prevenção de erros**                   | **H4 (catastrophe)**: o sistema permite inserir dados de agendamento fora do horário (e.g., data passada) sem avisar.                  | Pode levar a coletas jamais executadas. É um caso grave, pois compromete a eficácia. |
+| **Flexibilidade e eficiência**           | **H2 (minor)**: não há opção para salvar diferentes perfis de configurações de API/consultas para projetos recorrentes.                | Usuários frequentes têm de preencher tudo novamente.                                 |
+| **Ajuda a reconhecer e recuperar erros** | **H2 (minor)**: notificações de “cota excedida” desaparecem rapidamente e não são registradas em log.                                  | Usuário pode não entender o motivo da falha.                                         |
+| Heurística violada                       | Problema identificado (severidade)                                                                                                    | Justificativa                                        |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| **Visibilidade do estado do sistema**    | **H2 (minor)**: as barras de progresso por fonte mostram percentuais, mas não indicam tempo estimado restante.                        | Usuário fica sem noção do tempo de espera.           |
+| **Prevenção de erros**                   | **H3 (major)**: botão “Deduplicar” aparece mesmo quando não há duplicatas; clicar pode esconder resultados únicos.                    | Deveria estar desabilitado se não houver duplicatas. |
+| **Consistência e padrões**               | **H1 (cosmético)**: ícones de “evidenciar” e “descartar FP” têm estilos diferentes do restante do sistema.                            | Afeta estética e harmonia.                           |
+| **Flexibilidade e eficiência**           | **H2 (minor)**: a matriz de risco não permite arrastar e soltar achados para classificar; exige menu de contexto.                     | Poderia haver interação mais rápida.                 |
+| **Ajuda a reconhecer e recuperar erros** | **H3 (major)**: se o usuário fechar o modal de captura de evidência sem salvar, uma mensagem de alerta não aparece; o dado é perdido. | Falta confirmação de abandono de ação.               |
+
+| Heurística violada                       | Problema identificado (severidade)                                                                                                                             | Justificativa                                     |
+| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| **Reconhecimento em vez de memorização** | **H2 (minor)**: rótulos dos KPIs (“Severidade”, “Exposição”) não têm ícones ou descrições curtas.                                                              | Gestores podem não lembrar o significado exato.   |
+| **Visibilidade do estado do sistema**    | **H2 (minor)**: após importar o relatório, o sistema demora a mostrar feedback de upload; falta indicador de progresso.                                        | Pode levar o usuário a tentar importar novamente. |
+| **Consistência e padrões**               | **H2 (minor)**: os drop‑downs para impacto financeiro e reputacional usam escalas de 1–5 enquanto o KPI “Exposição” usa porcentagem; ausência de uniformidade. | Inconsistência dificulta a comparação.            |
+| **Ajuda a reconhecer e recuperar erros** | **H3 (major)**: se uma seção obrigatória não for selecionada, o erro aparece só ao gerar o sumário.                                                            | Mensagem deveria ser exibida imediatamente.       |
+
+| Heurística violada                       | Problema identificado (severidade)                                                                                             | Justificativa                                         |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- |
+| **Consistência e padrões**               | **H2 (minor)**: o botão “Adaptar vocabulário” está em local diferente do botão “Revisar clareza”, confundindo o fluxo.         | Ambos são etapas de revisão, deveriam estar próximos. |
+| **Flexibilidade e eficiência**           | **H2 (minor)**: não há atalho para pré‑visualizar slides enquanto digita o sumário; é necessário rolar até a seção de geração. | Reduz eficiência para quem faz alterações frequentes. |
+| **Aesthetic & minimalist design**        | **H1 (cosmético)**: demasiados ícones no editor de texto (negrito, itálico, cores) distraem do foco no conteúdo.               | Layout poderia priorizar as funções principais.       |
+| **Ajuda a reconhecer e recuperar erros** | **H2 (minor)**: ao inserir imagens nos slides, não há aviso sobre tamanho máximo; se exceder, o sistema falha silenciosamente. | Falta de mensagens claras prejudica experiência.      |
+
+| Heurística violada                    | Problema identificado (severidade)                                                                                 | Justificativa                                     |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- |
+| **Visibilidade do estado do sistema** | **H2 (minor)**: o contador regressivo (pitch de 3–5 min) está pequeno e pouco destacado; pode passar despercebido. | Usuário pode extrapolar o tempo.                  |
+| **Consistência e padrões**            | **H2 (minor)**: botões “Mostrar Evidências” e “Próximo” são ambos azul‑escuros sem diferenciação de hierarquia.    | Não indica claramente qual é a ação principal.    |
+| **Controle e liberdade do usuário**   | **H3 (major)**: ao clicar “Registrar Decisão” não há a opção de salvar rascunho; uma vez enviado, não pode editar. | Falta mecanismo de recuperação.                   |
+| **Ajuda e documentação**              | **H2 (minor)**: não há instruções rápidas sobre como indexar o documento no KB.                                    | Usuário pode esquecer campos obrigatórios (tags). |
+
 
 ### B) Indicação de Boas Práticas de Heurística
-(Um exemplo do sistema onde a heurística foi atendida.)
+Uma prática positiva recorrente no sistema é a visibilidade do estado do sistema: barras de progresso, checklists de etapas e painéis de status são usados em diversas telas, fornecendo feedback claro durante varreduras e geração de relatórios, o que diminui a ansiedade do usuário. Outra boa prática é o glossário inline para os termos técnicos, que reduz a necessidade de memorizar conceitos e atende à heurística de reconhecimento em vez de memorização.
+
 
 ---
 
-## Entrega 14 - 17/11/2025 [Em andamento]
+## Entrega 14 - 17/11/2025 [Concluído]
 
 ### A) Fluxograma de Avaliação de Usabilidade por Observação do Usuário
-(Fluxo de como o teste será aplicado.)
+O fluxo abaixo representa a sequência de um teste típico. A avaliação é moderada, com sessões presenciais ou remotas, e usa a técnica think‑aloud. Para cada participante (analistas e gestores), repete‑se o ciclo completo:
+1. Definir Participantes
+ - Selecionar 5–8 analistas de segurança e 5–8 gestores/compliance com experiência comparável a Lucas e Marina (perfis do MoLIC).
+
+2. Consentimento e Perfil
+ - Apresentar e obter assinatura do termo de consentimento (ética e LGPD).
+ - Aplicar questionário demográfico (cargo, experiência, familiaridade com OSINT).
+
+3. Explicar o Cenário de Uso
+ - Descrever brevemente o cenário (ex.: “investigar vazamento de domínio X” para Lucas ou “consolidar relatório para diretoria Y” para Marina).
+ - Explicar que o foco é avaliar a interface, não o desempenho do usuário.
+
+4. Executar Tarefas com Think‑Aloud
+ - Entregar o roteiro de tarefas.
+ - Iniciar cronômetro e gravar vídeo/tela.
+ - O participante realiza as ações enquanto verbaliza pensamentos, dúvidas e decisões.
+ - O avaliador observa e registra tempos, cliques, erros, hesitações e comentários.
+
+5. Questionários Pós‑Taref
+ - Após cada tarefa, aplicar pequena escala Likert (1–5) sobre dificuldade, clareza e satisfação.
+
+6. Debriefing
+ - Perguntar percepções gerais (o que gostou, onde teve dificuldades).
+ - Reforçar que os dados serão anonimizados.
+
+7. Encerramento
+ - Agradecer a participação.
+ - Anotar insights gerais e potenciais melhorias.
 
 ### B) Descrição do Procedimento de Preparação do Teste
-- Passo 1: ...  
-- Passo 2: Lista de tarefas  
-- Passo 3: Formulário de perfil do usuário  
-- etc.  
+Para uma avaliação consistente, siga estes passos:
+1. Planejamento Inicial
+ - Revisar os objetivos da avaliação (reduzir tempo de coleta, evitar retrabalho, permitir relatórios claros, etc.).
+ - Definir perguntas de pesquisa (eficiência, efetividade, compreensão, satisfação, aprendizado e ética), conforme o método DECIDE.
+
+2. Criação do Protocolo
+ - Preparar roteiro de tarefas específicas para cada persona:
+  - Lucas (analista): configurar escopo, parametrizar consultas, monitorar execução, deduplicar achados, classificar riscos, gerar relatório técnico.
+  - Marina (gestora): importar relatório técnico, selecionar seções, definir KPIs, avaliar impacto, redigir sumário, gerar slides, apresentar e arquivar.
+ - Elaborar formulários (perfil, SUS/escala Likert, avaliação heurística).
+ - Definir instruções padrão para o moderador (introdução, estímulos neutros, encerramento).
+
+3. Recrutamento
+ - Selecionar participantes com diferentes níveis de experiência em OSINT e relatórios executivos.
+ - Acordar data/hora das sessões e enviar convite com orientações (inclusive a possibilidade de desistir a qualquer momento).
+
+4. Montagem do Ambiente
+ - Disponibilizar computadores com a versão de teste do sistema e ferramentas de captura de tela/vídeo.
+ - Verificar conectividade, chaves de API fictícias e dados de teste.
+ - Garantir acessibilidade (leitores de tela, legendas) caso necessário.
+
+5. Execução
+ - Conduzir sessões conforme fluxograma.
+ - Repetir para cada participante.
+ - Ao final, consolidar observações e completar a tabela de resultados.
+
+6. Análise
+ - Calcular tempos médios, taxas de sucesso e pontuações de satisfação.
+ - Cruzar dados quantitativos com observações qualitativas (erros, comentários) e heurísticas violadas.
+ - Identificar problemas prioritários e sugerir correções.
+
+7. Relatório de Avaliação
+ - Elaborar relatório com resultados agregados, recomendações e tendências.
+ - Incluir vídeo ou prints de momentos críticos, gráficos de tempo médio e tabelas de erros.
 
 ### C) Resultados do Teste
-Tabela:  
-- Grau de sucesso  
-- Erros cometidos  
-- Tipos de erros  
-- Tempo necessário  
-- Grau de satisfação  
+Como exemplo, considere que os testes com 6 analistas e 6 gestores produziram os seguintes dados resumidos:
 
-- *Links dos vídeos:*  
-- *Respostas dos formulários:*  
-- *Conclusão da avaliação por observação do usuário:*  
+| **Tarefa**                             | **Grau de Sucesso** | **Erros Cometidos**                               | **Tipos de Erro**                                                                                  | **Tempo Médio (min)** | **Grau de Satisfação (1–5)** |
+| -------------------------------------- | ------------------- | ------------------------------------------------- | -------------------------------------------------------------------------------------------------- | --------------------- | ---------------------------- |
+| Preparar escopo (analista)             | 5/6                 | Erros de validação de alvo (2), não salvar escopo | Não entender placeholder do campo alvo; esquecer de marcar limites                                 | 4                     | 4.3                          |
+| Selecionar fontes OSINT                | 6/6                 | Erros de redundância (1)                          | Marcar fontes irrelevantes mesmo após aviso de “rate limit”                                        | 3                     | 4.5                          |
+| Parametrizar e agendar varredura       | 4/6                 | Falhas de agendamento (3)                         | Confusão no calendário, esquecer de escolher data/hora correta; não notar indicador de cota de API | 5                     | 4.0                          |
+| Monitorar e deduplicar achados         | 5/6                 | Não deduplicar (2), excluir achados válidos (1)   | Não perceber botão “Remover duplicatas”; clicar em “Descartar FP” por engano                       | 6                     | 4.2                          |
+| Classificar riscos                     | 4/6                 | Erros de matriz de risco (3)                      | Dificuldade em entender escalas impacto × probabilidade                                            | 7                     | 3.8                          |
+| Gerar relatório técnico                | 6/6                 | Falha de exportação (1)                           | Deixar campo obrigatório em branco; não entender alerta                                            | 5                     | 4.6                          |
+| Importar relatório e selecionar seções | 5/6                 | Seções irrelevantes marcadas (2)                  | Foco excessivo em detalhes técnicos no sumário executivo                                           | 4                     | 4.4                          |
+| Definir KPIs e avaliar impacto         | 4/6                 | KPIs inadequados (3), impacto mal classificado    | Confusão sobre severidade versus frequência; falta de contexto financeiro                          | 6                     | 3.9                          |
+| Redigir sumário e adaptar vocabulário  | 4/6                 | Termos técnicos não substituídos (2)              | Não usar glossário; dificuldade de simplificar jargões                                             | 8                     | 4.0                          |
+| Produzir apresentação                  | 6/6                 | Problemas de layout de slides (2)                 | Excesso de informações por slide; não seguir regra “1 ideia por slide”                             | 6                     | 4.5                          |
+| Apresentar e registrar decisões        | 5/6                 | Não registrar ata completa (2)                    | Esquecer de anotar todas as perguntas/respostas durante Q&A                                        | 5                     | 4.2                          |
+
+
+### Links de evidências (fictícios):
+- Vídeo das sessões e logs de interação gravados (pasta interna de gravações).
+- Respostas dos formulários de perfil e questionários pós-teste (documentos no KB da equipe).
+
+###Conclusão da avaliação por observação do usuário:
+- O sistema atendeu o objetivo de reduzir tempo de coleta e consolidação em relação ao processo manual; a média de cada etapa ficou dentro dos limites de 3–7 minutos.
+- As principais tendências de problemas observadas foram dificuldades em entender restrições do campo “Alvo”, confusão na matriz de riscos e uso incorreto do glossário. Isso confirma que a avaliação aponta tendências e não certezas.
+- Melhorias sugeridas: instruções mais claras no placeholder do campo alvo; tutorial interativo para matriz de risco; auto‑seleção de KPIs recomendados; feedback mais proeminente nos botões “Remover duplicatas” e “Descartar FP”.
+- A satisfação média (acima de 4) indica aceitação positiva, mas a memorabilidade deve ser reavaliada, pois alguns usuários esqueceram passos após 2 semanas.
+
+### Avaliação Heurística de Nielsen (Exemplos)
+Para cada tela, foram analisadas as 10 heurísticas (visibilidade do status, mapeamento, prevenção de erros, consistência, eficiência, etc.) e atribuída severidade de 0 (não problema) a 4 (crítico). Alguns exemplos:
+
+- Tela “Preencher Alvo e Fontes”: Rótulos claros atendem à heurística de consistência e padrões (severidade 0). Entretanto, o placeholder do campo Alvo é ambíguo – viola prevenção de erros (severidade 2). O botão “Continuar” desabilitado sem feedback viola visibilidade de status (severidade 2).
+- Tela “Configurar APIs”: Indicadores verdes/vermelhos de validação de credenciais atendem visibilidade do status (severidade 0). A falta de ajuda contextual sobre o que é “throttling” viola ajuda e documentação (severidade 1).
+- Dashboard Técnico: A barra de progresso e logs atendem visibilidade do status (0); contudo, a matriz impacto × probabilidade é pouco intuitiva, violando correspondência entre sistema e mundo real (3).
+- Sumário Executivo: O glossário inline e a conversão de jargões são boas práticas de ajuda e documentação (0). O uso de slides carregados com várias ideias viola prevenção de erros e aesthetic and minimalist design (2).
+
+Boa Prática Exemplificada: O painel executivo para Marina utiliza cartões de KPI com cores neutras e rótulos claros; ao passar o mouse sobre termos técnicos, um balão de ajuda explica seu significado. Essa implementação demonstra “ajuda e documentação” e “consistência e padrões” bem atendidas, reduzindo ruídos e facilitando a compreensão do usuário leigo.
 
 ---
