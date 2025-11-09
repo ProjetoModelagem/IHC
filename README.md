@@ -864,16 +864,16 @@ CE (Captura de Erro): mensagens com causa + ação recomendada + referência (c�
 - *Diagrama:*
 
 ### Lucas
-<img width="691" height="720" alt="image" src="https://github.com/user-attachments/assets/d69265ca-3d41-4938-b766-eb0dfdc6a7d6" />
-<img width="614" height="511" alt="image" src="https://github.com/user-attachments/assets/22907617-2909-431f-a0b3-a21385e5c368" />
-<img width="435" height="365" alt="image" src="https://github.com/user-attachments/assets/4cedb6b2-0d71-4ffe-88dd-7fa7d54c7623" />
+<img width="543" height="568" alt="image" src="https://github.com/user-attachments/assets/5243550e-6373-4398-8efb-0e9188c97167" />
+<img width="594" height="409" alt="image" src="https://github.com/user-attachments/assets/3dde1f43-4101-4669-a726-f6a8261c9f61" />
+<img width="276" height="235" alt="image" src="https://github.com/user-attachments/assets/0e5d1947-53f5-4af2-acb3-90825368b5a0" />
 
 
 
 ### Marina
-<img width="561" height="444" alt="image" src="https://github.com/user-attachments/assets/588cf855-96bb-4557-b562-071d59db6409" />
-<img width="584" height="436" alt="image" src="https://github.com/user-attachments/assets/89f4cc07-7830-46f2-a380-4c48b9a20f12" />
-<img width="438" height="312" alt="image" src="https://github.com/user-attachments/assets/96832f24-ac16-47fb-b53d-bb4537adbc34" />
+<img width="621" height="433" alt="image" src="https://github.com/user-attachments/assets/e490a777-6930-4b53-8101-282409733310" />
+<img width="708" height="363" alt="image" src="https://github.com/user-attachments/assets/6d93186f-9ae3-4571-9648-20bce072dff6" />
+
 
 
 ---
