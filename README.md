@@ -857,7 +857,7 @@ CE (Captura de Erro): mensagens com causa + ação recomendada + referência (c�
 
 ---
 
-## Entrega 10 - 20/10/2025 [Em andamento]
+## Entrega 10 - 20/10/2025 [Concluído]
 
 ### MOLIC
 - *Nome do Cenário:*  
@@ -872,7 +872,8 @@ CE (Captura de Erro): mensagens com causa + ação recomendada + referência (c�
 
 ### Marina
 <img width="621" height="433" alt="image" src="https://github.com/user-attachments/assets/e490a777-6930-4b53-8101-282409733310" />
-<img width="708" height="363" alt="image" src="https://github.com/user-attachments/assets/6d93186f-9ae3-4571-9648-20bce072dff6" />
+<img width="727" height="367" alt="image" src="https://github.com/user-attachments/assets/99ad8ed9-a53a-415c-9484-46e2f4c37093" />
+
 
 
 
@@ -885,7 +886,7 @@ CE (Captura de Erro): mensagens com causa + ação recomendada + referência (c�
 
 ---
 
-## Entrega 12 - 03/11/2025 [Em andamento]
+## Entrega 12 - 03/11/2025 [Concluído]
 
 ### a) Planejamento de Usabilidade (Método DECIDE)
 ## *D:*
