@@ -886,6 +886,7 @@ CE (Captura de Erro): mensagens com causa + ação recomendada + referência (c�
 
 ### Protótipo Correspondente ao MOLIC
 - *Link para o Figma:*  
+https://www.figma.com/design/lTtQckh7cDu0O4pe7V78Aq/Untitled?node-id=0-1&t=EPQBdqVh4V5vhVbd-1
 
 ---
 
