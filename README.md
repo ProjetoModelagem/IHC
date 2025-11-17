@@ -882,7 +882,7 @@ CE (Captura de Erro): mensagens com causa + ação recomendada + referência (c�
 
 ---
 
-## Entrega 11 - 27/10/2025 [Em andamento]
+## Entrega 11 - 27/10/2025 [Concluído]
 
 ### Protótipo Correspondente ao MOLIC
 - *Link para o Figma:*  
@@ -963,7 +963,7 @@ Avaliar, interpretar e apresentar os resultados
 
 ---
 
-## Entrega 13 - 10/11/2025 [Em andamento]
+## Entrega 13 - 10/11/2025 [Concluído]
 
 ### A) Avaliação de IHC através de inspeção HEURÍSTICA
 | Heurística violada                       | Problema identificado (severidade)                                                                                                                    | Justificativa                                                                              |
